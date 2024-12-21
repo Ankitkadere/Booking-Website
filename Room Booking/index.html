@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- <link rel="stylesheet" href="/style.css"> -->
+    <title>ANY TECHNOLOGIES</title>
+    <!-- favicon -->
+    <link rel="icon"
+        href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo"
+        type="image/gif" sizes="16x16" />
+    <!-- header links -->
+    <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
+    <!-- slider links -->
+    <!-- <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
+    <script src="js/jQuery3.4.1.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
+    <link rel="stylesheet" href="css\filter.css" />
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyAcMpWDStktk6IRwJjPBQ0exKTCMYENQ-c",
+            authDomain: "room-booking-9dcf1.firebaseapp.com",
+            projectId: "room-booking-9dcf1",
+            storageBucket: "room-booking-9dcf1.firebasestorage.app",
+            messagingSenderId: "603961601605",
+            appId: "1:603961601605:web:c3a0530829de90605ebd2c",
+            measurementId: "G-XX78VM11PS"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
+
+</head>
+
+<body onload="SearchLoad()">
+    <!-- HEADER -->
+    <div id="1"></div>
+    <script>
+        load("header.html");
+        function load(url) {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(1).innerHTML = req.responseText;
+        }
+    </script>
+    <!-- SLIDER -->
+    <div id="2"></div>
+    <script>
+        load("slider.html");
+        function load(url) {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(2).innerHTML = req.responseText;
+        }
+    </script>
+
+    <!-- CONTENT SECTION -->
+
+    <section class="w3-display-container w3-content" style="max-width: 1500px">
+
+        <style>
+            .w3-display-container {
+                position: absolute;
+                width: 100%;
+                margin-top: -15%;
+            }
+
+            input {
+                outline: none;
+            }
+
+            .srcbox {
+                margin-left: 20px;
+                border-radius: 20px;
+            }
+
+            .srcmaincont {
+                border-radius: 20px;
+                box-shadow: 1px 2px 5px black;
+
+            }
+
+            .srcarea {
+                width: 96%;
+                margin: 0px 5px;
+            }
+
+            .srcbutton {
+                width: 100%;
+                border-radius: 10px;
+            }
+
+
+
+            @media (max-width: 768px) {
+                .srcbox {
+                    margin-top: 48%;
+                    height: 100vh;
+                    margin-left: 0px;
+                    overflow: hidden;
+                }
+
+                .h2head {
+                    font-size: 25px;
+                }
+
+                .w3-row-padding {
+                    display: flex;
+                }
+            }
+        </style>
+        <div class="w3-display-left w3-col l6 m8 srcbox">
+            <div class="w3-container w3-white w3-padding-16 srcmaincont">
+                <h2 class="h2head">
+                    <i class="fa fa-bed w3-margin-right"></i>FInd Your Best Room
+                </h2>
+                <div class="w3-row-padding" style="margin: 0 -16px">
+                    <div class="w3-margin-bottom srcarea">
+                        <label><i class="fa fa-calendar-o"></i> City / Area / Pin Code</label>
+                        <input class="w3-input w3-border" id="distanceRange" type="text" name="place"
+                            placeholder="Madan Mahal 482001" />
+                    </div>
+                </div>
+                <div class="w3-row-padding" style="margin: 0 -16px">
+                    <div class="w3-half w3-margin-bottom">
+                        <label><i class="fa fa-calendar-o"></i> Room Type</label>
+                        <select class="w3-input w3-border" id="roomTypeFilter">
+                            <option value="all">All Types</option>
+                            <option value="android">Android</option>
+                            <option value="keypad">Keypad</option>
+                            <option value="vgphone">5G Phone</option>
+                            <option value="Iphone">I Phone</option>
+                            <option value="jio">Jio</option>
+                        </select>
+                    </div>
+                    <div class="w3-half">
+                        <label><i class="fa fa-child"></i> Price</label>
+                        <select class="w3-input w3-border" style="width: 100%" id="priceRange">
+                            <option value="0">Price Range</option>
+                            <option value="2">Under 2,000</option>
+                            <option value="3">Under 3,000</option>
+                            <option value="4">Under 4,000</option>
+                            <option value="5">Under 5,000</option>
+                            <option value="6">Under 6,000</option>
+                            <option value="7">Under 7,000</option>
+                            <option value="8">Under 8,000</option>
+                            <option value="10">Under 10,000</option>
+                            <option value="15">Under 15,000</option>
+                            <option value="4">Above 15,000 Rs</option>
+                        </select>
+                        <select class="w3-input w3-border" style="width: 100%" id="priceRange1">
+                            <option value="0">Price Range</option>
+                            <option value="2">Under 2,000</option>
+                            <option value="3">Under 3,000</option>
+                            <option value="4">Under 4,000</option>
+                            <option value="5">Under 5,000</option>
+                            <option value="6">Under 6,000</option>
+                            <option value="7">Under 7,000</option>
+                            <option value="8">Under 8,000</option>
+                            <option value="10">Under 10,000</option>
+                            <option value="15">Under 15,000</option>
+                            <option value="4">Above 15,000 Rs</option>
+                        </select>
+                        <select class="w3-input w3-border" style="width: 100%" id="priceRange2">
+                            <option value="0">Price Range</option>
+                            <option value="1">Under 500 Rs</option>
+                            <option value="2">Under 1,000 Rs</option>
+                            <option value="3">Under 15,000 Rs</option>
+                            <option value="4">Under 2,000 Rs</option>
+                            <option value="5">Under 3,000 Rs</option>
+                        </select>
+
+                        <select class="w3-input w3-border" style="width: 100%" id="priceRange3">
+                            <option value="0">Price Range</option>
+                            <option value="1">Under 500 Rs</option>
+                            <option value="2">Under 1,000 Rs</option>
+                            <option value="3">Under 2,000 Rs</option>
+                            <option value="4">Under 3,000 Rs</option>
+                            <option value="5">Under 5,000 Rs</option>
+                        </select>
+
+                        <select class="w3-input w3-border" style="width: 100%" id="priceRange4">
+                            <option value="0">Price Range</option>
+                            <option value="1">Under 800 Rs</option>
+                            <option value="2">Under 1,000 Rs</option>
+                            <option value="3">Under 15,000 Rs</option>
+                            <option value="4">Under 2,000 Rs</option>
+                            <option value="5">Under 3,000 Rs</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="w3-row-padding" style="margin: 8px -16px; display: none">
+                    <div class="w3-half w3-margin-bottom">
+                        <label><i class="fa fa-male"></i> Adults</label>
+                        <input class="w3-input w3-border" type="number" value="1" name="Adults" min="1" max="6" />
+                    </div>
+                    <div class="w3-half">
+                        <label><i class="fa fa-child"></i> Kids</label>
+                        <input class="w3-input w3-border" type="text" value="0" name="Kids" min="0" max="6" />
+                    </div>
+                </div>
+                <button onclick="applyFilters()" class="w3-button w3-blue srcbutton">
+                    <i class="fa fa-search w3-margin-right"></i> Search availability
+                </button>
+            </div>
+        </div>
+        <script>
+            function myMap() {
+                myCenter = new google.maps.LatLng(41.878114, -87.629798);
+                var mapOptions = {
+                    center: myCenter,
+                    zoom: 12,
+                    scrollwheel: false,
+                    draggable: false,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                };
+                var map = new google.maps.Map(
+                    document.getElementById("googleMap"),
+                    mapOptions
+                );
+
+                var marker = new google.maps.Marker({
+                    position: myCenter,
+                });
+                marker.setMap(map);
+            }
+        </script>
+        <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
+    </section>
+    <br />
+
+    <main>
+        <!-- Full Room Details Modal -->
+        <div class="full-details" id="fullDetails">
+            <div class="details-content">
+                <div>
+                    <img id="detailsImage" src="" alt="Room Image" />
+                </div>
+                <div>
+                    <h2 id="detailsTitle"></h2>
+                    <hr />
+                    <div class="pset">
+                        <p class="pcseet">Conditions</p>
+                        <p id="detailsSubtitle"></p>
+                    </div>
+                    <div class="pset">
+                        <p class="pcseet">Feature</p>
+                        <p id="detailsDuration"></p>
+                    </div>
+                    <div class="pset">
+                        <p class="pcseet">Color / Used</p>
+                        <p id="detailsDistance"></p>
+                    </div>
+                    <div class="pset">
+                        <p class="pcseet">Address</p>
+                        <p id="detailsAddress"></p>
+                    </div>
+                    <hr />
+
+                    <div class="pset">
+                        <p style="color: darkblue" class="pcseet">Price</p>
+                        <p style="text-align: right" id="detailsPrice"></p>
+                    </div>
+
+                    <div class="pset">
+                        <p style="text-align: right" id="detailsPrice"></p>
+                    </div>
+
+                    <button class="booking" id="bookNow">Book Now</button>
+                </div>
+            </div>
+        </div>
+        <div class="container " id="roomContainer">
+            <!-- Room details will be injected here by JavaScript -->
+            <div id="roomlist">
+            </div>
+    </main>
+    <script src="js\Room.js"></script>
+    <br /><br /><br /><br />
+
+    <div id="3" style="display: none;"></div>
+    <script>
+        load(".html");
+        function load(url) {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(3).innerHTML = req.responseText;
+        }
+    </script>
+
+    <!-- FOOTER -->
+    <div id="4"></div>
+    <script>
+        load("footer.html");
+        function load(url) {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(4).innerHTML = req.responseText;
+        }
+    </script>
+</body>
+
+<!-- slider JS START -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#containerSlider").slick({
+            dots: true,
+            infinite: true,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 1500,
+        });
+    });
+</script>
+<!-- slider JS ENDS -->
+
+</html>
