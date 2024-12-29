@@ -1,0 +1,67 @@
+<style>
+  /* CSS for search input and suggestions */
+   
+  .suggestions-container {
+    position:absolute;
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    height:40px;
+    display: none;
+  }
+
+  .suggestion-item {
+    position:absolute;
+    width:95%;
+    margin-left:5px;
+    padding: 7px;
+    background-color:white;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .suggestion-item:last-child {
+    border-bottom: 0.1px;;
+  }
+
+  .suggestion-item:hover {
+    background-color:rgb(235, 235, 235);
+  }
+
+  @media (max-width:768px){
+    .suggestion-item {
+        width:91%;
+        margin-left:5px;
+      }
+    
+  }
+</style>
+// Second Input -- Main Input Suggestion 
+<style>
+.suggestions-container1 {
+  
+    width:auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-top: none;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    height:100px;
+    display: none;
+  }
+  .suggestions-container1 .suggestion-item {
+ 
+    width:40%;
+    margin-left:70px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color:lightgray;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+  }
+</style>

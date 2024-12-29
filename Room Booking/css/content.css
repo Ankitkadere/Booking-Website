@@ -4,20 +4,20 @@ body
     font-family: 'Lato', sans-serif;
 }
 h1
-{  
-    width: 95%;
+{
+    width: 90%;
     margin: auto;
-    padding: 20px 0;
+    padding: 50px 0;
     letter-spacing: 2px;
     font-weight: 700;
     text-transform: capitalize;
 }
 #containerClothing, #containerAccessories
-{    
+{
     display: grid;
     grid-gap: 70px 20px;
     grid-template-columns: repeat(5, 1fr);
-    width: 98%;
+    width: 90%;
     margin: auto;
     padding-bottom: 40px;
 }
@@ -78,7 +78,7 @@ h2
     }
     #containerClothing, #containerAccessories
     {
-        width: 98%;
+        width: 95%;
         grid-gap: 10px;
     }
 }
@@ -93,7 +93,7 @@ h2
         display: grid;
         grid-gap: 70px 20px;
         grid-template-columns: repeat(3, 1fr);
-        width: 98%;
+        width: 80%;
     }    
 }
 @media(max-width: 650px)
@@ -108,7 +108,7 @@ h2
     }
     #containerClothing, #containerAccessories
     {
-        width: 98%;
+        width: 90%;
     }
 }
 @media(max-width: 600px)
@@ -119,7 +119,7 @@ h2
     }
     #containerClothing, #containerAccessories
     {
-        width: 98%;
+        width: 70%;
     }
 }
 @media(max-width: 505px)
@@ -130,7 +130,7 @@ h2
     }
     #containerClothing, #containerAccessories
     {
-        width: 98%;
+        width: 80%;
         grid-template-columns: repeat(2, 1fr);
     }
 }

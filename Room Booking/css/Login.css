@@ -11,7 +11,6 @@ body{
 .container{
     background:#fff;
     width:40vw;
- 
     padding:2.5rem;
     margin:50px auto;
     border-radius:10px;
@@ -87,7 +86,7 @@ button{
     outline:none;
     border:none;
     width:100%;
-    background:rgb(125,125,235);
+    background:rgb(7, 26, 78);
     color:white;
     cursor:pointer;
     transition:0.9s;
@@ -104,7 +103,7 @@ button:hover{
     text-align:center;
 }
 .icons i{
-    color:rgb(125,125,235);
+    color:rgb(9, 34, 88);
     padding:0.8rem 1.5rem;
     border-radius:10px;
     font-size:1.5rem;

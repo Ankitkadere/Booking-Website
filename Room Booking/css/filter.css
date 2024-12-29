@@ -5,7 +5,7 @@
     margin:0px;
 
    }
-  button {
+  . container button {
     background-color:rgb(30, 34, 95);
     color: white;
     cursor: pointer;
@@ -31,26 +31,21 @@
     flex-wrap: wrap;
     justify-content: center;
   }
-
-
-  .booking-button:hover {
-    background-color: #45a049;
-  }
- #roomContainer {
-  width: 100%;  
-  margin: auto;
-  flex-box:wrap;
  
-  flex-wrap: wrap;
-  gap: 20px;
-  display: flex;
-}
+  .container {
+    width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-evenly;
+    padding: 20px 0;
+  }
 
 .room {
-  width: 25%;  
+  width: 30%;  
   background-color: #fff;
   border-radius: 2px;
- 
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
@@ -222,29 +217,28 @@
 
 @media screen and (max-width: 768px) {
  
+  .container{
+  margin-top:20px;
+ 
+  }
   .room {
-    width: 100px;   
-   
-    margin:5px 1px;;
+     width:47%;
+     gap:5px;
+    margin: auto;
+     
   }
  
 #roomContainer {
-  width: 100%;  
-  margin: auto;
-  flex-box:wrap;  
-  width :98%;
-  padding-top:150px;
-  flex-wrap: wrap;
-  gap: 20px;
-  display: flex;
+   padding-top:150px;;
 }
 
   .full-details .details-content {
-    width: 100%;
-    height:auto;
-    padding-top :150px;
+     padding-top :150px;
     display:block;
    
+  }
+  .full-details{
+    margin-bottom:320px;
   }
   
 
@@ -255,13 +249,11 @@
 }
 
 .details-content .booking {
-  width: 100%;
+
   margin-top:5px;
   
 }
-.room {
-  width: 98%;
-}
+ 
 }
  
  
