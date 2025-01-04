@@ -188,6 +188,8 @@ closeDetailsBtn.addEventListener("click", () => {
 });
 
 // Display rooms based on the condition a == 123
+ 
+
 function applyFilters() {
   // Get the selected filter values
   let typeroom = document.getElementById("roomTypeFilter").value;

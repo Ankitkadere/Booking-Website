@@ -50,7 +50,7 @@ const firebaseConfig = {
         const docRef=doc(db, "users", user.uid);
         setDoc(docRef,userData)
         .then(()=>{
-            window.location.href='Dahsboard.html';
+            window.location.href='Profile.html';
         })
         .catch((error)=>{
             console.error("error writing document", error);
@@ -80,7 +80,7 @@ const firebaseConfig = {
         showMessage('login is successful', 'signInMessage');
         const user=userCredential.user;
         localStorage.setItem('loggedInUserId', user.uid);
-        window.location.href='Dahsboard.html';
+        window.location.href='profile.html';
     })
     .catch((error)=>{
         const errorCode=error.code;
