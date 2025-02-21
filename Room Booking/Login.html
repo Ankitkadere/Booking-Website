@@ -5,23 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register & Login</title>
+    <link rel="icon" href="img\icon.jpeg" type="image/jpeg" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/Login.css">
     <script type="module" src="Firebase.js"></script>
+
 </head>
 
-<body>
-     <!-- HEADER -->
-     <div id="1"></div><br><br><br><br>
-     <script>
-         load("header.html");
-         function load(url) {
-             req = new XMLHttpRequest();
-             req.open("GET", url, false);
-             req.send(null);
-             document.getElementById(1).innerHTML = req.responseText;
-         }
-     </script>
+<body oncontextmenu="return false">
+    <!-- HEADER -->
+    <div id="1"></div><br><br><br><br>
+    <script>
+        load("header.html");
+        function load(url) {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(1).innerHTML = req.responseText;
+        }
+    </script>
     <div class="container" id="signup" style="display:none;">
         <h1 class="form-title">Register</h1>
         <form method="post" action="">
@@ -29,12 +31,12 @@
             <div class="input-group">
                 <i class="fas fa-user"></i>
                 <input type="text" id="fName" placeholder="First Name" required>
-                <label for="fname">First Name</label>
+                <label for="fname">Full Name</label>
             </div>
             <div class="input-group">
                 <i class="fas fa-user"></i>
-                <input type="text" id="lName" placeholder="Last Name" required>
-                <label for="lName">Last Name</label>
+                <input type="number" id="lName" placeholder="Last Name" required>
+                <label for="lName">Mobile Number</label>
             </div>
             <div class="input-group">
                 <i class="fas fa-envelope"></i>
@@ -46,6 +48,87 @@
                 <input type="password" id="rPassword" placeholder="Password" required>
                 <label for="rPassword">Password</label>
             </div>
+ 
+            <form style="display: none;">
+                <div class="row">
+                    <div class="col-50">
+                        <h3><i class="fa fa-home"></i> Room Type</h3>
+                        <input type="text" id="id" name="ID" placeholder="">
+                        <select type="text" id="type" name="RoomType" placeholder="Room Type">
+                            <option value="Single Room">Single Room</option>
+                            <option value="Double Room">Double Room </option>
+                            <option value="Student's Room">Student's Room</option>
+                            <option value="Faimily Room">Faimily Room </option>
+                            <option value="Madhay Predesh">Hostle Room</option>
+                            <option value="Other">Couple's Room </option>
+                        </select>
+                        <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                        <input type="text" id="Name" name="firstame" placeholder="Radhe Krishna">
+                        <label for="email"><i class="fa fa-envelope"></i> Mobile</label>
+                        <input type="number" id="Number" name="email" placeholder="+91 1234567890">
+                        <label for="adr"><i class="fa fa-address-card"></i> Address / Landmark</label>
+                        <input type="text" id="Address" name="address" placeholder="542 W. 15th Street">
+                        <label for="state"><i class="fa fa-address-card"></i> State</label>
+                        <select type="text" id="State" name="state" placeholder="NY">
+                            <option value="Madhay Predesh">Madhay Predesh</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="col-50">
+                        <h3>Payment</h3>
+                        <label for="fname"><i class="fa fa-user"></i> Gender Allowance</label>
+                        <select type="text" id="Gender" name="Gender" placeholder="NY">
+                            <option value="Other">Both Are Allow</option>
+                            <option value="Madhay Predesh">Only Male</option>
+                            <option value="Other">Only Female</option>
+                        </select>
+                        <label for="fname"><i class="fa fa-home"></i> Room Floor</label>
+                        <select type="text" id="Floor" name="Floor" placeholder="NY">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="Above 4">Above 4</option>
+                        </select>
+                      
+                        <label for="fname"><i class="fa fa-wallet"></i>
+                            Payment Method</label>
+                        <select name="Payment" id="Payment">
+                            <option value="Cash">Cash</option>
+                        </select>
+                        <div class="row checkbox">
+                            <div class="col-50">
+                                <div class="col-50">
+                                    <input type="checkbox" id="wifi" value="WiFi" name="amenities">
+                                    <label for="wifi1">WiFi</label>
+                                </div>
+
+                                <div class="col-50">
+                                    <input type="checkbox" id="kitchen" value="Kitchen" name="amenities">
+                                    <label for="kitchen1">Kitchen</label>
+                                </div>
+                            </div>
+                            <div class="col-50">
+                                <div class="col-50">
+                                    <input type="checkbox" id="Ebill" value="WiFi" name="amenities">
+                                    <label for="wifi2">Electricity</label>
+                                </div>
+
+                                <div class="col-50">
+                                    <input type="checkbox" id="furniture" value="Kitchen" name="amenities">
+                                    <label for="kitchen2">Furniture</label>
+                                </div>
+                            </div>
+                        </div>
+                        <label for="email"><i class="fa fa-envelope"></i> Room Price</label>
+                        <input type="number" id="RoomPrice" name="RoomPrice" placeholder="10,000">
+
+
+                    </div>
+                </div><br>
+
+
+            </form>
             <button class="btn" id="submitSignUp">Sign Up</button>
         </form>
         <p class="or">
@@ -56,7 +139,7 @@
             <i class="fab fa-facebook"></i>
         </div>
         <div class="links">
-           
+
             <button id="signInButton">Sign In</button>
         </div>
     </div>
@@ -84,16 +167,17 @@
         <p class="or">
             ----------or--------
         </p>
-        <div style="display: none;"  class="icons">
+        <div style="display: none;" class="icons">
             <i class="fab fa-google"></i>
             <i class="fab fa-facebook"></i>
         </div>
         <div class="links">
-          
+
             <button id="signUpButton">Sign Up</button>
         </div>
     </div>
-    <br><br><br><br><div id="4"></div>
+    <br><br><br><br>
+    <div id="4"></div>
     <script>
         load("footer.html");
         function load(url) {

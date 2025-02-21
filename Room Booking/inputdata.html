@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout Modal</title>
+  <link rel="icon" href="img\icon.jpeg" type="image/jpeg" sizes="16x16" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      overflow-y: auto;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 2% auto;
+      padding: 10px;
+      border-radius: 8px;
+      max-width: 600px;
+      width: 90%;
+      position: relative;
+      box-shadow: 2px 2px 30px black;
+      animation: animatezoom 0.6s;
+    }
+
+    @keyframes animatezoom {
+      from {
+        transform: scale(0)
+      }
+
+      to {
+        transform: scale(1)
+      }
+    }
+
+    .close-btn {
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      font-size: 22px;
+      cursor: pointer;
+      color: #888;
+    }
+
+    .close-btn:hover {
+      color: #000;
+    }
+
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+    }
+
+    .col-50 {
+      flex: 50%;
+      padding: 0 16px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      outline: none;
+    }
+
+
+    label {
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .icon-container {
+      margin-bottom: 25px;
+      font-size: 24px;
+    }
+
+    .btn {
+      background-color: #163769;
+      color: white;
+      padding: 12px;
+      margin: 5px 0px;
+      border: none;
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 17px;
+    }
+
+    .btn:hover {
+      background-color: #45a049;
+    }
+
+    #btncan:hover {
+      background-color: #ad1400;
+    }
+
+    /* Responsive */
+    @media (max-width: 800px) {
+      .row {
+        flex-direction: column;
+      }
+
+      .modal-content {
+        margin: auto;
+        padding: 5px;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body oncontextmenu="return false">
+
+  <div id="checkoutModal" class="modal">
+    <div class="modal-content">
+      <form>
+        <div class="row">
+          <div class="col-50">
+            <h3>Billing Address</h3>
+            <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+            <input type="text" id="fname" name="Firstname" placeholder="Radhe Krishna" required>
+            <label for="email"><i class="fa fa-envelope"></i> Mobile</label>
+            <input type="number" id="number" name="Email" placeholder="+91 1234567890" required>
+            <label for="adr"><i class="fa fa-address-card"></i> Address</label>
+            <input type="text" id="adr" name="Address" placeholder="542 W. 15th Street" required>
+            <label for="state"><i class="fa fa-address-card"></i> State</label>
+            <select type="text" id="state" name="State" placeholder="NY" required>
+              <option value="Madhay Predesh">Madhay Predesh</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label>Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label for="expyear">Male</label>
+            <input type="number" id="male" name="Male" placeholder="Male">
+            <label for="cvv">Female</label>
+            <input type="number" id="female" name="Female" placeholder="Female">
+            <label for="cname">Payment Method</label>
+            <select name="Payment" id="Payment">
+              <option value="Cash">Cash</option>
+            </select>
+            <div class="row" style="display: none;">
+              <div class="col-50">
+                <label for="expyear">Male</label>
+                <input type="number" id="male" name="Male" placeholder="Male">
+              </div>
+              <div class="col-50">
+                <label for="cvv">Female</label>
+                <input type="number" id="female" name="Female" placeholder="Female">
+              </div>
+            </div>
+          </div>
+        </div><br>
+        <input type="submit" value="Continue to checkout" class="btn">
+        <input type="button" value="Cancle" class="btn" id="btncan"
+          onclick=" document.getElementById('checkoutModal').style.display = 'none';">
+      </form>
+
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById('checkoutModal').style.display = 'block';
+    }
+
+    function closeModal() {
+      document.getElementById('checkoutModal').style.display = 'none';
+    }
+
+
+    window.onclick = function (event) {
+      var modal = document.getElementById('checkoutModal');
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
+  </script>
+
+</body>
+
+</html>

@@ -4,125 +4,534 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <style>
-        /* ===== Google Font Import - Poppins ===== */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+    <title>Dahsboard</title>
+    <link rel="stylesheet" href="Form.css">
+    <script type="module" src="Profile.js"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<style>
+    /* ===== Google Font Import - Poppins ===== */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    :root {
+        /* ===== Colors ===== */
+        --primary-color: #002792;
+        --panel-color: #ffffff;
+        --text-color: #000;
+        --black-light-color: #707070;
+        --border-color: #e6e5e5;
+        --toggle-color: #DDD;
+        --box1-color: #096cd6;
+        --box2-color: #ffe6acce;
+        --box3-color: #E7D1FC;
+        --title-icon-color: #fff;
+
+        /* ====== Transition ====== */
+        --tran-05: all 0.5s ease;
+        --tran-03: all 0.3s ease;
+        --tran-03: all 0.2s ease;
+    }
+
+    hr {
+        width: 100%;
+    }
+
+    body {
+        min-height: 100vh;
+        background-color: var(--primary-color);
+    }
+
+    body.dark {
+        --primary-color: #3A3B3C;
+        --panel-color: #242526;
+        --text-color: #CCC;
+        --black-light-color: #CCC;
+        --border-color: #4D4C4C;
+        --toggle-color: #FFF;
+        --box1-color: #3A3B3C;
+        --box2-color: #3A3B3C;
+        --box3-color: #3A3B3C;
+        --title-icon-color: #CCC;
+    }
+
+    /* === Custom Scroll Bar CSS === */
+    ::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #ec0000;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--primary-color);
+        border-radius: 50px;
+        transition: all 0.3s ease;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #eef3ff;
+    }
+
+    body.dark::-webkit-scrollbar-thumb:hover,
+    body.dark .activity-data::-webkit-scrollbar-thumb:hover {
+        background: #3A3B3C;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 250px;
+        padding: 10px 14px;
+        background-color: var(--panel-color);
+        border-right: 1px solid var(--border-color);
+        transition: var(--tran-05);
+    }
+
+    nav.close {
+        width: 73px;
+    }
+
+    nav .logo-name {
+        display: flex;
+        align-items: center;
+    }
+
+    nav .logo-name h4 {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        margin: auto;
+    }
+
+    nav .logo-image {
+        display: flex;
+        justify-content: center;
+        min-width: 45px;
+    }
+
+    nav .logo-image img {
+        width: 40px;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    nav .logo-name .logo_name {
+        font-size: 22px;
+        font-weight: 600;
+        color: var(--text-color);
+        margin-left: 14px;
+        transition: var(--tran-05);
+    }
+
+    nav.close .logo_name {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    nav .menu-items {
+        margin-top: 40px;
+        height: calc(100% - 90px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .menu-items li {
+        list-style: none;
+    }
+
+    .menu-items li a {
+        display: flex;
+        align-items: center;
+        height: 50px;
+        text-decoration: none;
+        position: relative;
+    }
+
+    .nav-links li a:hover:before {
+        content: "";
+        position: absolute;
+        left: -7px;
+        height: 5px;
+        width: 5px;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+    }
+
+    body.dark li a:hover:before {
+        background-color: var(--text-color);
+    }
+
+    .menu-items li a i {
+        font-size: 24px;
+        min-width: 45px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--black-light-color);
+    }
+
+    .menu-items li a .link-name {
+        font-size: 18px;
+        font-weight: 400;
+        color: var(--black-light-color);
+        transition: var(--tran-05);
+    }
+
+    nav.close li a .link-name {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .nav-links li a:hover i,
+    .nav-links li a:hover .link-name {
+        color: var(--primary-color);
+    }
+
+    body.dark .nav-links li a:hover i,
+    body.dark .nav-links li a:hover .link-name {
+        color: var(--text-color);
+    }
+
+    .menu-items .logout-mode {
+        padding-top: 10px;
+        border-top: 1px solid var(--border-color);
+    }
+
+    .menu-items .mode {
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+    }
+
+    .menu-items .mode-toggle {
+        position: absolute;
+        right: 14px;
+        height: 50px;
+        min-width: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .mode-toggle .switch {
+        position: relative;
+        display: inline-block;
+        height: 22px;
+        width: 40px;
+        border-radius: 25px;
+        background-color: var(--toggle-color);
+    }
+
+    .switch:before {
+        content: "";
+        position: absolute;
+        left: 5px;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 15px;
+        width: 15px;
+        background-color: var(--panel-color);
+        border-radius: 50%;
+        transition: var(--tran-03);
+    }
+
+    body.dark .switch:before {
+        left: 20px;
+    }
+
+    .dashboard {
+        position: relative;
+        left: 250px;
+        background-color: var(--panel-color);
+        min-height: 100vh;
+        width: calc(100% - 250px);
+        padding: 10px 14px;
+        transition: var(--tran-05);
+    }
+
+    nav.close~.dashboard {
+        left: 73px;
+        width: calc(100% - 73px);
+    }
+
+    .dashboard .top {
+        position: fixed;
+        top: 0;
+        left: 250px;
+        display: flex;
+        width: calc(100% - 250px);
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 14px;
+        background-color: var(--panel-color);
+        transition: var(--tran-05);
+        z-index: 1;
+    }
+
+    nav.close~.dashboard .top {
+        left: 73px;
+        width: calc(100% - 73px);
+    }
+
+    .dashboard .top .sidebar-toggle {
+        font-size: 26px;
+        color: var(--text-color);
+        cursor: pointer;
+    }
+
+    .dashboard .top .search-box {
+        position: relative;
+        height: 45px;
+        max-width: 600px;
+        width: 100%;
+        margin: 0 30px;
+    }
+
+    .top .search-box input {
+        position: absolute;
+        border: 2px solid var(--border-color);
+        background-color: var(--panel-color);
+        padding: 0 50px 0 50px;
+        border-radius: 20px;
+        height: 100%;
+        width: 100%;
+        color: var(--text-color);
+        font-size: 15px;
+        font-weight: 400;
+        outline: none;
+    }
+
+    .top .search-box i {
+        position: absolute;
+        left: 15px;
+        font-size: 22px;
+        z-index: 10;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--black-light-color);
+    }
+
+    .top img {
+        width: 40px;
+        border-radius: 50%;
+    }
+
+    .dashboard .dash-content {
+        padding-top: 0px;
+    }
+
+    .dash-content .title {
+        display: flex;
+        align-items: center;
+        margin: 10px 0 30px 0;
+    }
+
+    .dash-content .title i {
+        position: relative;
+        height: 35px;
+        width: 35px;
+        background-color: var(--primary-color);
+        border-radius: 6px;
+        color: var(--title-icon-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+    }
+
+    .dash-content .title .text {
+        font-size: 24px;
+        font-weight: 500;
+        color: var(--text-color);
+        margin-left: 10px;
+    }
+
+    .dash-content .boxes {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .dash-content .boxes .box {
+        display: flex;
+        margin: 5px;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 12px;
+        width: calc(100% / 3 - 15px);
+        padding: 15px 20px;
+        background-color: var(--box1-color);
+        transition: var(--tran-05);
+        overflow: hidden;
+    }
+
+    .detail {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .boxes .box i {
+        font-size: 25px;
+        color: var(--text-color);
+
+    }
+
+
+    .boxes .box .text {
+        white-space: nowrap;
+        font-size: 1px;
+        font-weight: 500;
+        color: var(--text-color);
+    }
+
+    .boxes .box .number {
+        font-size: 30px;
+        font-weight: 500;
+        color: var(--text-color);
+    }
+
+    .boxes .box.box2 {
+        span {
+            font-size: 20px;
         }
 
-        :root {
-            /* ===== Colors ===== */
-            --primary-color: #0E4BF1;
-            --panel-color: #FFF;
-            --text-color: #000;
-            --black-light-color: #707070;
-            --border-color: #e6e5e5;
-            --toggle-color: #DDD;
-            --box1-color: #4DA3FF;
-            --box2-color: #FFE6AC;
-            --box3-color: #E7D1FC;
-            --title-icon-color: #fff;
+        background-color: var(--box2-color);
+    }
 
-            /* ====== Transition ====== */
-            --tran-05: all 0.5s ease;
-            --tran-03: all 0.3s ease;
-            --tran-03: all 0.2s ease;
+    .boxes .box.box3 {
+        span {
+            font-size: 20px;
         }
 
-        body {
-            min-height: 100vh;
-            background-color: var(--primary-color);
-        }
+        background-color: var(--box3-color);
+    }
 
-        body.dark {
-            --primary-color: #3A3B3C;
-            --panel-color: #242526;
-            --text-color: #CCC;
-            --black-light-color: #CCC;
-            --border-color: #4D4C4C;
-            --toggle-color: #FFF;
-            --box1-color: #3A3B3C;
-            --box2-color: #3A3B3C;
-            --box3-color: #3A3B3C;
-            --title-icon-color: #CCC;
-        }
+    .dash-content .activity .activity-data {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
 
-        /* === Custom Scroll Bar CSS === */
-        ::-webkit-scrollbar {
-            width: 0px;
-        }
+    .activity .activity-data {
+        display: flex;
+    }
 
-        ::-webkit-scrollbar-track {
-            background: #ec0000;
-        }
+    .activity-data .data {
+        display: flex;
+        flex-direction: column;
+        margin: 0 15px;
+    }
 
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary-color);
-            border-radius: 50px;
-            transition: all 0.3s ease;
-        }
+    .activity-data .data-title {
+        font-size: 20px;
+        font-weight: 500;
+        color: var(--text-color);
+    }
 
-        ::-webkit-scrollbar-thumb:hover {
-            background: #eef3ff;
-        }
+    .activity-data .data .data-list {
+        font-size: 18px;
+        font-weight: 400;
+        margin-top: 20px;
+        white-space: nowrap;
+        color: var(--text-color);
+    }
 
-        body.dark::-webkit-scrollbar-thumb:hover,
-        body.dark .activity-data::-webkit-scrollbar-thumb:hover {
-            background: #3A3B3C;
-        }
-
+    @media (max-width: 1000px) {
         nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 100%;
+            width: 73px;
+        }
+
+        nav.close {
             width: 250px;
-            padding: 10px 14px;
-            background-color: var(--panel-color);
-            border-right: 1px solid var(--border-color);
-            transition: var(--tran-05);
+        }
+
+        nav .logo_name {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        nav.close .logo_name {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        nav li a .link-name {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        nav.close li a .link-name {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        nav~.dashboard {
+            left: 73px;
+            width: calc(100% - 73px);
+        }
+
+        nav.close~.dashboard {
+            left: 250px;
+            width: calc(100% - 250px);
+        }
+
+        nav~.dashboard .top {
+            left: 73px;
+            width: calc(100% - 73px);
+        }
+
+        nav.close~.dashboard .top {
+            left: 250px;
+            width: calc(100% - 250px);
+        }
+
+        .activity .activity-data {
+            overflow-X: scroll;
+        }
+    }
+
+    @media (max-width: 780px) {
+        .dash-content .boxes .box {
+            width: calc(100% / 2 - 15px);
+            margin-top: 15px;
+        }
+    }
+
+    @media (max-width: 560px) {
+        .dash-content .boxes .box {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 400px) {
+        nav {
+            width: 0px;
         }
 
         nav.close {
             width: 73px;
         }
 
-        nav .logo-name {
-            display: flex;
-            align-items: center;
-        }
-
-        nav .logo-name h4 {
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-            margin: auto;
-        }
-
-        nav .logo-image {
-            display: flex;
-            justify-content: center;
-            min-width: 45px;
-        }
-
-        nav .logo-image img {
-            width: 40px;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-
-        nav .logo-name .logo_name {
-            font-size: 22px;
-            font-weight: 600;
-            color: var(--text-color);
-            margin-left: 14px;
-            transition: var(--tran-05);
+        nav .logo_name {
+            opacity: 0;
+            pointer-events: none;
         }
 
         nav.close .logo_name {
@@ -130,55 +539,9 @@
             pointer-events: none;
         }
 
-        nav .menu-items {
-            margin-top: 40px;
-            height: calc(100% - 90px);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .menu-items li {
-            list-style: none;
-        }
-
-        .menu-items li a {
-            display: flex;
-            align-items: center;
-            height: 50px;
-            text-decoration: none;
-            position: relative;
-        }
-
-        .nav-links li a:hover:before {
-            content: "";
-            position: absolute;
-            left: -7px;
-            height: 5px;
-            width: 5px;
-            border-radius: 50%;
-            background-color: var(--primary-color);
-        }
-
-        body.dark li a:hover:before {
-            background-color: var(--text-color);
-        }
-
-        .menu-items li a i {
-            font-size: 24px;
-            min-width: 45px;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--black-light-color);
-        }
-
-        .menu-items li a .link-name {
-            font-size: 18px;
-            font-weight: 400;
-            color: var(--black-light-color);
-            transition: var(--tran-05);
+        nav li a .link-name {
+            opacity: 0;
+            pointer-events: none;
         }
 
         nav.close li a .link-name {
@@ -186,73 +549,9 @@
             pointer-events: none;
         }
 
-        .nav-links li a:hover i,
-        .nav-links li a:hover .link-name {
-            color: var(--primary-color);
-        }
-
-        body.dark .nav-links li a:hover i,
-        body.dark .nav-links li a:hover .link-name {
-            color: var(--text-color);
-        }
-
-        .menu-items .logout-mode {
-            padding-top: 10px;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .menu-items .mode {
-            display: flex;
-            align-items: center;
-            white-space: nowrap;
-        }
-
-        .menu-items .mode-toggle {
-            position: absolute;
-            right: 14px;
-            height: 50px;
-            min-width: 45px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-        }
-
-        .mode-toggle .switch {
-            position: relative;
-            display: inline-block;
-            height: 22px;
-            width: 40px;
-            border-radius: 25px;
-            background-color: var(--toggle-color);
-        }
-
-        .switch:before {
-            content: "";
-            position: absolute;
-            left: 5px;
-            top: 50%;
-            transform: translateY(-50%);
-            height: 15px;
-            width: 15px;
-            background-color: var(--panel-color);
-            border-radius: 50%;
-            transition: var(--tran-03);
-        }
-
-        body.dark .switch:before {
-            left: 20px;
-        }
-
-        .dashboard {
-            position: relative;
-           
-            left: 250px;
-            background-color: var(--panel-color);
-            min-height: 100vh;
-            width: calc(100% - 250px);
-            padding: 10px 14px;
-            transition: var(--tran-05);
+        nav~.dashboard {
+            left: 0;
+            width: 100%;
         }
 
         nav.close~.dashboard {
@@ -260,486 +559,663 @@
             width: calc(100% - 73px);
         }
 
-        .dashboard .top {
-            position: fixed;
-            top: 0;
-            left: 250px;
-            display: flex;
-            width: calc(100% - 250px);
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 14px;
-            background-color: var(--panel-color);
-            transition: var(--tran-05);
-            z-index: 10;
+        nav~.dashboard .top {
+            left: 0;
+            width: 100%;
         }
 
         nav.close~.dashboard .top {
-            left: 73px;
-            width: calc(100% - 73px);
+            left: 0;
+            width: 100%;
+        }
+    }
+</style>
+
+<body oncontextmenu="return false">
+    <section>
+        <nav>
+            <div class="logo-name">
+                <div class="logo-image" style="display: none;">
+                    <img src="images/logo.png" alt="">
+                </div>
+
+                <span class="logo_name" style="display: flex; justify-content: space-around;">
+                    <span style="font-size: 14px;" id="email">Loading...</span>
+                </span>
+            </div>
+
+            <div class="menu-items">
+                <ul class="nav-links">
+                    <li><a href="#" id="sec1">
+                            <i class="uil uil-estate"></i>
+                            <span class="link-name">Dahsboard</span>
+                        </a></li>
+                    <li><a href="#" id="sec2">
+                            <i class="uil uil-user"></i>
+                            <span class="link-name">Profile</span>
+                        </a></li>
+                    <li><a href="#" style="display: none;">
+                            <i class="uil uil-chart"></i>
+                            <span class="link-name">Analytics</span>
+                        </a></li>
+                    <li><a href="#" style="display: none;">
+                            <i class="uil uil-thumbs-up"></i>
+                            <span class="link-name">Like</span>
+                        </a></li>
+                    <li><a href="#" style="display: none;">
+                            <i class="uil uil-comments"></i>
+                            <span class="link-name">Comment</span>
+                        </a></li>
+                    <li><a href="#" style="display: none;">
+                            <i class="uil uil-share"></i>
+                            <span class="link-name">Share</span>
+                        </a></li>
+                </ul>
+
+                <ul class="logout-mode">
+                    <li><a href="#" id="logout">
+                            <i class="uil uil-signout"></i>
+                            <span class="link-name">Logout</span>
+                        </a></li>
+
+                    <li class="mode">
+                        <a href="#">
+                            <i class="uil uil-moon"></i>
+                            <span class="link-name">Dark Mode</span>
+                        </a>
+
+                        <div class="mode-toggle">
+                            <span class="switch"></span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <section id="page1" class="dashboard">
+            <div class="top">
+                <i class="uil uil-bars sidebar-toggle"></i>
+                <div class="search-box">
+                    <i class="uil uil-search"></i>
+                    <input type="text" placeholder="Search here...">
+                </div>
+            </div><br><br>
+            <div class="dash-content">
+                <div class="overview">
+                    <div class="title">
+                        <i class="uil uil-tachometer-fast-alt"></i>
+                        <span class="text">Dashboard</span>
+                    </div>
+                    <div class="boxes">
+                        <div class="box box1" onclick=" document.getElementById('add').style.display = 'block'">
+                            <i class="uil uil-home"></i>
+                            <span class="text"> </span>
+                            <span class="number">Add Your Room</span>
+                        </div>
+                        <div class="box box2">
+                            <div style="display: flex;">
+                                <i id="" style="margin-right: 10px;"> </i>
+                                <i class="uil uil-home"> <span id="phone">Loading...</span> </i>
+                            </div>
+                            <hr>
+                            <h1></h1>
+                            <div class="detail">
+                                <p><strong>Name:</strong> <span id="loggedUserName"></span></p>
+                                <p><strong>Mobile:</strong> <span id="loggedUserNumber"></span></p>
+                            </div>
+                            <div class="detail">
+                                <p><strong>Address:</strong> <span id="loggedUserAddress"></span></p>
+                                <p><strong>State:</strong> <span id="loggedUserstate"></span></p>
+                            </div>
+                            <div class="detail">
+                                <p><strong>Gender:</strong> <span id="loggedUserGender"></span></p>
+                                <p><strong> Floor:</strong> <span id="loggedUserFloor"></span></p>
+                            </div>
+                            <div class="detail">
+                                <p><strong>Bill :</strong> <span id="id"></span> </p>
+                                <p><strong>Shereable</strong> <span class="text"> </span></p>
+                            </div>
+                            <hr>
+                            <span class="number" id="loggedUserPayment"><span id="address">Loading...</span> Rs
+                                Month</span>
+                            <script>     document.getElementById("id").innerHTML = userData.email;</script>
+                        </div>
+                        <div class="box box3">
+                            <div style="display: flex;">
+                                <i id="" style="margin-right: 10px;"> </i>
+                                <i class="uil uil-home"> <span id="state">Loading...</span> </i>
+                            </div>
+                            <hr>
+                            <h1></h1>
+                            <div class="detail">
+                                <p><strong>Name:</strong> <span id="loggedUserName"></span></p>
+                                <p><strong>Mobile:</strong> <span id="loggedUserNumber"></span></p>
+                            </div>
+                            <div class="detail">
+                                <p><strong>Address:</strong> <span id="loggedUserAddress"></span></p>
+                                <p><strong>State:</strong> <span id="loggedUserstate"></span></p>
+                            </div>
+                            <div class="detail">
+                                <p><strong>Gender:</strong> <span id="loggedUserGender"></span></p>
+                                <p><strong> Floor:</strong> <span id="loggedUserFloor"></span></p>
+                            </div>
+                            <div class="detail">
+                                <p><strong>Bill :</strong> <span id="id"></span> </p>
+                                <p><strong>Shereable</strong> <span class="text"> </span></p>
+                            </div>
+                            <hr>
+                            <span class="number" id="loggedUserPayment"><span id="gender">Loading...</span> Rs
+                                Month</span>
+                            <script>     document.getElementById("id").innerHTML = userData.email;</script>
+                        </div>
+                        <div class="box box2">
+                            <div style="display: flex;">
+                                <i id="" style="margin-right: 10px;"> </i>
+                                <i class="uil uil-home"> <span id="roomType">Loading...</span> </i>
+                            </div>
+                            <hr>
+                            <h1></h1>
+                            <div class="detail">
+                                <p><strong>Name:</strong> <span id="loggedUserName"></span></p>
+                                <p><strong>Mobile:</strong> <span id="loggedUserNumber"></span></p>
+                            </div>
+                            <div class="detail">
+                                <p><strong>Address:</strong> <span id="loggedUserAddress"></span></p>
+                                <p><strong>State:</strong> <span id="loggedUserstate"></span></p>
+                            </div>
+                            <div class="detail">
+                                <p><strong>Gender:</strong> <span id="loggedUserGender"></span></p>
+                                <p><strong> Floor:</strong> <span id="loggedUserFloor"></span></p>
+                            </div>
+                            <div class="detail">
+                                <p><strong>Bill :</strong> <span id="id"></span> </p>
+                                <p><strong>Shereable</strong> <span class="text"> </span></p>
+                            </div>
+                            <hr>
+                            <span class="number" id="loggedUserPayment"> <span id="floor">Loading...</span> Rs
+                                Month</span>
+                            <script>     document.getElementById("id").innerHTML = userData.email;</script>
+                        </div>
+                        <div class="box box3">
+                            <div style="display: flex;">
+                                <i id="" style="margin-right: 10px;"> </i>
+                                <i class="uil uil-home"><span id="paymentMethod">Loading...</span> </i>
+                            </div>
+                            <hr>
+                            <h1></h1>
+                            <div class="detail">
+                                <p><strong>Name:</strong> <span id="loggedUserName"></span></p>
+                                <p><strong>Mobile:</strong> <span id="loggedUserNumber"></span></p>
+                            </div>
+                            <div class="detail">
+                                <p><strong>Address:</strong> <span id="loggedUserAddress"></span></p>
+                                <p><strong>State:</strong> <span id="loggedUserstate"></span></p>
+                            </div>
+                            <div class="detail">
+                                <p><strong>Gender:</strong> <span id="loggedUserGender"></span></p>
+                                <p><strong> Floor:</strong> <span id="loggedUserFloor"></span></p>
+                            </div>
+                            <div class="detail">
+                                <p><strong>Bill :</strong> <span id="id"></span> </p>
+                                <p><strong>Shereable</strong> <span class="text"> </span></p>
+                            </div>
+                            <hr>
+                            <span class="number" id="loggedUserPayment"> <span id="roomPrice">Loading...</span> Rs
+                                Month</span>
+                            <script>     document.getElementById("id").innerHTML = userData.email;</script>
+                        </div>
+                        <script type="module" src="Database.js"></script>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="page2" style="display: none;" class="dashboard">
+            <div class="top">
+                <i class="uil uil-bars sidebar-toggle"></i>
+                <div class="search-box">
+                    <i class="uil uil-search"></i>
+                    <input type="text" placeholder="Search here...">
+                </div>
+            </div><br><br>
+            <div class="dash-content">
+                <div class="overview">
+                    <div class="title">
+                        <i class="uil uil-tachometer-fast-alt"></i>
+                        <span class="text">Profile</span>
+                    </div>
+                    <div class="boxes">
+                        <div class="box box1" onclick=" document.getElementById('profile').style.display = 'block'">
+                            <i class="uil uil-home"></i>
+                            <span class="text"> </span>
+                            <span class="number"> Update Profile</span>
+                        </div>
+                        <div class="box box2">
+                            <div style="display: flex;">
+                                <i id="" style="margin-right: 10px;"> </i>
+                                <i class="uil uil-user"> <span>Full Name </span> </i>
+                            </div>
+                            <hr>
+                            <h1></h1>
+                            <div class="detail">
+                            </div>
+                            <div class="detail">
+                            </div>
+                            <div class="detail">
+                            </div>
+                            <div class="detail">
+                            </div>
+                            <hr>
+                            <span class="number" id="loggedUserPayment"> <span id="firstName">Loading...</span> </span>
+                        </div>
+                        <div class="box box2">
+                            <div style="display: flex;">
+                                <i id="" style="margin-right: 10px;"> </i>
+                                <i class="uil uil-phone"> <span>Mobile Number </span> </i>
+                            </div>
+                            <hr>
+                            <h1></h1>
+                            <div class="detail">
+                            </div>
+                            <div class="detail">
+                            </div>
+                            <div class="detail">
+                            </div>
+                            <div class="detail">
+                            </div>
+                            <hr>
+                            <span class="number" id="loggedUserPayment"><span id="lastName">Loading...</span> </span>
+                        </div>
+                        <div class="box box2">
+                            <div style="display: flex;">
+                                <i id="" style="margin-right: 10px;"> </i>                              
+                                <i class="uil uil-location-point"> <span>Full Address </span> </i>
+                            </div>
+                            <hr>
+                            <h1></h1>
+                            <div class="detail">
+                            </div>
+                            <div class="detail">
+                            </div>
+                            <div class="detail">
+                            </div>
+                            <div class="detail">
+                            </div>
+                            <hr>
+                            <span class="number"> <span id="userID">Loading...</span> </span>
+                        </div>
+
+                        <script type="module" src="Database.js"></script> <!-- JavaScript File to Fetch Data -->
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+</body>
+
+<head>
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+            backdrop-filter: blur(5px);
         }
 
-        .dashboard .top .sidebar-toggle {
-            font-size: 26px;
-            color: var(--text-color);
-            cursor: pointer;
-        }
-
-        .dashboard .top .search-box {
-            position: relative;
-            height: 45px;
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 10px;
             max-width: 600px;
-            width: 100%;
-            margin: 0 30px;
-        }
-
-        .top .search-box input {
-            position: absolute;
-            border: 2px solid var(--border-color);
-            background-color: var(--panel-color);
-            padding: 0 50px 0 50px;
-            border-radius: 20px;
-            height: 100%;
-            width: 100%;
-            color: var(--text-color);
-            font-size: 15px;
-            font-weight: 400;
-            outline: none;
-        }
-
-        .top .search-box i {
-            position: absolute;
-            left: 15px;
-            font-size: 22px;
-            z-index: 10;
-            top: 50%;
-            transform: translateY(-50%);
-            color: var(--black-light-color);
-        }
-
-        .top img {
-            width: 40px;
-            border-radius: 50%;
-        }
-
-        .dashboard .dash-content { 
-            padding-top: 0px;
-        }
-
-        .dash-content .title {
-            display: flex;
-            align-items: center;
-            margin: 10px 0 30px 0;
-        }
-
-        .dash-content .title i {
+            width: 90%;
             position: relative;
-            height: 35px;
-            width: 35px;
-            background-color: var(--primary-color);
-            border-radius: 6px;
-            color: var(--title-icon-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
+            box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 0.5s ease-out;
         }
 
-        .dash-content .title .text {
-            font-size: 24px;
-            font-weight: 500;
-            color: var(--text-color);
-            margin-left: 10px;
+        /* Smooth fade-in animation */
+        @keyframes fadeIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
 
-        .dash-content .boxes {
+        .close-btn {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #888;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .close-btn:hover {
+            color: #000;
+        }
+
+        .row {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
             flex-wrap: wrap;
+            margin: 0;
         }
 
-        .dash-content .boxes .box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border-radius: 12px;
-            width: calc(100% / 3 - 15px);
-            padding: 15px 20px;
-            background-color: var(--box1-color);
-            transition: var(--tran-05);
+        .col-50 {
+            flex: 50%;
+            padding: 0 16px;
         }
 
-        .boxes .box i {
-            font-size: 35px;
-            color: var(--text-color);
-        }
-
-        .boxes .box .text {
-            white-space: nowrap;
-            font-size: 18px;
-            font-weight: 500;
-            color: var(--text-color);
-        }
-
-        .boxes .box .number {
-            font-size: 40px;
-            font-weight: 500;
-            color: var(--text-color);
-        }
-
-        .boxes .box.box2 {
-            background-color: var(--box2-color);
-        }
-
-        .boxes .box.box3 {
-            background-color: var(--box3-color);
-        }
-
-        .dash-content .activity .activity-data {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        input,
+        button,
+        select {
             width: 100%;
+            margin-bottom: 15px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            font-size: 16px;
         }
 
-        .activity .activity-data {
+        button {
+            width: 100%;
+            margin-bottom: 15px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        label {
+            margin-bottom: 5px;
+            display: block;
+            font-weight: bold;
+        }
+
+        .icon-container {
+            margin-bottom: 25px;
+            font-size: 24px;
+        }
+
+        .btn {
+            background-color: #163769;
+            color: white;
+            padding: 12px;
+            margin: 5px 0;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 17px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        #btncan {
+            background-color: #d9534f;
+        }
+
+        #btncan:hover {
+            background-color: #ad1400;
+        }
+
+        .checkbox {
+            display: flex;
+            flex-wrap: wrap;
+            gap: px;
+        }
+
+        .checkbox .col-50 {
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            flex-direction: row;
+        }
+
+        .checkbox .col-50 .col-50 {
+            width: 15px;
+            background-color: #dbdbdb;
+            margin: 1px;
             display: flex;
         }
 
-        .activity-data .data {
-            display: flex;
-            flex-direction: column;
-            margin: 0 15px;
+
+        .checkbox label {
+            font-size: 14px;
         }
 
-        .activity-data .data-title {
-            font-size: 20px;
-            font-weight: 500;
-            color: var(--text-color);
+
+
+        /* HTML: <div class="loader"></div> */
+        .loader {
+            display: none;
+            margin: auto;
+            width: 30px;
+            padding: 8px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: #ffffff;
+            --_m:
+                conic-gradient(#0000 10%, #000),
+                linear-gradient(#000 0 0) content-box;
+            -webkit-mask: var(--_m);
+            mask: var(--_m);
+            -webkit-mask-composite: source-out;
+            mask-composite: subtract;
+            animation: l3 1s infinite linear;
         }
 
-        .activity-data .data .data-list {
-            font-size: 18px;
-            font-weight: 400;
-            margin-top: 20px;
-            white-space: nowrap;
-            color: var(--text-color);
-        }
-
-        @media (max-width: 1000px) {
-            nav {
-                width: 73px;
-            }
-
-            nav.close {
-                width: 250px;
-            }
-
-            nav .logo_name {
-                opacity: 0;
-                pointer-events: none;
-            }
-
-            nav.close .logo_name {
-                opacity: 1;
-                pointer-events: auto;
-            }
-
-            nav li a .link-name {
-                opacity: 0;
-                pointer-events: none;
-            }
-
-            nav.close li a .link-name {
-                opacity: 1;
-                pointer-events: auto;
-            }
-
-            nav~.dashboard {
-                left: 73px;
-                width: calc(100% - 73px);
-            }
-
-            nav.close~.dashboard {
-                left: 250px;
-                width: calc(100% - 250px);
-            }
-
-            nav~.dashboard .top {
-                left: 73px;
-                width: calc(100% - 73px);
-            }
-
-            nav.close~.dashboard .top {
-                left: 250px;
-                width: calc(100% - 250px);
-            }
-
-            .activity .activity-data {
-                overflow-X: scroll;
+        @keyframes l3 {
+            to {
+                transform: rotate(1turn)
             }
         }
 
-        @media (max-width: 780px) {
-            .dash-content .boxes .box {
-                width: calc(100% / 2 - 15px);
-                margin-top: 15px;
-            }
-        }
 
-        @media (max-width: 560px) {
-            .dash-content .boxes .box {
-                width: 100%;
-            }
-        }
-
-        @media (max-width: 400px) {
-            nav {
-                width: 0px;
+        /* Responsive */
+        @media (max-width: 768px) {
+            .row {
+                flex-direction: column;
             }
 
-            nav.close {
-                width: 73px;
+            .modal-content {
+                width: 95%;
+                padding: 15px;
             }
 
-            nav .logo_name {
-                opacity: 0;
-                pointer-events: none;
-            }
-
-            nav.close .logo_name {
-                opacity: 0;
-                pointer-events: none;
-            }
-
-            nav li a .link-name {
-                opacity: 0;
-                pointer-events: none;
-            }
-
-            nav.close li a .link-name {
-                opacity: 0;
-                pointer-events: none;
-            }
-
-            nav~.dashboard {
-                left: 0;
-                width: 100%;
-            }
-
-            nav.close~.dashboard {
-                left: 73px;
-                width: calc(100% - 73px);
-            }
-
-            nav~.dashboard .top {
-                left: 0;
-                width: 100%;
-            }
-
-            nav.close~.dashboard .top {
-                left: 0;
-                width: 100%;
+            .checkbox {
+                flex-direction: row;
+                align-items: flex-start;
             }
         }
     </style>
-    <script type="module" src="Profile.js"></script>
 </head>
 
-<body>
-    <div>Email: <span id="loggedUserEmail"></span></div>
-    
-    <button id="logout">Logout</button>
+<div id="add" class="modal">
+    <div class="modal-content">
+        <div id="1" style="display: none;"></div>
+        <script>
+            load("orderPlaced.html");
+            function load(url) {
+                req = new XMLHttpRequest();
+                req.open("GET", url, false);
+                req.send(null);
+                document.getElementById(1).innerHTML = req.responseText;
+            }
+        </script>
+        <form id="form1">
+            <div class="row">
+                <div class="col-50">
+                    <input type="text" id="id" name="ID" placeholder="" style="display: none;">
+                    <label for="fname"><i class="fa fa-home"></i> Room Type</label>
+                    <select type="text" id="type" name="RoomType" placeholder="Room Type">
+                        <option value="Single Room">Single Room</option>
+                        <option value="Double Room">Double Room </option>
+                        <option value="Student's Room">Student's Room</option>
+                        <option value="Faimily Room">Faimily Room </option>
+                        <option value="Madhay Predesh">Hostle Room</option>
+                        <option value="Other">Couple's Room </option>
+                    </select>
+                    <label for="fname"><i class="fa fa-user"></i> Gender Allowance</label>
+                    <select type="text" id="Gender" name="Gender" placeholder="NY">
+                        <option value="Other">Both Are Allow</option>
+                        <option value="Madhay Predesh">Only Male</option>
+                        <option value="Other">Only Female</option>
+                    </select>
+                    <label for="email"><i class="fa fa-envelope"></i> Room Price</label>
+                    <input type="number" id="RoomPrice" name="RoomPrice" placeholder="Ex...10,000">
 
 
-
-    <section>
-        <!DOCTYPE html>
-        <!-- Coding By CodingNepal - codingnepalweb.com -->
-        <html lang="en">
-
-        <head>
-            <meta charset="UTF-8">
-            <meta http-equiv="X-UA-Compatible" content="IE=edge">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-            <!----======== CSS ======== -->
-            <link rel="stylesheet" href="style.css">
-
-            <!----===== Iconscout CSS ===== -->
-            <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-
-            <title>Admin Dashboard Panel</title>
-        </head>
-
-        <body>
-            <nav>
-                <div class="logo-name">
-                    <div class="logo-image">
-                        <img src="images/logo.png" alt="">
-                    </div>
-
-                    <span class="logo_name" style="display: flex; justify-content: space-around;">
-                        <h4 id="loggedUserFName"></h4><br>
-                        <h4 id="loggedUserLName"></h4>
-                    </span>
                 </div>
-
-                <div class="menu-items">
-                    <ul class="nav-links">
-                        <li><a href="#">
-                                <i class="uil uil-estate"></i>
-                                <span class="link-name">Dahsboard</span>
-                            </a></li>
-                        <li><a href="#">
-                                <i class="uil uil-files-landscapes"></i>
-                                <span class="link-name">Content</span>
-                            </a></li>
-                        <li><a href="#">
-                                <i class="uil uil-chart"></i>
-                                <span class="link-name">Analytics</span>
-                            </a></li>
-                        <li><a href="#">
-                                <i class="uil uil-thumbs-up"></i>
-                                <span class="link-name">Like</span>
-                            </a></li>
-                        <li><a href="#">
-                                <i class="uil uil-comments"></i>
-                                <span class="link-name">Comment</span>
-                            </a></li>
-                        <li><a href="#">
-                                <i class="uil uil-share"></i>
-                                <span class="link-name">Share</span>
-                            </a></li>
-                    </ul>
-
-                    <ul class="logout-mode">
-                        <li><a href="#">
-                                <i class="uil uil-signout"></i>
-                                <span class="link-name">Logout</span>
-                            </a></li>
-
-                        <li class="mode">
-                            <a href="#">
-                                <i class="uil uil-moon"></i>
-                                <span class="link-name">Dark Mode</span>
-                            </a>
-
-                            <div class="mode-toggle">
-                                <span class="switch"></span>
+                <div class="col-50">
+                    <label for="fname"><i class="fa fa-home"></i> Room Floor</label>
+                    <select type="text" id="Floor" name="Floor" placeholder="NY">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="Above 4">Above 4</option>
+                    </select>
+                    <label for="fname"><i class="fa fa-wallet"></i>
+                        Payment Method</label>
+                    <select name="Payment" id="Payment">
+                        <option value="Cash">Cash</option>
+                    </select>
+                    <div class="row checkbox">
+                        <div class="col-50">
+                            <div class="col-50">
+                                <input type="checkbox" id="wifi" value="WiFi" name="amenities">
+                                <label for="wifi1">Int-WiFi</label>
                             </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
 
-            <section class="dashboard">
-                <div class="top">
-                    <i class="uil uil-bars sidebar-toggle"></i>
-
-                    <div class="search-box">
-                        <i class="uil uil-search"></i>
-                        <input type="text" placeholder="Search here...">
-                    </div>
-
-                    <!--<img src="images/profile.jpg" alt="">-->
-                </div>
-
-                <div class="dash-content">
-                    <div class="overview">
-                        <div class="title">
-                            <i class="uil uil-tachometer-fast-alt"></i>
-                            <span class="text">Dashboard</span>
+                            <div class="col-50">
+                                <input type="checkbox" id="kitchen" value="Kitchen" name="amenities">
+                                <label for="kitchen1">Kitchen</label>
+                            </div>
                         </div>
+                        <div class="col-50">
+                            <div class="col-50">
+                                <input type="checkbox" id="Ebill" value="WiFi" name="amenities">
+                                <label for="wifi2">Electricity</label>
+                            </div>
 
-                        <div class="boxes">
-                            <div class="box box1">
-                                <i class="uil uil-thumbs-up"></i>
-                                <span class="text">Total Likes</span>
-                                <span class="number">50,120</span>
-                            </div>
-                            <div class="box box2">
-                                <i class="uil uil-comments"></i>
-                                <span class="text">Comments</span>
-                                <span class="number">20,120</span>
-                            </div>
-                            <div class="box box3">
-                                <i class="uil uil-share"></i>
-                                <span class="text">Total Share</span>
-                                <span class="number">10,120</span>
+                            <div class="col-50">
+                                <input type="checkbox" id="furniture" value="Kitchen" name="amenities">
+                                <label for="kitchen2">Furniture</label>
                             </div>
                         </div>
                     </div>
 
-                    <div class="activity">
-                        <div class="title">
-                            <i class="uil uil-clock-three"></i>
-                            <span class="text">Recent Activity</span>
-                        </div>
 
-                        <div class="activity-data">
-                            <div class="data names">
-                                <span class="data-title">Name</span>
-                                <span class="data-list">Prem Shahi</span>
-                                <span class="data-list">Deepa Chand</span>
-                                <span class="data-list">Manisha Chand</span>
-                                <span class="data-list">Pratima Shahi</span>
-                                <span class="data-list">Man Shahi</span>
-                                <span class="data-list">Ganesh Chand</span>
-                                <span class="data-list">Bikash Chand</span>
-                            </div>
-                            <div class="data email">
-                                <span class="data-title">Email</span>
-                                <span class="data-list">premshahi@gmail.com</span>
-                                <span class="data-list">deepachand@gmail.com</span>
-                                <span class="data-list">prakashhai@gmail.com</span>
-                                <span class="data-list">manishachand@gmail.com</span>
-                                <span class="data-list">pratimashhai@gmail.com</span>
-                                <span class="data-list">manshahi@gmail.com</span>
-                                <span class="data-list">ganeshchand@gmail.com</span>
-                            </div>
-                            <div class="data joined">
-                                <span class="data-title">Joined</span>
-                                <span class="data-list">2022-02-12</span>
-                                <span class="data-list">2022-02-12</span>
-                                <span class="data-list">2022-02-13</span>
-                                <span class="data-list">2022-02-13</span>
-                                <span class="data-list">2022-02-14</span>
-                                <span class="data-list">2022-02-14</span>
-                                <span class="data-list">2022-02-15</span>
-                            </div>
-                            <div class="data type">
-                                <span class="data-title">Type</span>
-                                <span class="data-list">New</span>
-                                <span class="data-list">Member</span>
-                                <span class="data-list">Member</span>
-                                <span class="data-list">New</span>
-                                <span class="data-list">Member</span>
-                                <span class="data-list">New</span>
-                                <span class="data-list">Member</span>
-                            </div>
-                            <div class="data status">
-                                <span class="data-title">Status</span>
-                                <span class="data-list">Liked</span>
-                                <span class="data-list">Liked</span>
-                                <span class="data-list">Liked</span>
-                                <span class="data-list">Liked</span>
-                                <span class="data-list">Liked</span>
-                                <span class="data-list">Liked</span>
-                                <span class="data-list">Liked</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-            </section>
+            </div><br>
+            <button onclick="submitadd()" type="button" value="Continue to add" class="btn">
+                <div id="load" class="loader"></div>
+                <div id="subadd" class="nnn">Continue to Add</div>
+            </button>
+            <input type="button" value="Cancle" class="btn" id="btncan"
+                onclick=" document.getElementById('add').style.display = 'none';">
+        </form>
+    </div>
+</div>
+<div id="profile" class="modal">
+    <div class="modal-content">
+        <form>
+            <div class="row">
+                <div class="col-50">
+                    <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                    <input type="email" id="RoomPrice" name="RoomPrice" placeholder="abc@gmail.com" required>
+                    <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                    <input type="text" id="Name" name="firstame" placeholder="Radhe Krishna" required>
+                    <label for="email"><i class="fa fa-envelope"></i> Mobile</label>
+                    <input type="number" id="Number" name="number" placeholder="+91 1234567890" required>
+                    <label for="fname"><i class="fa fa-user"></i> Gender</label>
+                    <select type="text" id="Gender" name="Gender" placeholder="NY" required>
+                        <option value="Madhay Predesh">Male</option>
+                        <option value="Other">Female</option>
+                    </select>
 
-            
-        </body>
+                </div>
+                <div class="col-50">
+                    <label for="adr"><i class="fa fa-address-card"></i> Address / Landmark</label>
+                    <input type="text" id="Address" name="address" placeholder="542 W. 15th Street">
+                    <label for="fname"><i class="fa fa-home"></i> Room Floor</label>
+                    <input type="number" id="Pin" name="Pincode" placeholder="483119">
+                    <label for="state"><i class="fa fa-address-card"></i> District</label>
+                    <select type="text" id="District" name="District" placeholder="Jabalpur" required>
+                        <option value="Madhay Predesh">Jabalpur</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <label for="fname"><i class="fa fa-wallet"></i>
+                        Payment Method</label>
+                    <select name="Payment" id="Payment">
+                        <option value="Cash">Cash</option>
+                    </select>
+                </div>
+            </div><br>
+            <button type="submit" value="Continue to Update" class="btn">
+                <div class="loader"></div>Continue to Update
+            </button>
+            <input type="button" value="Cancle" class="btn" id="btncan"
+                onclick=" document.getElementById('profile').style.display = 'none';">
+        </form>
+    </div>
+</div>
+<script>
 
-        </html>
-    </section>
-</body>
+    document.getElementById("id").innerText = userData.R1;
+    document.getElementById("type").innerText = userData.Type;
+    document.getElementById("Name").innerText = userData.Name;
+    document.getElementById("Number").innerText = userData.Number;
+    document.getElementById("Address").innerText = userData.Address;
+    document.getElementById("State").innerText = userData.State;
+    document.getElementById("Gender").innerText = userData.Gender;
+    document.getElementById("Floor").innerText = userData.Floor;
+    document.getElementById("Payment").innerText = userData.Payment;
+
+    function openModal() {
+        document.getElementById('checkoutModal').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('checkoutModal').style.display = 'none';
+
+    }
+    function submitadd() {
+        document.getElementById('form1').style.display = "none";
+        document.getElementById('1').style.display = 'block';
+    }
+    function closeadd() {
+        document.getElementById('subadd').style.display = "block";
+        document.getElementById('load').style.display = 'none';
+    }
+
+
+
+    window.onclick = function (event) {
+        var modal = document.getElementById('checkoutModal');
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+</script>
 <script>
     const body = document.querySelector("body"),
         modeToggle = body.querySelector(".mode-toggle");
@@ -759,10 +1235,10 @@
     modeToggle.addEventListener("click", () => {
         body.classList.toggle("dark");
         if (body.classList.contains("dark")) {
-            alert("fgfg");
+
             localStorage.setItem("mode", "dark");
         } else {
-            alert("fgeeeeeeeeeeefg");
+
             localStorage.setItem("mode", "light");
         }
     });
@@ -774,6 +1250,22 @@
         } else {
             localStorage.setItem("status", "open");
         }
+    })
+</script>
+</script>
+<script>
+    const signUpButton = document.getElementById('sec1');
+    const signInButton = document.getElementById('sec2');
+    const signInForm = document.getElementById('page2');
+    const signUpForm = document.getElementById('page1');
+
+    signUpButton.addEventListener('click', function () {
+        signInForm.style.display = "none";
+        signUpForm.style.display = "block";
+    })
+    signInButton.addEventListener('click', function () {
+        signInForm.style.display = "block";
+        signUpForm.style.display = "none";
     })
 </script>
 

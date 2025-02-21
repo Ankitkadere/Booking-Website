@@ -4,13 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- <link rel="stylesheet" href="/style.css"> -->
-    <title>ANY TECHNOLOGIES</title>
+    <title>MY ROOM BOOKING</title>
     <!-- favicon -->
-    <link rel="icon"
-        href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo"
-        type="image/gif" sizes="16x16" />
+    <link rel="icon" href="img\icon.jpeg" type="image/jpeg" />
     <!-- header links -->
     <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
@@ -25,7 +21,7 @@
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js";
-         const firebaseConfig = {
+        const firebaseConfig = {
             apiKey: "AIzaSyAcMpWDStktk6IRwJjPBQ0exKTCMYENQ-c",
             authDomain: "room-booking-9dcf1.firebaseapp.com",
             projectId: "room-booking-9dcf1",
@@ -42,7 +38,7 @@
 
 </head>
 
-<body onload="SearchLoad()">
+<body oncontextmenu="return false" onload="SearchLoad()" onchange="SearchLoad()">
     <!-- HEADER -->
     <div id="1"></div>
     <script>
@@ -68,7 +64,7 @@
 
     <!-- CONTENT SECTION -->
 
-    <section  onchange="SearchLoad()" class="w3-display-container w3-content" style="max-width: 1500px">
+    <section class="w3-display-container w3-content" style="max-width: 1500px">
 
         <style>
             .w3-display-container {
@@ -77,8 +73,8 @@
                 margin-top: -15%;
             }
 
-         
-            #distanceRange{
+
+            #distanceRange {
                 margin-left: 5px;
                 outline: none;
                 border: 0px 0px 2px 0px;
@@ -104,6 +100,7 @@
                 width: 100%;
                 background-color: rgb(201, 199, 199);
                 border-radius: 10px;
+                margin-top: -20px;
             }
 
 
@@ -132,9 +129,10 @@
                 </h2>
                 <div class="w3-row-padding" style="margin: 0 -16px">
                     <div class="w3-margin-bottom srcarea">
-                        <label><i class="fa fa-calendar-o"></i> City / Area / Pin Code</label>                   
-                            <input class="w3-input  " id="distanceRange" type="search" id="searchInput" placeholder="Search " onkeyup="showSuggestions(this.value)">
-                            <div id="suggestions-container" class="suggestions-container"></div>
+                        <label><i class="fa fa-calendar-o"></i> City / Area / Pin Code</label>
+                        <input class="w3-input  " id="distanceRange" type="search" id="searchInput"
+                            placeholder="Search " onkeyup="showSuggestions(this.value)">
+                        <div id="suggestions-container" class="suggestions-container"></div>
                     </div>
                 </div>
                 <div class="w3-row-padding" style="margin: 0 -14px">
@@ -283,7 +281,8 @@
                         <p style="text-align: right" id="detailsPrice"></p>
                     </div>
 
-                    <button class="booking" id="bookNow">Book Now</button>
+                    <button onclick=" document.getElementById('checkoutModal').style.display = 'block'" class="booking"
+                        id="bookNow">Book Now</button>
                 </div>
             </div>
         </div>
@@ -292,12 +291,12 @@
             <div id="roomlist">
             </div>
     </main>
-    <script src="js\Room.js"></script>
+    <script src="js/allset.js"></script>
     <br /><br /><br /><br />
 
-    <div id="3" style="display: none;"></div>
+    <div id="3"></div>
     <script>
-        load(".html");
+        load("inputdata.html");
         function load(url) {
             req = new XMLHttpRequest();
             req.open("GET", url, false);
@@ -334,6 +333,6 @@
     });
 </script>
 <!-- slider JS ENDS -->
- <script src="js/search-input.js"></script>
+<script src="js/search-input.js"></script>
 
 </html>

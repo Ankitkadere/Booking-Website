@@ -1,46 +1,107 @@
-
-#orderContainer
-{
-    font-family: 'Lato', sans-serif;
-    width: 80%;
-    padding-top: 250px;
-    padding-bottom: 150px;
-    margin: auto;
-    text-align: center;
+#orderContainer {
+  font-family: "Lato", sans-serif;
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  animation: fadeIn 2.5s ease-in-out;
 }
-#orderContainer i
-{
-    
-    color: rgb(0, 6, 97);
+
+#orderContainer i {
+  color: rgb(0, 26, 139);
+  padding-bottom: 10px;
+  font-size: 3em;
+}
+
+#check {
+  font-size: 80px;
+  color: #27ae60;
+  animation: bounceIn 1s ease-in-out;
+}
+
+#aboutCheck h1 {
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  font-size: 28px;
+  margin: 10px 0;
+  font-weight: bold;
+  opacity: 0;
+  animation: slideIn 1.2s forwards 1.5s;
+}
+
+#aboutCheck p {
+  font-weight: 100;
+  letter-spacing: 1px;
+  font-size: 18px;
+  opacity: 0;
+  animation: fadeIn 1.5s forwards 1s;
+}
+#btn {
+  background-color: #163769;
+  color: white;
+  padding: 8px 22px;
+  margin: 5px 0;
+  border: none;
+  width: 100%;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 17px;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  margin: 10px 0;
+  font-weight: bold;
+  opacity: 0;
+  animation: slideIn 1.2s forwards 1.5s;
+  transition: background-color 0.1s ease-in-out;
+ 
+}
+
+@media (max-width: 700px) {
+  #orderContainer i {
+    font-size: 3em;
     padding-bottom: 30px;
-    font-size: 10em;
-}
-#aboutCheck p
-{
-    font-weight: 100;
-    letter-spacing: 1px;
-}
-#aboutCheck h1
-{
-    letter-spacing: 1px;
-    word-spacing: 1px;
+  }
+  h1 {
+    font-size: 18px;
+  }
+  p {
+    font-size: 15px;
+  }
 }
 
-/* ----------------------------- MEDIA QUERY --------------------------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
-@media(max-width: 700px)
-{
-    #orderContainer i
-    {
-        font-size: 8em;
-        padding-bottom: 30px;
-    }
-    h1
-    {
-        font-size: 18px;
-    }
-    p
-    {
-        font-size: 15px;
-    }
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
