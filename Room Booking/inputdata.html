@@ -108,6 +108,21 @@
       background-color: #ad1400;
     }
 
+    #sec2 {
+      margin-top: 11.8%;
+    }
+
+    #roombook {
+      width: 210%;
+      justify-content: center;
+    }
+
+    #roombook h2 {
+      margin: auto;
+      width: 50%;
+      color: #163769;
+    }
+
     /* Responsive */
     @media (max-width: 800px) {
       .row {
@@ -119,6 +134,20 @@
         padding: 5px;
         width: 100%;
       }
+
+      #roombook {
+        width: 100%;
+        justify-content: center;
+      }
+
+      #roombook h2 {
+        margin: auto;
+        width: 60%;
+      }
+      #sec2 {
+      margin-top: -10%;
+    }
+
     }
   </style>
 </head>
@@ -130,36 +159,32 @@
       <form>
         <div class="row">
           <div class="col-50">
-            <h3>Billing Address</h3>
+            <div id="roombook">
+              <h2>ROOM BOOKING </h2>
+            </div>
+            <br>
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
             <input type="text" id="fname" name="Firstname" placeholder="Radhe Krishna" required>
             <label for="email"><i class="fa fa-envelope"></i> Mobile</label>
             <input type="number" id="number" name="Email" placeholder="+91 1234567890" required>
-            <label for="adr"><i class="fa fa-address-card"></i> Address</label>
+            <label for="expyear"><i class="fa fa-user"></i> Male</label>
+            <input type="number" id="male" name="Male" placeholder="Male">
+            <label for="cvv"> <i class="fa fa-user"></i> Female</label>
+            <input type="number" id="female" name="Female" placeholder="Female">
+          </div>
+          <div class="col-50" id="sec2">  <label for="adr"><i class="fa fa-address-card"></i> Address</label>
             <input type="text" id="adr" name="Address" placeholder="542 W. 15th Street" required>
             <label for="state"><i class="fa fa-address-card"></i> State</label>
             <select type="text" id="state" name="State" placeholder="NY" required>
               <option value="Madhay Predesh">Madhay Predesh</option>
               <option value="Other">Other</option>
             </select>
-          </div>
-          <div class="col-50">
-            <h3>Payment</h3>
-            <label>Accepted Cards</label>
-            <div class="icon-container">
-              <i class="fa fa-cc-visa" style="color:navy;"></i>
-              <i class="fa fa-cc-amex" style="color:blue;"></i>
-              <i class="fa fa-cc-mastercard" style="color:red;"></i>
-              <i class="fa fa-cc-discover" style="color:orange;"></i>
-            </div>
-            <label for="expyear">Male</label>
-            <input type="number" id="male" name="Male" placeholder="Male">
-            <label for="cvv">Female</label>
-            <input type="number" id="female" name="Female" placeholder="Female">
+          
             <label for="cname">Payment Method</label>
             <select name="Payment" id="Payment">
               <option value="Cash">Cash</option>
-            </select>
+            </select> <label for="fname"><i class="fa fa-date"></i> Date</label>
+            <input type="date" id="fname" name="Date" placeholder="01 - 02 -20025" required>
             <div class="row" style="display: none;">
               <div class="col-50">
                 <label for="expyear">Male</label>
