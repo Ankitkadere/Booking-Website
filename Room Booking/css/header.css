@@ -1,7 +1,6 @@
 body {
   margin: 0;
-  width:100vw;
-  overflow-y:hidden;
+  width:100%;
 }
 #badge {
   position: absolute;
@@ -134,7 +133,7 @@ body {
     display: none;
   }
 }
-@media (max-width: 750px) {
+@media (max-width: 768px) {
   #shopName {
     font-size: 28px;
   }
@@ -147,6 +146,9 @@ body {
   .addedToCart {
     font-size: 1.2em;
     margin: 10px 20px;
+  }
+  #user a {
+   margin: 0px 5px;
   }
 }
 

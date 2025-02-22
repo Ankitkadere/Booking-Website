@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/Login.css">
     <script type="module" src="Firebase.js"></script>
-
 </head>
 
 <body oncontextmenu="return false">
@@ -48,87 +47,61 @@
                 <input type="password" id="rPassword" placeholder="Password" required>
                 <label for="rPassword">Password</label>
             </div>
- 
-            <form style="display: none;">
-                <div class="row">
-                    <div class="col-50">
-                        <h3><i class="fa fa-home"></i> Room Type</h3>
-                        <input type="text" id="id" name="ID" placeholder="">
-                        <select type="text" id="type" name="RoomType" placeholder="Room Type">
-                            <option value="Single Room">Single Room</option>
-                            <option value="Double Room">Double Room </option>
-                            <option value="Student's Room">Student's Room</option>
-                            <option value="Faimily Room">Faimily Room </option>
-                            <option value="Madhay Predesh">Hostle Room</option>
-                            <option value="Other">Couple's Room </option>
-                        </select>
-                        <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-                        <input type="text" id="Name" name="firstame" placeholder="Radhe Krishna">
-                        <label for="email"><i class="fa fa-envelope"></i> Mobile</label>
-                        <input type="number" id="Number" name="email" placeholder="+91 1234567890">
-                        <label for="adr"><i class="fa fa-address-card"></i> Address / Landmark</label>
-                        <input type="text" id="Address" name="address" placeholder="542 W. 15th Street">
-                        <label for="state"><i class="fa fa-address-card"></i> State</label>
-                        <select type="text" id="State" name="state" placeholder="NY">
-                            <option value="Madhay Predesh">Madhay Predesh</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-                    <div class="col-50">
-                        <h3>Payment</h3>
-                        <label for="fname"><i class="fa fa-user"></i> Gender Allowance</label>
-                        <select type="text" id="Gender" name="Gender" placeholder="NY">
-                            <option value="Other">Both Are Allow</option>
-                            <option value="Madhay Predesh">Only Male</option>
-                            <option value="Other">Only Female</option>
-                        </select>
-                        <label for="fname"><i class="fa fa-home"></i> Room Floor</label>
-                        <select type="text" id="Floor" name="Floor" placeholder="NY">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="Above 4">Above 4</option>
-                        </select>
-                      
-                        <label for="fname"><i class="fa fa-wallet"></i>
-                            Payment Method</label>
-                        <select name="Payment" id="Payment">
-                            <option value="Cash">Cash</option>
-                        </select>
-                        <div class="row checkbox">
+            <div class="row" style="display:none;">
+                <div class="col-50">
+                    <h3><i class="fa fa-home"></i> Room Type</h3>
+                    <input type="text" id="id" name="ID" placeholder="">
+                    <input type="text" id="type" name="RoomType" placeholder="Room Type">                 
+                    <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                    <input type="text" id="Name" name="firstame" placeholder="Radhe Krishna">
+                    <label for="email"><i class="fa fa-envelope"></i> Mobile</label>
+                    <input type="number" id="Number" name="email" placeholder="+91 1234567890">
+                    <label for="adr"><i class="fa fa-address-card"></i> Address / Landmark</label>
+                    <input type="text" id="Address" name="address" placeholder="542 W. 15th Street">
+                    <label for="state"><i class="fa fa-address-card"></i> State</label>
+                    <input type="text" id="State" name="state" placeholder="NY">          
+                </div>
+                <div class="col-50">
+                    <h3>Payment</h3>
+                    <label for="fname"><i class="fa fa-user"></i> Gender Allowance</label>
+                    <input type="text" id="Gender" name="Gender" placeholder="NY">
+                         
+                    <label for="fname"><i class="fa fa-home"></i> Room Floor</label>
+                    <input type="text" id="Floor" name="Floor" placeholder="NY">
+                    <label for="fname"><i class="fa fa-wallet"></i>
+                        Payment Method</label>
+                    <input name="Payment" id="Payment">
+                        
+                    <div class="row checkbox">
+                        <div class="col-50">
                             <div class="col-50">
-                                <div class="col-50">
-                                    <input type="checkbox" id="wifi" value="WiFi" name="amenities">
-                                    <label for="wifi1">WiFi</label>
-                                </div>
-
-                                <div class="col-50">
-                                    <input type="checkbox" id="kitchen" value="Kitchen" name="amenities">
-                                    <label for="kitchen1">Kitchen</label>
-                                </div>
+                                <input type="checkbox" id="wifi" value="WiFi" name="amenities">
+                                <label for="wifi1">WiFi</label>
                             </div>
-                            <div class="col-50">
-                                <div class="col-50">
-                                    <input type="checkbox" id="Ebill" value="WiFi" name="amenities">
-                                    <label for="wifi2">Electricity</label>
-                                </div>
 
-                                <div class="col-50">
-                                    <input type="checkbox" id="furniture" value="Kitchen" name="amenities">
-                                    <label for="kitchen2">Furniture</label>
-                                </div>
+                            <div class="col-50">
+                                <input type="checkbox" id="kitchen" value="Kitchen" name="amenities">
+                                <label for="kitchen1">Kitchen</label>
                             </div>
                         </div>
-                        <label for="email"><i class="fa fa-envelope"></i> Room Price</label>
-                        <input type="number" id="RoomPrice" name="RoomPrice" placeholder="10,000">
+                        <div class="col-50">
+                            <div class="col-50">
+                                <input type="checkbox" id="Ebill" value="WiFi" name="amenities">
+                                <label for="wifi2">Electricity</label>
+                            </div>
 
-
+                            <div class="col-50">
+                                <input type="checkbox" id="furniture" value="Kitchen" name="amenities">
+                                <label for="kitchen2">Furniture</label>
+                            </div>
+                        </div>
                     </div>
-                </div><br>
+                    <label for="email"><i class="fa fa-envelope"></i> Room Price</label>
+                    <input type="number" id="RoomPrice" name="RoomPrice" placeholder="10,000">
 
 
-            </form>
+                </div>
+            </div><br>
             <button class="btn" id="submitSignUp">Sign Up</button>
         </form>
         <p class="or">
@@ -159,7 +132,7 @@
                 <input type="password" id="password" placeholder="Password" required>
                 <label for="password">Password</label>
             </div>
-            <p class="recover">
+            <p class="recover" id="recoverButton">
                 <a href="#">Recover Password</a>
             </p>
             <button class="btn" id="submitSignIn">Sign In</button>
@@ -176,6 +149,42 @@
             <button id="signUpButton">Sign Up</button>
         </div>
     </div>
+
+    <div class="container" id="recover" style="display:none;">
+        <h1 class="form-title">Recover </h1>
+        <form method="post" action="">
+            <div id="signInMessage" class="messageDiv" style="display:none;"></div>
+
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" placeholder="Email" required>
+                <label for="email">Email</label>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-phone"></i>
+                <input type="email" id="email" placeholder="Email" required>
+                <label for="email">Mobile Number</label>
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" placeholder="Password" required>
+                <label for="password">Old Password</label>
+            </div>
+
+            <button class="btn" id="submitSignIn">Sign In</button>
+        </form>
+        <p class="or">
+            ----------or--------
+        </p>
+        <div style="display: none;" class="icons">
+            <i class="fab fa-google"></i>
+            <i class="fab fa-facebook"></i>
+        </div>
+        <div class="links">
+            <button id="signInButton1">Sign In</button><br><br>
+            <button id="signUpButton1">Sign Up</button>
+        </div>
+    </div>
     <br><br><br><br>
     <div id="4"></div>
     <script>
@@ -190,16 +199,38 @@
     <script>
         const signUpButton = document.getElementById('signUpButton');
         const signInButton = document.getElementById('signInButton');
+        const signUpButton1 = document.getElementById('signUpButton1');
+        const signInButton1 = document.getElementById('signInButton1');
+        const recoverButton = document.getElementById('recoverButton');
         const signInForm = document.getElementById('signIn');
         const signUpForm = document.getElementById('signup');
+        const recover = document.getElementById('recover');
 
         signUpButton.addEventListener('click', function () {
             signInForm.style.display = "none";
+            recover.style.display = "none";
             signUpForm.style.display = "block";
         })
         signInButton.addEventListener('click', function () {
             signInForm.style.display = "block";
             signUpForm.style.display = "none";
+            recover.style.display = "none";
+        })
+
+        signUpButton1.addEventListener('click', function () {
+            signInForm.style.display = "none";
+            recover.style.display = "none";
+            signUpForm.style.display = "block";
+        })
+        signInButton1.addEventListener('click', function () {
+            signInForm.style.display = "block";
+            signUpForm.style.display = "none";
+            recover.style.display = "none";
+        })
+        recoverButton.addEventListener('click', function () {
+            signInForm.style.display = "none";
+            signUpForm.style.display = "none";
+            recover.style.display = "block";
         })
     </script>
 </body>

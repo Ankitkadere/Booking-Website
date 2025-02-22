@@ -82,7 +82,7 @@ input:focus~label,input:not(:placeholder-shown)~label{
 button{
     font-size:1.1rem;
     padding:8px 0;
-    border-radius:5px;
+    border-radius:10px;
     outline:none;
     border:none;
     width:100%;
@@ -141,7 +141,7 @@ button:hover{
     transition:0.9s;
 }
 
- #signUpButton, #signInButton{
+ #signUpButton, #signInButton , #signUpButton1, #signInButton1{
     color:rgb(125,125,235);
     border:none;
     background-color:transparent;
@@ -168,10 +168,13 @@ button:hover{
     .container{
         background:#fff;
         width:90vw;
-        height:60vh;
+        height:auto;
         padding:0.5rem;
         margin:50px auto;
         border-radius:10px;
         box-shadow:0 20px 35px rgba(0,0,1,0.9);
     }
+}
+#nosett{
+    display:none;
 }
