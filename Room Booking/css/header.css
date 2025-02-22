@@ -1,6 +1,6 @@
 body {
   margin: 0;
- 
+  width: 100vw;
 }
 img{
   width:40px;
@@ -20,7 +20,7 @@ img{
   background-color: white;
   margin: auto;
   text-align: center;
-  width: 100%;
+  width: 100vw;
   overflow-y: hidden;
   display: grid;
   grid-gap: 10px;
