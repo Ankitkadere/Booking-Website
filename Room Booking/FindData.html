@@ -2,41 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MY ROOM BOOKING</title>
-    <!-- favicon -->
-    <link rel="icon" href="img\fav.jpeg" type="image/jpeg" />
-    <!-- header links -->
-    <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet" />
-    <!-- slider links -->
-    <!-- <script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
-    <script src="js/jQuery3.4.1.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
-    <link rel="stylesheet" href="css\filter.css" />
-    <link rel="stylesheet" href="css/search-input.css">
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-analytics.js";
-        const firebaseConfig = {
-            apiKey: "AIzaSyAcMpWDStktk6IRwJjPBQ0exKTCMYENQ-c",
-            authDomain: "room-booking-9dcf1.firebaseapp.com",
-            projectId: "room-booking-9dcf1",
-            storageBucket: "room-booking-9dcf1.firebasestorage.app",
-            messagingSenderId: "603961601605",
-            appId: "1:603961601605:web:c3a0530829de90605ebd2c",
-            measurementId: "G-XX78VM11PS"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-    </script>
-
 </head>
+
 <body>
     <section class="w3-display-container w3-content" style="max-width: 1500px">
 
@@ -45,8 +15,14 @@
                 position: absolute;
                 width: 100%;
                 margin-top: -15%;
-          }
-             #distanceRange {
+            }
+
+            main {
+                margin-bottom: 5%;
+            }
+
+
+            #distanceRange {
                 margin-left: 5px;
                 outline: none;
                 border: 0px 0px 2px 0px;
@@ -78,13 +54,16 @@
 
 
             @media (max-width: 768px) {
+                main {
+                    margin-bottom: 0%;
+                   
+                }
 
                 .srcbox {
-                    margin-top: 12%;
+                    margin-top: 38%;
                     height: auto;
                     margin-left: 0px;
                     overflow: hidden;
-                    border:
                 }
 
                 .h2head {
@@ -220,7 +199,7 @@
         <script
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu-916DdpKAjTmJNIgngS6HL_kDIKU0aU&callback=myMap"></script>
     </section>
-
+    <br>
     <main>
         <!-- Full Room Details Modal -->
         <div class="full-details" id="fullDetails">
