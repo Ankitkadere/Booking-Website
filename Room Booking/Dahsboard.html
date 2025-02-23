@@ -146,6 +146,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        overflow-x: hidden;
     }
 
     .menu-items li {
@@ -199,7 +200,7 @@
     .nav-links li a:hover i,
     .nav-links li a:hover .link-name {
         color: var(--box1-color);
-         
+
     }
 
     body.dark .nav-links li a:hover i,
@@ -577,12 +578,12 @@
     <section>
         <nav>
             <div class="logo-name">
-                <div class="logo-image" style="display: none;">
-                    <img src="images/logo.png" alt="">
+                <div class="logo-image">
+                    <img src="img\fav.jpeg" alt="">
                 </div>
 
                 <span class="logo_name" style="display: flex; justify-content: space-around;">
-                    <span style="font-size: 14px;" id="email">Loading...</span>
+
                 </span>
             </div>
 
@@ -811,6 +812,24 @@
                         <div class="box box2">
                             <div style="display: flex;">
                                 <i id="" style="margin-right: 10px;"> </i>
+                                <i class="uil uil-envelope"> <span>Email </span> </i>
+                            </div>
+                            <hr>
+                            <h1></h1>
+                            <div class="detail">
+                            </div>
+                            <div class="detail">
+                            </div>
+                            <div class="detail">
+                            </div>
+                            <div class="detail">
+                            </div>
+                            <hr>
+                            <span class="number" id="loggedUserPayment"> <span id="email">Loading...</span> </span>
+                        </div>
+                        <div class="box box2">
+                            <div style="display: flex;">
+                                <i id="" style="margin-right: 10px;"> </i>
                                 <i class="uil uil-phone"> <span>Mobile Number </span> </i>
                             </div>
                             <hr>
@@ -856,9 +875,10 @@
 
 <head>
     <style>
-       hr{
-        margin-bottom: 2%;
-       }
+        hr {
+            margin-bottom: 2%;
+        }
+
         .modal {
             display: none;
             position: fixed;
@@ -1154,7 +1174,7 @@
                     </select>
                 </div>
                 <div class="col-50 secect2">
-               
+
                     <label for="fname"><i class="fa fa-wallet"></i>
                         Payment Method</label>
                     <select name="Payment" id="Payment">
@@ -1225,7 +1245,7 @@
                     </select>
                 </div>
             </div><br>
-            <button type="submit" value="Continue to Update" class="btn">
+            <button onclick="submitadd()" type="submit" value="Continue to Update" class="btn">
                 <div class="loader"></div>Continue to Update
             </button>
             <input type="button" value="Cancle" class="btn" id="btncan"
