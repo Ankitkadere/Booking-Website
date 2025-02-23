@@ -37,7 +37,7 @@
   letter-spacing: 1px;
   font-size: 18px;
   opacity: 0;
-  margin-bottom:10%;
+  margin-bottom: 10%;
   animation: fadeIn 1.5s forwards 1s;
 }
 #btn {
@@ -51,7 +51,7 @@
   font-size: 17px;
   letter-spacing: 1px;
   word-spacing: 1px;
- 
+
   font-weight: bold;
   opacity: 0;
   animation: slideIn 1.2s forwards 1.5s;
@@ -65,7 +65,7 @@
   }
   #orderContainer {
     height: 100vh;
-    overflow:hidden;
+    overflow: hidden;
   }
   h1 {
     font-size: 18px;
