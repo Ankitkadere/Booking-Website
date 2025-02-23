@@ -24,7 +24,7 @@
 
     :root {
         /* ===== Colors ===== */
-        --primary-color: #002792;
+        --primary-color: #ffffff;
         --panel-color: #ffffff;
         --text-color: #000;
         --black-light-color: #707070;
@@ -167,7 +167,7 @@
         height: 5px;
         width: 5px;
         border-radius: 50%;
-        background-color: var(--primary-color);
+        background-color: var(--box1-color);
     }
 
     body.dark li a:hover:before {
@@ -198,7 +198,8 @@
 
     .nav-links li a:hover i,
     .nav-links li a:hover .link-name {
-        color: var(--primary-color);
+        color: var(--box1-color);
+         
     }
 
     body.dark .nav-links li a:hover i,
@@ -345,7 +346,7 @@
         position: relative;
         height: 35px;
         width: 35px;
-        background-color: var(--primary-color);
+        background-color: var(--box1-color);
         border-radius: 6px;
         color: var(--title-icon-color);
         display: flex;
@@ -654,7 +655,7 @@
                         </div>
                         <div class="box box2">
                             <div style="display: flex;">
-                                <i id="" style="margin-right: 10px;"> </i>
+                                <i id="iset1" style="margin-right: 10px;">1 </i>
                                 <i class="uil uil-home"> <span id="phone">Loading...</span> </i>
                             </div>
                             <hr>
@@ -682,7 +683,7 @@
                         </div>
                         <div class="box box3">
                             <div style="display: flex;">
-                                <i id="" style="margin-right: 10px;"> </i>
+                                <i id="iset2" style="margin-right: 10px;">2 </i>
                                 <i class="uil uil-home"> <span id="state">Loading...</span> </i>
                             </div>
                             <hr>
@@ -710,7 +711,7 @@
                         </div>
                         <div class="box box2">
                             <div style="display: flex;">
-                                <i id="" style="margin-right: 10px;"> </i>
+                                <i id="iset3" style="margin-right: 10px;">3 </i>
                                 <i class="uil uil-home"> <span id="roomType">Loading...</span> </i>
                             </div>
                             <hr>
@@ -738,7 +739,7 @@
                         </div>
                         <div class="box box3">
                             <div style="display: flex;">
-                                <i id="" style="margin-right: 10px;"> </i>
+                                <i id="iset4" style="margin-right: 10px;">4 </i>
                                 <i class="uil uil-home"><span id="paymentMethod">Loading...</span> </i>
                             </div>
                             <hr>
@@ -855,9 +856,9 @@
 
 <head>
     <style>
-        /* ======================= */
-        /* MODAL STYLES */
-        /* ======================= */
+       hr{
+        margin-bottom: 2%;
+       }
         .modal {
             display: none;
             position: fixed;
@@ -874,7 +875,7 @@
         /* MODAL CONTENT */
         .modal-content {
             background-color: #fff;
-            margin: 5% auto;
+            margin: 3% auto;
             padding: 20px;
             border-radius: 12px;
             max-width: 700px;
@@ -1038,7 +1039,7 @@
         }
 
         .secect2 {
-            margin-top: 9.2%;
+            margin-top: 10.5%;
         }
 
         .loader {
@@ -1068,15 +1069,32 @@
                 flex-direction: column;
             }
 
-            .modal-content {
-                width: 100%;
-                padding: 15px;
-                margin: 0px auto;
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100vw;
+                height: 100vh;
+                background-color: rgb(255, 255, 255);
+                overflow-y: auto;
             }
 
+            /* MODAL CONTENT */
+            .modal-content {
+                background-color: #fff;
+                margin: 0px auto;
+                padding: 20px;
+                border-radius: 12px;
+                width: 100%;
+                position: relative;
+                animation: fadeIn 0.5s ease-out;
+            }
 
             .col-50 label {
-                font-size: 14px;
+
+                font-size: 16px;
             }
 
             center {
@@ -1107,8 +1125,9 @@
             <div class="row">
                 <div class="col-50">
                     <center>
-                        <h3>ROOM PUBLISH</h3>
-                    </center><br>
+                        <h3>ROOM PUBLISH</h3><br>
+                        <hr>
+                    </center>
                     <input type="text" id="id" name="ID" placeholder="" style="display: none;">
                     <label for="fname"><i class="fa fa-home"></i> Room Type</label>
                     <select type="text" id="type" name="RoomType" placeholder="Room Type">
@@ -1118,19 +1137,13 @@
                         <option value="Faimily Room">Faimily Room </option>
                         <option value="Madhay Predesh">Hostle Room</option>
                         <option value="Other">Couple's Room </option>
-                    </select>
+                    </select><br>
                     <label for="fname"><i class="fa fa-user"></i> Gender Allowance</label>
                     <select type="text" id="Gender" name="Gender" placeholder="NY">
                         <option value="Other">Both Are Allow</option>
                         <option value="Madhay Predesh">Only Male</option>
                         <option value="Other">Only Female</option>
-                    </select>
-                    <label for="email"><i class="fa fa-envelope"></i> Room Price</label>
-                    <input type="number" id="RoomPrice" name="RoomPrice" placeholder="Ex...10,000">
-
-
-                </div>
-                <div class="col-50 secect2">
+                    </select><br>
                     <label for="fname"><i class="fa fa-home"></i> Room Floor</label>
                     <select type="text" id="Floor" name="Floor" placeholder="NY">
                         <option value="1">1</option>
@@ -1139,14 +1152,20 @@
                         <option value="4">4</option>
                         <option value="Above 4">Above 4</option>
                     </select>
+                </div>
+                <div class="col-50 secect2">
+               
                     <label for="fname"><i class="fa fa-wallet"></i>
                         Payment Method</label>
                     <select name="Payment" id="Payment">
                         <option value="Cash">Cash</option>
                     </select>
+                    <label for="email"><i class="fa fa-envelope"></i> Room Price</label>
+                    <input type="number" id="RoomPrice" name="RoomPrice" placeholder="Ex...10,000">
+
                     <div class="col-50 check">
                         <input type="checkbox" id="wifi" value="WiFi" name="amenities">
-                        <label for="wifi1">In WiFi</label>
+                        <label for="wifi1">Int - WiFi</label>
                         <input type="checkbox" id="kitchen" value="Kitchen" name="amenities">
                         <label for="kitchen1">Kitchen</label>
                     </div>
@@ -1172,7 +1191,8 @@
         <form>
             <div class="row">
                 <center>
-                    <h3>UPDATE PROFILE</h3>
+                    <h3>UPDATE PROFILE</h3><br>
+                    <hr>
                 </center>
                 <div class="col-50">
                     <label for="email"><i class="fa fa-envelope"></i> Email</label>

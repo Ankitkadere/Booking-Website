@@ -84,7 +84,7 @@ async function loadUserData(userId) {
 document.getElementById("logout").addEventListener("click", () => {
   signOut(auth)
     .then(() => {
-      alert("Logged out successfully!");
+      
       window.location.href = "index.html"; // Redirect to login page
     })
     .catch((error) => {
