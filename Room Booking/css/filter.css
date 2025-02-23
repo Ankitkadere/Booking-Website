@@ -227,6 +227,10 @@
     margin: auto;
      
   }
+  main {
+    padding: 5px;
+    margin-top:25%;
+  }
  
 #roomContainer {
    padding-top:150px;;
