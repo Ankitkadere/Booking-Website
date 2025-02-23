@@ -1,0 +1,120 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logo Page with Circle Animation</title>
+    <style>
+        /* Fullscreen Splash */
+        .screen {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(255, 255, 255);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.8s ease-in-out;
+        }
+
+        /* Hide splash after animation */
+        .screen.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Logo Container */
+        .Splash {
+            width: 250px;
+            height: 250px;
+            position: relative;
+        }
+
+        /* Logo */
+        .logo {
+            width: 80%;
+            margin-left: 8%;
+            height: 80%;
+        }
+
+        /* Animated Circle */
+        .circle {
+            position: absolute;
+            top: -22px;
+            left: -10px;
+            width: 270px;
+            margin: auto;
+            height: 250px;
+            stroke: rgb(0, 18, 119);
+            transform: rotate(-90deg); 
+        }
+
+        circle {
+            stroke-dasharray: 345;
+            stroke-dashoffset: 345;
+            transition: stroke-dashoffset 2s ease-in-out;
+        }
+
+        /* Animation starts after 0.5s */
+        .animate circle {
+            stroke-dashoffset: 0;
+        }
+
+        /* Google Fonts */
+        @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+        /* Cursor (Typewriter Effect) */
+        .cursor {
+            width: 70px;
+            display: inline-block;
+            font-family: 'Anonymous Pro', monospace;
+            font-size: 40px;
+            font-weight: bolder;
+            text-align: center;
+            font-family: 'Courier New', Courier, monospace;
+            white-space: nowrap;
+            color: rgb(3, 24, 116);
+            overflow: hidden;
+
+        }
+
+        /* Typewriter Animation */
+        .typewriter-animation {
+            animation:
+                typewriter .1s steps(30) 1s 1 normal both,
+                blinkingCursor 500ms steps(30) infinite normal;
+        }
+
+        /* Typewriter Effect */
+        @keyframes typewriter {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        /* Blinking Cursor */
+        @keyframes blinkingCursor {
+            50% {
+                border-right-color: transparent;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="Splash">
+        <img src="img/fav.jpeg" class="logo" />
+        <svg viewBox="0 0 120 120" class="circle">
+            <circle cx="60" cy="60" r="55" fill="none" stroke-width="2" />
+        </svg><br><br><br>
+        <p class="cursor typewriter-animation">MY ROOM</p>
+    </div>
+    <script src="js\Splash.js"></script>
+</body>
+
+</html>

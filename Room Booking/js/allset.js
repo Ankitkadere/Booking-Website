@@ -12,7 +12,8 @@ var androidRooms = [
     duration: "This is the best room for your best & easy jouarny",
     distance: "Black Color || Used 6 Months || ",
     address: "Bus Stand, Shahpura, Jabalpur, Madhya Pradesh",
-    image: "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?cs=srgb&dl=pexels-pixabay-271816.jpg&fm=jpg",
+    image:
+      "https://images.pexels.com/photos/271816/pexels-photo-271816.jpeg?cs=srgb&dl=pexels-pixabay-271816.jpg&fm=jpg",
   },
   {
     id: "001002",
@@ -22,7 +23,8 @@ var androidRooms = [
     duration: "This is the best room for your best & easy jouarny",
     distance: "2 km from city center",
     address: "654 Pine Street, Uptown",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYRkCGLPrFBp-oH_bfQ0_Tn1xhKkbyrOv9ww&s",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYRkCGLPrFBp-oH_bfQ0_Tn1xhKkbyrOv9ww&s",
   },
 ];
 
@@ -36,7 +38,8 @@ var keypadRooms = [
     duration: "This is the best room for your best & easy jouarny",
     distance: "3 km from city center",
     address: "789 Elm Street, Suburbs",
-    image: "https://media.gettyimages.com/id/1212170511/photo/scandinavian-style-living-room-interior.jpg?s=612x612&w=0&k=20&c=3iI_6kD95u4mDx8wBx8gktvFpvA1rceZfAsC0WCO82c=",
+    image:
+      "https://media.gettyimages.com/id/1212170511/photo/scandinavian-style-living-room-interior.jpg?s=612x612&w=0&k=20&c=3iI_6kD95u4mDx8wBx8gktvFpvA1rceZfAsC0WCO82c=",
   },
   {
     id: "F002",
@@ -46,7 +49,8 @@ var keypadRooms = [
     duration: "This is the best room for your best & easy jouarny",
     distance: "4 km from city center",
     address: "321 Oak Avenue, Suburbs",
-    image: "https://media.gettyimages.com/id/1213695544/photo/3d-rendering-of-a-luxurious-bedroom-interior.jpg?s=612x612&w=0&k=20&c=2w5r627b1TkwsLOHm73d2Tc9225TjXzYjaw5iaDX_c0=",
+    image:
+      "https://media.gettyimages.com/id/1213695544/photo/3d-rendering-of-a-luxurious-bedroom-interior.jpg?s=612x612&w=0&k=20&c=2w5r627b1TkwsLOHm73d2Tc9225TjXzYjaw5iaDX_c0=",
   },
 ];
 
@@ -60,7 +64,8 @@ var vgphoneRooms = [
     duration: "This is the best room for your best & easy jouarny",
     distance: "1 km from city center",
     address: "987 Cedar Road, Downtown",
-    image: "https://media.gettyimages.com/id/1216663592/photo/a-modern-stylish-and-bright-living-room.jpg?s=612x612&w=0&k=20&c=ShRyok7GUaQnglI6IGD0QhG9J0AhR__fzHrAvXM2ZNk=",
+    image:
+      "https://media.gettyimages.com/id/1216663592/photo/a-modern-stylish-and-bright-living-room.jpg?s=612x612&w=0&k=20&c=ShRyok7GUaQnglI6IGD0QhG9J0AhR__fzHrAvXM2ZNk=",
   },
   {
     id: "C002",
@@ -85,7 +90,8 @@ var iphoneRooms = [
     duration: "Stay duration: 1-5 nights",
     distance: "2.5 km from city center",
     address: "123 Main Street, Downtown",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjbXlKB89CHsvCHn5sl_qNvtenEQTyaShx-Q&s",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjbXlKB89CHsvCHn5sl_qNvtenEQTyaShx-Q&s",
   },
   {
     id: "R002",
@@ -95,7 +101,8 @@ var iphoneRooms = [
     duration: "This is the best room for your best & easy jouarny",
     distance: "5 km from city center",
     address: "456 Maple Avenue, Uptown",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcST_wmDGykZWXpVJ2USRJm1s--yVhF069xJRQ&s",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcST_wmDGykZWXpVJ2USRJm1s--yVhF069xJRQ&s",
   },
 ];
 
@@ -109,7 +116,8 @@ var jioRooms = [
     duration: "This is the best room for your best & easy jouarny",
     distance: "1 km from city center",
     address: "987 Cedar Road, Downtown",
-    image: "https://img.freepik.com/free-photo/gray-sofa-white-living-room-interior-with-copy-space-3d-rendering_43614-802.jpg",
+    image:
+      "https://img.freepik.com/free-photo/gray-sofa-white-living-room-interior-with-copy-space-3d-rendering_43614-802.jpg",
   },
   {
     id: "C002",
@@ -119,7 +127,8 @@ var jioRooms = [
     duration: "This is the best room for your best & easy jouarny",
     distance: "2 km from city center",
     address: "654 Pine Street, Uptown",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn-GJSQlY_OpphwHsh30nQcEKFnjgLGcxyiw&s",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn-GJSQlY_OpphwHsh30nQcEKFnjgLGcxyiw&s",
   },
 ];
 
@@ -188,7 +197,6 @@ closeDetailsBtn.addEventListener("click", () => {
 });
 
 // Display rooms based on the condition a == 123
- 
 
 function applyFilters() {
   // Get the selected filter values

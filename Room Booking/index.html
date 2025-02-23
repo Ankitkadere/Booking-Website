@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
     <link rel="stylesheet" href="css\filter.css" />
     <link rel="stylesheet" href="css/search-input.css">
+    <script src="js\Splash.js"></script>
     <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
@@ -38,12 +39,27 @@
 
 </head>
 <style>
+         @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
     body {
         overflow-x: hidden;
     }
+    .screen{
+        position: absolute;
+    }
 </style>
 
-<body oncontextmenu="return false" onload="SearchLoad()" onchange="SearchLoad()">
+<body oncontextmenu="return false" onload="SearchLoad()" onchange="SearchLoad()">    
+      <!-- SPLASH SCREEN -->
+      <div id="0" class="screen"></div>
+      <script>
+          load("Splash.html");
+          function load(url) {
+              req = new XMLHttpRequest();
+              req.open("GET", url, false);
+              req.send(null);
+              document.getElementById(0).innerHTML = req.responseText;
+          }
+      </script>
     <!-- HEADER -->
     <div id="1"></div>
     <script>
