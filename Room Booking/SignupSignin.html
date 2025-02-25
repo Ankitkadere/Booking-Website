@@ -5,24 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register & Login</title>
-    <link rel="icon" href="img\icon.jpeg" type="image/jpeg" />
+    <link rel="icon" href="img\fav.jpeg" type="image/jpeg" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/Login.css">
-    <script type="module" src="Firebase.js"></script>
+    <script src="Firebase.js"></script>
+    <script src="Database.js"></script>
 </head>
 
-<body oncontextmenu="return false">
-    <!-- HEADER -->
-    <div id="1"></div><br><br><br><br>
-    <script>
-        load("header.html");
-        function load(url) {
-            req = new XMLHttpRequest();
-            req.open("GET", url, false);
-            req.send(null);
-            document.getElementById(1).innerHTML = req.responseText;
-        }
-    </script>
+<body>
     <div class="container" id="signup" style="display:none;">
         <h1 class="form-title">Register</h1>
         <form method="post" action="">
@@ -51,7 +41,7 @@
                 <div class="col-50">
                     <h3><i class="fa fa-home"></i> Room Type</h3>
                     <input type="text" id="id" name="ID" placeholder="">
-                    <input type="text" id="type" name="RoomType" placeholder="Room Type">                 
+                    <input type="text" id="type" name="RoomType" placeholder="Room Type">
                     <label for="fname"><i class="fa fa-user"></i> Full Name</label>
                     <input type="text" id="Name" name="firstame" placeholder="Radhe Krishna">
                     <label for="email"><i class="fa fa-envelope"></i> Mobile</label>
@@ -59,19 +49,19 @@
                     <label for="adr"><i class="fa fa-address-card"></i> Address / Landmark</label>
                     <input type="text" id="Address" name="address" placeholder="542 W. 15th Street">
                     <label for="state"><i class="fa fa-address-card"></i> State</label>
-                    <input type="text" id="State" name="state" placeholder="NY">          
+                    <input type="text" id="State" name="state" placeholder="NY">
                 </div>
                 <div class="col-50">
                     <h3>Payment</h3>
                     <label for="fname"><i class="fa fa-user"></i> Gender Allowance</label>
                     <input type="text" id="Gender" name="Gender" placeholder="NY">
-                         
+
                     <label for="fname"><i class="fa fa-home"></i> Room Floor</label>
                     <input type="text" id="Floor" name="Floor" placeholder="NY">
                     <label for="fname"><i class="fa fa-wallet"></i>
                         Payment Method</label>
                     <input name="Payment" id="Payment">
-                        
+
                     <div class="row checkbox">
                         <div class="col-50">
                             <div class="col-50">
@@ -162,8 +152,8 @@
             </div>
             <div class="input-group">
                 <i class="fas fa-phone"></i>
-                <input type="email" id="email" placeholder="Email" required>
-                <label for="email">Mobile Number</label>
+                <input type="number" id="Number" placeholder="Mobile Number" required>
+                <label for="Number">Mobile Number</label>
             </div>
             <div class="input-group">
                 <i class="fas fa-lock"></i>
@@ -171,7 +161,7 @@
                 <label for="password">Old Password</label>
             </div>
 
-            <button class="btn" id="submitSignIn">Sign In</button>
+            <button class="btn" id="recoverButton">Submit</button>
         </form>
         <p class="or">
             ----------or--------
@@ -185,54 +175,6 @@
             <button id="signUpButton1">Sign Up</button>
         </div>
     </div>
-    <br><br><br><br>
-    <div id="4"></div>
-    <script>
-        load("footer.html");
-        function load(url) {
-            req = new XMLHttpRequest();
-            req.open("GET", url, false);
-            req.send(null);
-            document.getElementById(4).innerHTML = req.responseText;
-        }
-    </script>
-    <script>
-        const signUpButton = document.getElementById('signUpButton');
-        const signInButton = document.getElementById('signInButton');
-        const signUpButton1 = document.getElementById('signUpButton1');
-        const signInButton1 = document.getElementById('signInButton1');
-        const recoverButton = document.getElementById('recoverButton');
-        const signInForm = document.getElementById('signIn');
-        const signUpForm = document.getElementById('signup');
-        const recover = document.getElementById('recover');
-
-        signUpButton.addEventListener('click', function () {
-            signInForm.style.display = "none";
-            recover.style.display = "none";
-            signUpForm.style.display = "block";
-        })
-        signInButton.addEventListener('click', function () {
-            signInForm.style.display = "block";
-            signUpForm.style.display = "none";
-            recover.style.display = "none";
-        })
-
-        signUpButton1.addEventListener('click', function () {
-            signInForm.style.display = "none";
-            recover.style.display = "none";
-            signUpForm.style.display = "block";
-        })
-        signInButton1.addEventListener('click', function () {
-            signInForm.style.display = "block";
-            signUpForm.style.display = "none";
-            recover.style.display = "none";
-        })
-        recoverButton.addEventListener('click', function () {
-            signInForm.style.display = "none";
-            signUpForm.style.display = "none";
-            recover.style.display = "block";
-        })
-    </script>
 </body>
 
 </html>

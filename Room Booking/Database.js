@@ -32,7 +32,7 @@ onAuthStateChanged(auth, (user) => {
     loadUserData(user.uid);
   } else {
     alert("No user is logged in.");
-    window.location.href = "index.html"; // Redirect to login
+    window.location.href = "Dahsboard.html"; // Redirect to login
   }
 });
 
@@ -84,7 +84,7 @@ async function loadUserData(userId) {
 document.getElementById("logout").addEventListener("click", () => {
   signOut(auth)
     .then(() => {
-      
+      alert("Logged out successfully!");
       window.location.href = "index.html"; // Redirect to login page
     })
     .catch((error) => {

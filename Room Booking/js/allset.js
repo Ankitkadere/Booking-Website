@@ -1,6 +1,34 @@
 window.onchange = "SearchLoad()";
 var locate = document.getElementById("locate");
 
+const todays = new Date().toISOString().split("T")[0]; // Get today's date
+document.getElementById("date").value = todays; // Set today's date
+document.getElementById("date").setAttribute("min", todays); // Disable past dates
+
+const today = new Date();
+today.setDate(today.getDate()); // Set to tomorrow (future date)
+const minDate = today.toISOString().split("T")[0]; // Convert to YYYY-MM-DD format
+document.getElementById("date").setAttribute("min", minDate);
+
+const scriptURL =
+  "https://script.google.com/macros/s/AKfycbz3qkCmvrudkA88NdnMXn5ihZLC0dIM1wV9u2XloNnRgl5OoMGiuIsI6_t-08bBxn7yqw/exec";
+const form = document.forms["submit-to-google-sheet"];
+
+if (form) {
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    fetch(scriptURL, { method: "POST", body: new FormData(form) })
+      .then((response) => {
+        document.getElementById("bookinginput").style.display = "none";
+        document.getElementById("orderContainer1").style.display = "block";
+        response;
+      })
+      .catch((error) => console.error("Error!", error.message));
+  });
+} else {
+  console.error("Form not found! Make sure the form exists in your HTML.");
+}
+
 // Define room arrays for different categories
 // Single Room
 var androidRooms = [
@@ -147,7 +175,7 @@ const detailsDuration = document.getElementById("detailsDuration");
 const detailsDistance = document.getElementById("detailsDistance");
 const detailsAddress = document.getElementById("detailsAddress");
 const bookNow = document.getElementById("bookNow");
-
+const idset = document.getElementById("id");
 // Function to load rooms dynamically
 function loadRooms(rooms) {
   rooms.forEach((room) => {
@@ -157,6 +185,7 @@ function loadRooms(rooms) {
     <img src="${room.image}" alt="Room Image">
     <div class="room-details">
       <h3 class="room-title">${room.title}</h3>
+      <p class="room-id">Room ID: <span >${room.id}</span></p>
       <p class="room-subtitle" >${room.subtitle}</p>
       <p class="room-duration"  >${room.duration}</p>
       <p class="room-distance" style="display: none;>${room.distance}</p>
@@ -182,6 +211,7 @@ function displayRoomDetails(room) {
   detailsDuration.textContent = room.duration;
   detailsDistance.textContent = room.distance;
   detailsAddress.textContent = room.address;
+
   bookNow.href = `/book/${room.id}`;
   fullDetails.style.display = "flex";
 
@@ -247,6 +277,7 @@ function applyFilters() {
 function displayRoomDetails(room) {
   detailsImage.src = room.image;
   detailsTitle.textContent = room.title;
+  idset.textContent = room.id;
   detailsSubtitle.textContent = room.subtitle;
   detailsPrice.textContent = room.price;
   detailsDuration.textContent = room.duration;
@@ -255,9 +286,11 @@ function displayRoomDetails(room) {
   bookNow.href = `/book/${room.id}`;
   fullDetails.style.display = "flex";
   locate.scrollIntoView({
-    behavior: "smooth", // Scroll smoothly
-    block: "start", // Align the top of the full details with the top of the viewport
+    behavior: "smooth",
+    block: "start",
   });
+  var well = idset.textContent;
+  document.getElementById("productid").value = well;
 }
 
 // Close full room details

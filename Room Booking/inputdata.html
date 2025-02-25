@@ -150,70 +150,253 @@
       }
 
     }
+
+    #orderContainer1 {
+      display: none;
+      font-family: "Lato", sans-serif;
+      width: 50%;
+      height: 80%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 10px;
+      animation: fadeIn 6s ease-in-out;
+      display: block;
+      background-color: white;
+      margin: 5% auto;
+      /* Ensure it's visible */
+    }
+
+    #del {
+      display: none;
+      /* Hide the element */
+    }
+
+    #orderContainer1 i {
+      color: rgb(0, 26, 139);
+      padding-bottom: 10px;
+      font-size: 3em;
+    }
+
+    #check1 {
+      font-size: 80px;
+      color: rgb(115, 255, 0);
+      animation: bounceIn 8s ease-in-out;
+    }
+
+    #aboutCheck1 h1 {
+      letter-spacing: 1px;
+      word-spacing: 1px;
+      font-size: 28px;
+      margin: 10px 0;
+      font-weight: bold;
+      opacity: 0;
+      animation: slideIn 4.2s forwards 4.5s;
+    }
+
+    #aboutCheck1 p {
+      font-weight: 100;
+      letter-spacing: 1px;
+      font-size: 18px;
+      color: #000;
+      opacity: 0;
+      margin-bottom: 10%;
+      animation: fadeIn 7.5s forwards 4s;
+    }
+
+    #btn {
+      background-color: #163769;
+      color: white;
+      padding: 8px 32px;
+      border: none;
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 17px;
+      letter-spacing: 1px;
+      word-spacing: 1px;
+      font-weight: bold;
+      opacity: 0;
+      animation: slideIn 1.2s forwards 7.5s;
+      transition: background-color 3s ease-in-out;
+    }
+
+    @media (max-width: 700px) {
+      #orderContainer1 i {
+        font-size: 3em;
+        padding-bottom: 30px;
+      }
+
+      #orderContainer1 {
+        height: 100vh;
+        width: 100vw;
+        margin: 0px;
+        overflow: hidden;
+      }
+
+      h1 {
+        font-size: 18px;
+      }
+
+      p {
+
+        font-size: 12px;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes bounceIn {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+
+      40% {
+        transform: scale(1.2);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
   </style>
 </head>
 
 <body oncontextmenu="return false">
 
   <div id="checkoutModal" class="modal">
-    <div class="modal-content">
-      <form>
+
+    <div class="modal-content" id="bookinginput">
+
+      <form name="submit-to-google-sheet">
         <div class="row">
           <div class="col-50">
             <div id="roombook">
               <h2>ROOM BOOKING </h2>
             </div>
             <br>
+            <input type="text" id="productid" name="id" placeholder="1234" readonly>
             <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-            <input type="text" id="fname" name="Firstname" placeholder="Radhe Krishna" required>
+            <input type="text" id="fname" name="Fullname" placeholder="Radhe Krishna" required>
             <label for="number"><i class="fa fa-envelope"></i> Mobile</label>
-            <input type="number" id="number" name="Email" placeholder="+91 1234567890" required>
+            <input type="number" id="number" name="Number" placeholder="+91 1234567890" required>
             <label for="expyear"><i class="fa fa-user"></i> Male</label>
-            <input type="number" id="male" name="Male" placeholder="Male">
+
+            <select id="male" name="Male" placeholder="Number Male">
+              <option value="NO" disabled selected>Number Of Male</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="More Then 5">More Then 5</option>
+            </select>
             <label for="cvv"> <i class="fa fa-user"></i> Female</label>
-            <input type="number" id="female" name="Female" placeholder="Female">
+            <select id="female" name="Female" placeholder="Number Female">
+              <option value="NO" disabled selected>Number Of Female</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="More Then 5">More Then 5</option>
+            </select>
           </div>
           <div class="col-50" id="sec2">
-             <label for="adr"><i class="fa fa-address-card"></i> Address</label>
-            <input type="text" id="adr" name="Address" placeholder="542 W. 15th Street" required>
+            <label for="adr"><i class="fa fa-address-card"></i> City / Village</label>
+            <input type="text" id="adr" name="City" placeholder="542 W. 15th Street" required>
             <label for="state"><i class="fa fa-address-card"></i> State</label>
             <select type="text" id="state" name="State" placeholder="NY" required>
-              <option value="Madhay Predesh">Madhay Predesh</option>
-              <option value="Other">Other</option>
+              <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+              <option value="Andhra Pradesh">Andhra Pradesh</option>
+              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+              <option value="Assam">Assam</option>
+              <option value="Bihar">Bihar</option>
+              <option value="Chandigarh">Chandigarh</option>
+              <option value="Chhattisgarh">Chhattisgarh</option>
+              <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Goa">Goa</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Haryana">Haryana</option>
+              <option value="Himachal Pradesh">Himachal Pradesh</option>
+              <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+              <option value="Jharkhand">Jharkhand</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Kerala">Kerala</option>
+              <option value="Ladakh">Ladakh</option>
+              <option value="Lakshadweep">Lakshadweep</option>
+              <option value="Madhya Pradesh" selected>Madhya Pradesh</option>
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Manipur">Manipur</option>
+              <option value="Meghalaya">Meghalaya</option>
+              <option value="Mizoram">Mizoram</option>
+              <option value="Nagaland">Nagaland</option>
+              <option value="Odisha">Odisha</option>
+              <option value="Puducherry">Puducherry</option>
+              <option value="Punjab">Punjab</option>
+              <option value="Rajasthan">Rajasthan</option>
+              <option value="Sikkim">Sikkim</option>
+              <option value="Tamil Nadu">Tamil Nadu</option>
+              <option value="Telangana">Telangana</option>
+              <option value="Tripura">Tripura</option>
+              <option value="Uttar Pradesh">Uttar Pradesh</option>
+              <option value="Uttarakhand">Uttarakhand</option>
+              <option value="West Bengal">West Bengal</option>              
             </select>
-            <label for="cname">Payment Method</label>
-            <select name="Payment" id="Payment">
+            <label for="Payment"><i class="fa fa-money"></i> Payment Method</label>
+            <select id="Payment" name="Payment">
               <option value="Cash">Cash</option>
-            </select> <label for="fname"><i class="fa fa-date"></i> Date</label>
-            <input type="date" id="fname" name="Date" placeholder="01 - 02 -20025" required>
+              <option value="Onlin">Online</option>
+            </select>
+            <label for="Date"><i class="fa fa-calendar-o"></i> Date</label>
+            <input type="date" id="date" name="Date" placeholder="01 - 02 -20025" min="today" autocomplete="" required>
           </div>
         </div><br>
-        <input onclick="submitadd()" type="submit" value="Continue to checkout" class="btn">
+        <input type="submit" value="Book Your Room" class="btn">
         <input type="button" value="Cancle" class="btn" id="btncan"
           onclick=" document.getElementById('checkoutModal').style.display = 'none';">
       </form>
-
     </div>
+    <div id="orderContainer1">
+      <div id="check1"><i class="fas fa-check-circle"></i></div>
+      <div id="aboutCheck1">
+        <h1> Booked Successfully ! </h1>
+        <p> We Will Book Your Order & details within <strong>24 Hours</strong> . </p>
+      </div><br>
+      <a href="index.html" target="_self" id="btn">Black</a><br>
+    </div><br><br>
   </div>
 
-  <script>
-    function openModal() {
-      document.getElementById('checkoutModal').style.display = 'block';
-    }
-
-    function closeModal() {
-      document.getElementById('checkoutModal').style.display = 'none';
-    }
-
-
-    window.onclick = function (event) {
-      var modal = document.getElementById('checkoutModal');
-      if (event.target == modal) {
-        closeModal();
-      }
-    }
-  </script>
+  <!-- OREDER PLACED -->
 
 </body>
+<script src="js\allset.js"></script>
 
 </html>

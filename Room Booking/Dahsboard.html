@@ -895,7 +895,7 @@
         /* MODAL CONTENT */
         .modal-content {
             background-color: #fff;
-            margin: 3% auto;
+            margin: 4% auto;
             padding: 20px;
             border-radius: 12px;
             max-width: 700px;
@@ -1208,7 +1208,17 @@
 </div>
 <div id="profile" class="modal">
     <div class="modal-content">
-        <form>
+        <div id="2" style="display: none;"></div>
+        <script>
+            load("orderPlaced.html");
+            function load(url) {
+                req = new XMLHttpRequest();
+                req.open("GET", url, false);
+                req.send(null);
+                document.getElementById(2).innerHTML = req.responseText;
+            }
+        </script>
+        <form id="form2">
             <div class="row">
                 <center>
                     <h3>UPDATE PROFILE</h3><br>
@@ -1245,7 +1255,7 @@
                     </select>
                 </div>
             </div><br>
-            <button onclick="submitadd()" type="submit" value="Continue to Update" class="btn">
+            <button onclick="submitupdate()" type="submit" value="Continue to Update" class="btn">
                 <div class="loader"></div>Continue to Update
             </button>
             <input type="button" value="Cancle" class="btn" id="btncan"
@@ -1276,6 +1286,10 @@
     function submitadd() {
         document.getElementById('form1').style.display = "none";
         document.getElementById('1').style.display = 'block';
+    }
+    function submitupdate() {
+        document.getElementById('form2').style.display = "none";
+        document.getElementById('2').style.display = 'block';
     }
     function closeadd() {
         document.getElementById('subadd').style.display = "block";
