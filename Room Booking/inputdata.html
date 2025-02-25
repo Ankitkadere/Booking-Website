@@ -15,14 +15,14 @@
       left: 0;
       top: 0;
       width: 100vw;
-      height: 100%;
+      height: 100vh;
       background-color: rgba(0, 0, 0, 0.4);
-      overflow-x: auto;
+      overflow-y: auto;
     }
 
     .modal-content {
       background-color: #fff;
-      margin: 2% auto;
+      margin: 3% auto;
       padding: 10px;
       border-radius: 8px;
       max-width: 600px;
@@ -130,10 +130,12 @@
       }
 
       .modal-content {
-        margin: auto;
+        position: absolute;
+        margin: 0px auto;
         padding: 5px;
         width: 100%;
-            
+        height: 100vh;
+        overflow-y: auto;
       }
 
       #roombook {
@@ -163,10 +165,11 @@
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
       border-radius: 10px;
-      animation: fadeIn 6s ease-in-out;
+      animation: fadeIn 3s ease-in-out;
       display: block;
       background-color: white;
-      margin: 5% auto;
+      margin: 0% auto;
+      overflow: hidden;
       /* Ensure it's visible */
     }
 
@@ -184,7 +187,7 @@
     #check1 {
       font-size: 80px;
       color: rgb(115, 255, 0);
-      animation: bounceIn 8s ease-in-out;
+      animation: bounceIn 2s ease-in-out;
     }
 
     #aboutCheck1 h1 {
@@ -194,17 +197,17 @@
       margin: 10px 0;
       font-weight: bold;
       opacity: 0;
-      animation: slideIn 4.2s forwards 4.5s;
+      animation: slideIn 3.2s forwards 1.5s;
     }
 
     #aboutCheck1 p {
       font-weight: 100;
       letter-spacing: 1px;
-      font-size: 18px;
+      font-size: 14px;
       color: #000;
       opacity: 0;
       margin-bottom: 10%;
-      animation: fadeIn 7.5s forwards 4s;
+      animation: fadeIn 1.5s forwards 2s;
     }
 
     #btn {
@@ -220,22 +223,23 @@
       word-spacing: 1px;
       font-weight: bold;
       opacity: 0;
-      animation: slideIn 1.2s forwards 7.5s;
+      animation: slideIn 1.2s forwards 3.5s;
       transition: background-color 3s ease-in-out;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 800px) {
       #orderContainer1 i {
         font-size: 3em;
         padding-bottom: 30px;
       }
 
       #orderContainer1 {
+        position: absolute;
         display: none;
         height: 100vh;
-        width: 100vw;
+        width: 100%;
         margin: 0px;
-        overflow: hidden;
+
       }
 
       h1 {
@@ -244,7 +248,7 @@
 
       p {
 
-        font-size: 12px;
+        font-size: 10px;
       }
     }
 
@@ -370,7 +374,7 @@
               <option value="Tripura">Tripura</option>
               <option value="Uttar Pradesh">Uttar Pradesh</option>
               <option value="Uttarakhand">Uttarakhand</option>
-              <option value="West Bengal">West Bengal</option>              
+              <option value="West Bengal">West Bengal</option>
             </select>
             <label for="Payment"><i class="fa fa-money"></i> Payment Method</label>
             <select id="Payment" name="Payment">
