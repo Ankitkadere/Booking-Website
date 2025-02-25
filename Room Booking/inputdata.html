@@ -17,7 +17,7 @@
       width: 100vw;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.4);
-      overflow-y: auto;
+      overflow-x: auto;
     }
 
     .modal-content {
@@ -133,6 +133,7 @@
         margin: auto;
         padding: 5px;
         width: 100%;
+            
       }
 
       #roombook {
@@ -230,6 +231,7 @@
       }
 
       #orderContainer1 {
+        display: none;
         height: 100vh;
         width: 100vw;
         margin: 0px;
@@ -384,7 +386,7 @@
           onclick=" document.getElementById('checkoutModal').style.display = 'none';">
       </form>
     </div>
-    <div id="orderContainer1">
+    <div id="orderContainer1" style="display: none;">
       <div id="check1"><i class="fas fa-check-circle"></i></div>
       <div id="aboutCheck1">
         <h1> Booked Successfully ! </h1>
