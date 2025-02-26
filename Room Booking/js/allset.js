@@ -9,7 +9,7 @@ const today = new Date();
 today.setDate(today.getDate()); // Set to tomorrow (future date)
 const minDate = today.toISOString().split("T")[0]; // Convert to YYYY-MM-DD format
 document.getElementById("date").setAttribute("min", minDate);
-
+ 
 const scriptURL =
   "https://script.google.com/macros/s/AKfycbz3qkCmvrudkA88NdnMXn5ihZLC0dIM1wV9u2XloNnRgl5OoMGiuIsI6_t-08bBxn7yqw/exec";
 const form = document.forms["submit-to-google-sheet"];

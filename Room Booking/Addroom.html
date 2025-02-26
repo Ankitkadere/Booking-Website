@@ -10,6 +10,9 @@
     <script type="module" src="Profile.js"></script>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="js\AddRoom.js"></script>
+    <link rel="stylesheet" href="css\orderPlaced.css">
+    <script type="module" src="Database.js"></script>
 </head>
 <style>
     hr {
@@ -17,7 +20,6 @@
     }
 
     .modal {
-       
         position: fixed;
         z-index: 1000;
         left: 0;
@@ -227,7 +229,6 @@
         }
 
         .modal {
-          
             position: fixed;
             z-index: 1000;
             left: 0;
@@ -268,41 +269,43 @@
 <body>
     <div id="add" class="modal">
         <div class="modal-content">
-            <div id="1" style="display: none;"></div>
-            <script>
-                load("orderPlaced.html");
-                function load(url) {
-                    req = new XMLHttpRequest();
-                    req.open("GET", url, false);
-                    req.send(null);
-                    document.getElementById(1).innerHTML = req.responseText;
-                }
-            </script>
-            <form id="form1">
+            <div id="15" style="display: none;">
+                <div id="orderContainer">
+                    <div id="check"><i class="fas fa-check-circle"></i></div>
+                    <div id="aboutCheck">
+                        <h1> Updated Successfully! </h1>
+                        <p> We've Added Your Room Details Within <strong>24 Hours</strong> . </p>
+                    </div><br>
+                    <a href="Dahsboard.html" target="_self" id="btn">Black</a>
+                </div>
+            </div>
+
+            <form id="form1" name="submit-to-google-sheet">
                 <div class="row">
                     <div class="col-50">
                         <center>
                             <h3>ROOM PUBLISH</h3><br>
                             <hr>
                         </center>
-                        <input type="text" id="id" name="ID" placeholder="" style="display: none;">
-                        <label for="fname"><i class="fa fa-home"></i> Room Type</label>
-                        <select type="text" id="type" name="RoomType" placeholder="Room Type">
+                        <input type="date" id="date" name="Date" placeholder="01/01/2025" style="display: none;">
+                        <input type="text" id="boxid" name="Id" placeholder="" style="display: none;" required>
+                        <label for="fname"><i class="fa fa-home"></i> Room Type *</label>
+                        <select type="text" id="type" name="Roomtype" placeholder="Room Type">
                             <option value="Single Room">Single Room</option>
                             <option value="Double Room">Double Room </option>
                             <option value="Student's Room">Student's Room</option>
                             <option value="Faimily Room">Faimily Room </option>
-                            <option value="Madhay Predesh">Hostle Room</option>
-                            <option value="Other">Couple's Room </option>
+                            <option value="Hostle Room">Hostle Room</option>
+                            <option value="Couple's Room">Couple's Room </option>
                         </select><br>
-                        <label for="fname"><i class="fa fa-user"></i> Gender Allowance</label>
-                        <select type="text" id="Gender" name="Gender" placeholder="NY">
-                            <option value="Other">Both Are Allow</option>
-                            <option value="Madhay Predesh">Only Male</option>
-                            <option value="Other">Only Female</option>
+                        <label for="fname"><i class="fa fa-user"></i> Gender Allowance *</label>
+                        <select type="text" id="Gender" name="Gender">
+                            <option value="Both Are Allow">Both Are Allow</option>
+                            <option value="Male">Only Male</option>
+                            <option value="Female">Only Female</option>
                         </select><br>
-                        <label for="fname"><i class="fa fa-home"></i> Room Floor</label>
-                        <select type="text" id="Floor" name="Floor" placeholder="NY">
+                        <label for="fname"><i class="fa fa-home"></i> Room Floor *</label>
+                        <select type="text" id="Floor" name="Floor">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -311,59 +314,38 @@
                         </select>
                     </div>
                     <div class="col-50 secect2">
-
                         <label for="fname"><i class="fa fa-wallet"></i>
-                            Payment Method</label>
+                            Payment Method *</label>
                         <select name="Payment" id="Payment">
                             <option value="Cash">Cash</option>
+                            <option value="Online">Online</option>
                         </select>
-                        <label for="RoomPrice"><i class="fa fa-envelope"></i> Room Price</label>
-                        <input type="number" id="RoomPrice" name="RoomPrice" placeholder="Ex...10,000 Months">
+                        <label for="RoomPrice"><i class="fa fa-envelope"></i> Room Price *</label>
+                        <input type="number" id="RoomPrice" name="Roomprice" placeholder="Ex...10,000 Months" required>
 
                         <div class="col-50 check">
-                            <input type="checkbox" id="wifi" value="WiFi" name="amenities">
-                            <label for="wifi1">In-WiFi</label>
-                            <input type="checkbox" id="kitchen" value="Kitchen" name="amenities">
-                            <label for="kitchen1">Kitchen</label>
+                            <input type="checkbox" id="wifi" value="WIFI" name="Wifi">
+                            <label for="wifi1">WiFi-In</label>
+                            <input type="checkbox" id="kitchen" value="Kitchen" name="Kitchen">
+                            <label for="kitchen">Kitchen</label>
                         </div>
                         <div class="col-50 check">
-                            <input type="checkbox" id="Ebill" value="WiFi" name="amenities">
-                            <label for="wifi2">Electricity</label>
-                            <input type="checkbox" id="furniture" value="Kitchen" name="amenities">
-                            <label for="kitchen2">Furniture</label>
+                            <input type="checkbox" id="ebill" value="E-Bill" name="Bill">
+                            <label for="Electricity">Electricity</label>
+                            <input type="checkbox" id="furniture" value="Furniture" name="Furniture">
+                            <label for="furniture">Furniture</label>
                         </div>
                     </div>
                 </div><br>
-                <button type="button" value="Continue to add" class="btn">
+                <button type="submit" value="Continue to add" class="btn">
                     <div id="load" class="loader"></div>
                     <div id="subadd" class="nnn">Continue to Add</div>
                 </button>
                 <input type="button" value="Cancle" class="btn" id="btncan"
                     onclick=" document.getElementById('6').style.display = 'none';">
             </form>
-            <script>
-
-                const scriptURL =
-                    "https://script.google.com/macros/s/AKfycbztUUQ0zahqeO6zTRo4vbDkCfi3t9JIzcHl1nLD3BRMsCfb98lKeFEQzooKci7wqqw4/exec";
-                const form = document.forms["submit-to-google-sheet"];
-
-                if (form) {
-                    form.addEventListener("submit", (e) => {
-                        e.preventDefault();
-                        fetch(scriptURL, { method: "POST", body: new FormData(form) })
-                            .then((response) => {
-                                alert("dddddd");
-                                document.getElementById('form1').style.display = "none";
-                                document.getElementById('1').style.display = 'block';
-                                response;
-                            })
-                            .catch((error) => console.error("Error!", error.message));
-                    });
-                } else {
-                    console.error("Form not found! Make sure the form exists in your HTML.");
-                }
-            </script>
         </div>
+
     </div>
 </body>
 

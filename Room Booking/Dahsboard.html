@@ -834,7 +834,7 @@
                             <div class="box box2">
                                 <div style="display: flex;">
                                     <i id="" style="margin-right: 10px;"> </i>
-                                    <i class="uil uil-phone"> <span>Mobile Number </span> </i>
+                                    <i class="uil uil-phone"> <span id="wet">Mobile Number </span> </i>
                                 </div>
                                 <hr>
                                 <h1></h1>
@@ -849,6 +849,11 @@
                                 <hr>
                                 <span class="number" id="loggedUserPayment"><span id="lastName">Loading...</span>
                                 </span>
+                                <script>
+                                    var a = document.getElementById("lastName").value;
+                                    document.getElementById("wet").value = a;
+
+                                </script>
                             </div>
                             <div class="box box2">
                                 <div style="display: flex;">
@@ -877,6 +882,9 @@
             </div>
         </section>
 </body>
+
+
+
 <div id="6" style="display: none;"></div>
 <script>
     load("Addroom.html");
@@ -885,6 +893,10 @@
         req.open("GET", url, false);
         req.send(null);
         document.getElementById(6).innerHTML = req.responseText;
+        let script = document.createElement("script");
+        script.src = "js/AddRoom.js";
+        script.type = "text/javascript";
+        document.body.appendChild(script);
     }
 </script>
 <div id="11" style="display: none;"></div>
@@ -895,6 +907,10 @@
         req.open("GET", url, false);
         req.send(null);
         document.getElementById(11).innerHTML = req.responseText;
+        let script = document.createElement("script");
+        script.src = "js/Updateprofile.js";
+        script.type = "text/javascript";
+        document.body.appendChild(script);
     }
 </script>
 <script>

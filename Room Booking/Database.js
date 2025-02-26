@@ -31,7 +31,6 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
     loadUserData(user.uid);
   } else {
-    
     window.location.href = "Dahsboard.html"; // Redirect to login
   }
 });
@@ -51,6 +50,21 @@ async function loadUserData(userId) {
           element.textContent = value || "N/A";
         }
       };
+
+      onAuthStateChanged(auth, async (user) => {
+        if (user) {
+          const userDocRef = doc(db, "users", user.uid);
+          const userDoc = await getDoc(userDocRef);
+
+          if (userDoc.exists()) {
+            const userData = userDoc.data();
+            var sd = (document.getElementById("wet").value =
+              userData.lastName || "Not Accepted");
+            document.getElementById("boxid").value = sd;
+            document.getElementById("boxida").value = sd;
+          }
+        }
+      });
 
       // First Set of Fields
       setText("email", userData.email);
@@ -84,7 +98,6 @@ async function loadUserData(userId) {
 document.getElementById("logout").addEventListener("click", () => {
   signOut(auth)
     .then(() => {
-      
       window.location.href = "index.html"; // Redirect to login page
     })
     .catch((error) => {

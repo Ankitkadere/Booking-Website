@@ -10,6 +10,9 @@
     <script type="module" src="Profile.js"></script>
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="css\orderPlaced.css">
+    <script type="module" src="Database.js"></script>
+    <script src="js\Updateprofile.js"></script>
 </head>
 <style>
     hr {
@@ -17,7 +20,7 @@
     }
 
     .modal {
-       
+
         position: fixed;
         z-index: 1000;
         left: 0;
@@ -236,7 +239,7 @@
             background-color: rgb(255, 255, 255);
             overflow-y: auto;
         }
-        
+
         /* MODAL CONTENT */
         .modal-content {
             overflow-y: auto;
@@ -246,7 +249,6 @@
             border-radius: 12px;
             width: 100%;
             position: relative;
-           
             animation: fadeIn 0.5s ease-out;
         }
 
@@ -267,67 +269,67 @@
 </style>
 
 <body>
-    
-<div id="profile" class="modal">
-    <div class="modal-content">
-        <div id="2" style="display: none;"></div>
-        <script>
-            load("orderPlaced.html");
-            function load(url) {
-                req = new XMLHttpRequest();
-                req.open("GET", url, false);
-                req.send(null);
-                document.getElementById(2).innerHTML = req.responseText;
-            }
-        </script>
-        <form id="form2">
-            <div class="row">
-                <center>
-                    <h3>UPDATE PROFILE</h3><br>
-                    <hr>
-                </center>
-                <div class="col-50">
-                    <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                    <input type="email" id="RoomPrice" name="RoomPrice" placeholder="abc@gmail.com" required>
-                    <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-                    <input type="text" id="Name" name="firstame" placeholder="Radhe Krishna" required>
-                    <label for="email"><i class="fa fa-envelope"></i> Mobile</label>
-                    <input type="number" id="Number" name="number" placeholder="+91 1234567890" required>
-                    <label for="fname"><i class="fa fa-user"></i> Gender</label>
-                    <select type="text" id="Gender" name="Gender" placeholder="NY" required>
-                        <option value="Madhay Predesh">Male</option>
-                        <option value="Other">Female</option>
-                    </select>
 
+    <div id="profile" class="modal">
+        <div class="modal-content">
+            <div id="16" style="display: none;">
+                <div id="orderContainer">
+                    <div id="check"><i class="fas fa-check-circle"></i></div>
+                    <div id="aboutCheck">
+                        <h1> Updated Successfully! </h1>
+                        <p> We've Added Your Profile Details Within <strong>24 Hours</strong> . </p>
+                    </div><br>
+                    <a href="Dahsboard.html" target="_self" id="btn">Black</a>
                 </div>
-                <div class="col-50">
-                    <label for="adr"><i class="fa fa-address-card"></i> Address / Landmark</label>
-                    <input type="text" id="Address" name="address" placeholder="542 W. 15th Street">
-                    <label for="fname"><i class="fa fa-home"></i> Pin Code</label>
-                    <input type="number" id="Pin" name="Pincode" placeholder="483119">
-                    <label for="state"><i class="fa fa-address-card"></i> District</label>
-                    <select type="text" id="District" name="District" placeholder="Jabalpur" required>
-                        <option value="Madhay Predesh">Jabalpur</option>
-                        <option value="Other">Other</option>
-                    </select>
-                    <label for="fname"><i class="fa fa-wallet"></i>
-                        Payment Method</label>
-                    <select name="Payment" id="Payment">
-                          <option value="Online & Cash">Online & Cash</option>
-                        <option value="Cash">Cash</option>
-                          <option value="Online">Online</option>
-                    </select>
-                </div>
-            </div><br>
-            <button onclick="submitupdate()" type="submit" value="Continue to Update" class="btn">
-                <div class="loader"></div>Continue to Update
-            </button>
-            <input type="button" value="Cancle" class="btn" id="btncan"
-                onclick=" document.getElementById('11').style.display = 'none';"> <br><br>
-        </form>
+            </div>
+            <form id="form2">
+                <div class="row">
+                    <center>
+                        <h3>UPDATE PROFILE</h3>
+                        <hr>
+                    </center>
+                    <div class="col-50">
+                       
+                        <input type="number" id="boxida" name="Id" placeholder="+91 1234567890" required readonly>
+                        <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                        <input type="email" id="RoomPrice" name="RoomPrice" placeholder="abc@gmail.com" required>
+                        <label for="fname"><i class="fa fa-user"></i> Full Name</label>
+                        <input type="text" id="Name" name="firstame" placeholder="Radhe Krishna" required>
+                        <label for="email"><i class="fa fa-envelope"></i> Mobile</label>
+                        <input type="number" id="Number" name="number" placeholder="+91 1234567890" required>
+                        <label for="fname"><i class="fa fa-user"></i> Gender</label>
+                        <select type="text" id="Gender" name="Gender" placeholder="NY" required>
+                            <option value="Madhay Predesh">Male</option>
+                            <option value="Other">Female</option>
+                        </select>
+
+                    </div>
+                    <div class="col-50">
+                        <label for="adr"><i class="fa fa-address-card"></i> Address / Landmark</label>
+                        <input type="text" id="Address" name="address" placeholder="542 W. 15th Street">
+                        <label for="fname"><i class="fa fa-home"></i> Room Floor</label>
+                        <input type="number" id="Pin" name="Pincode" placeholder="483119">
+                        <label for="state"><i class="fa fa-address-card"></i> District</label>
+                        <select type="text" id="District" name="District" placeholder="Jabalpur" required>
+                            <option value="Madhay Predesh">Jabalpur</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <label for="fname"><i class="fa fa-wallet"></i>
+                            Payment Method</label>
+                        <select name="Payment" id="Payment">
+                            <option value="Cash">Cash</option>
+                        </select>
+                    </div>
+                </div><br>
+                <button onclick="submitupdate()" type="submit" value="Continue to Update" class="btn">
+                    <div class="loader"></div>Continue to Update
+                </button>
+                <input type="button" value="Cancle" class="btn" id="btncan"
+                    onclick=" document.getElementById('11').style.display = 'none';"> <br><br>
+            </form>
             <br><br>
+        </div>
     </div>
-</div>
 </body>
 
 </html>

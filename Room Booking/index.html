@@ -4,7 +4,41 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MY ROOM BOOKING</title>
+
+    <!-- Basic SEO -->
+    <meta name="author" content="MY ROOM">
+    <meta name="description"
+        content="MY ROOM is India's leading room-finding and booking platform. Easily search, compare, and book rooms at the best prices. Your hassle-free stay starts here!">
+    <meta name="keywords"
+        content="room booking India, find a room, rent a room, hotel booking India, PG rental, online room reservation, budget stay, accommodation, hostel booking, MY ROOM">
+    <meta name="robots" content="index, follow">
+    <meta name="geo.region" content="IN" />
+    <meta name="geo.placename" content="India" />
+    <meta name="geo.position" content="20.5937;78.9629" />
+    <meta name="ICBM" content="20.5937, 78.9629" />
+
+    <!-- Open Graph (Facebook, WhatsApp) -->
+    <meta property="og:title" content="MY ROOM - India's Best Room Booking Platform">
+    <meta property="og:description"
+        content="Looking for rooms in India? MY ROOM lets you find and book affordable rooms, PGs, and hotels at the best prices.">
+    <meta property="og:image" content="img/fav.jpeg">
+    <meta property="og:url" content="https://www.myroom.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MY ROOM - Find & Book Rooms Across India">
+    <meta name="twitter:description"
+        content="Find affordable room rentals, PGs, and hostels in India with MY ROOM. Book hassle-free today!">
+    <meta name="twitter:image" content="https://www.myroom.com/assets/room-booking.jpg">
+    <meta name="twitter:site" content="@MyRoomIndia">
+    <!-- Additional SEO Enhancements -->
+    <meta name="google-site-verification" content="your-google-site-verification-code" />
+    <meta name="bing-site-verification" content="your-bing-site-verification-code" />
+    <link rel="canonical" href="https://www.myroom.com">
+    <link rel="alternate" hreflang="en-IN" href="https://www.myroom.com" />
+    <link rel="alternate" hreflang="hi-IN" href="https://www.myroom.com/hi" />
+    <title>MY ROOM - Best Room Booking Website in India | PG & Hotel Rentals</title>
     <!-- favicon -->
     <link rel="icon" href="img\fav.jpeg" type="image/jpeg" />
     <!-- header links -->
@@ -15,9 +49,7 @@
     <script src="js/jQuery3.4.1.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
-    <link rel="stylesheet" href="css\filter.css" />
-    <link rel="stylesheet" href="css/search-input.css">
-
+    
     <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
@@ -82,6 +114,7 @@
             req.open("GET", url, false);
             req.send(null);
             document.getElementById(2).innerHTML = req.responseText;
+            
         }
     </script>
 
