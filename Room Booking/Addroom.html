@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dahsboard</title>
+    <link rel="icon" href="img\fav.jpeg" type="image/jpeg" />
+    <link rel="stylesheet" href="Form.css">
+    <script type="module" src="Profile.js"></script>
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<style>
+    hr {
+        margin-bottom: 2%;
+    }
+
+    .modal {
+       
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(5px);
+        overflow-y: auto;
+    }
+
+    /* MODAL CONTENT */
+    .modal-content {
+        background-color: #fff;
+        margin: 4% auto;
+        padding: 20px;
+        border-radius: 12px;
+        max-width: 700px;
+        width: 90%;
+        position: relative;
+        box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.3);
+        animation: fadeIn 0.5s ease-out;
+    }
+
+    /* FADE-IN ANIMATION */
+    @keyframes fadeIn {
+        from {
+            transform: scale(0.5);
+            opacity: 0;
+        }
+
+        to {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    /* CLOSE BUTTON */
+    .close-btn {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        font-size: 24px;
+        cursor: pointer;
+        color: #888;
+        font-weight: bold;
+        transition: color 0.3s ease-in-out;
+    }
+
+    .close-btn:hover {
+        color: #000;
+    }
+
+    /* ======================= */
+    /* FORM & INPUT STYLES */
+    /* ======================= */
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+    }
+
+    .col-50 {
+        flex: 50%;
+        padding: 5px;
+    }
+
+    input,
+    button,
+    select {
+        width: 100%;
+        padding: 12px;
+        gap: 10%;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        outline: none;
+        margin: 1% 0px;
+        font-size: 14px;
+        transition: border-color 0.3s ease-in-out;
+    }
+
+    input:focus,
+    select:focus {
+        border-color: #163769;
+        outline: none;
+    }
+
+
+    .btn {
+        background-color: #163769;
+        color: white;
+        width: 100%;
+        padding: 12px;
+        margin: 0.5% 0px;
+        border: none;
+        border-radius: 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    .btn:hover {
+        background-color: #45a049;
+    }
+
+    #btncan {
+        background-color: #d9534f;
+    }
+
+    #btncan:hover {
+        background-color: #ad1400;
+    }
+
+    center {
+        width: 200%;
+    }
+
+    .check {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 10px;
+        justify-content: space-between;
+    }
+
+    /* Circular Checkbox */
+    .col-50 input[type="checkbox"] {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 12px;
+        height: 12px;
+        border: 1px solid #00106d;
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+        background-color: #fff;
+        transition: all 0.3s ease-in-out;
+    }
+
+    /* Checkbox checked state */
+    .col-50 input[type="checkbox"]:checked {
+        background-color: #002472;
+    }
+
+    .col-50 input[type="checkbox"]::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        background-color: white;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .col-50 input[type="checkbox"]:checked::before {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    /* Checkbox Labels */
+    .col-50 label {
+        font-size: 16px;
+        color: #333;
+        cursor: pointer;
+        margin-left: 5px;
+        font-weight: 500;
+    }
+
+    /* Align checkboxes with labels */
+    .col-50 input[type="checkbox"]+label {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .secect2 {
+        margin-top: 10.5%;
+    }
+
+    .loader {
+        display: none;
+        margin: auto;
+        width: 30px;
+        aspect-ratio: 1;
+        padding: 8px;
+        border-radius: 50%;
+        background: #ffffff;
+        --_m: conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+        -webkit-mask: var(--_m);
+        mask: var(--_m);
+        -webkit-mask-composite: source-out;
+        mask-composite: subtract;
+        animation: l3 1s infinite linear;
+    }
+
+    @keyframes l3 {
+        to {
+            transform: rotate(1turn)
+        }
+    }
+
+    @media (max-width: 768px) {
+        .row {
+            flex-direction: column;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgb(255, 255, 255);
+            overflow-y: auto;
+        }
+
+        /* MODAL CONTENT */
+        .modal-content {
+            background-color: #fff;
+            margin: 0px auto;
+            padding: 20px;
+            border-radius: 12px;
+            width: 100%;
+            position: relative;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .col-50 label {
+
+            font-size: 16px;
+        }
+
+        center {
+            width: 100%;
+        }
+
+        .secect2 {
+            margin-top: 0%;
+        }
+
+    }
+</style>
+
+<body>
+    <div id="add" class="modal">
+        <div class="modal-content">
+            <div id="1" style="display: none;"></div>
+            <script>
+                load("orderPlaced.html");
+                function load(url) {
+                    req = new XMLHttpRequest();
+                    req.open("GET", url, false);
+                    req.send(null);
+                    document.getElementById(1).innerHTML = req.responseText;
+                }
+            </script>
+            <form id="form1">
+                <div class="row">
+                    <div class="col-50">
+                        <center>
+                            <h3>ROOM PUBLISH</h3><br>
+                            <hr>
+                        </center>
+                        <input type="text" id="id" name="ID" placeholder="" style="display: none;">
+                        <label for="fname"><i class="fa fa-home"></i> Room Type</label>
+                        <select type="text" id="type" name="RoomType" placeholder="Room Type">
+                            <option value="Single Room">Single Room</option>
+                            <option value="Double Room">Double Room </option>
+                            <option value="Student's Room">Student's Room</option>
+                            <option value="Faimily Room">Faimily Room </option>
+                            <option value="Madhay Predesh">Hostle Room</option>
+                            <option value="Other">Couple's Room </option>
+                        </select><br>
+                        <label for="fname"><i class="fa fa-user"></i> Gender Allowance</label>
+                        <select type="text" id="Gender" name="Gender" placeholder="NY">
+                            <option value="Other">Both Are Allow</option>
+                            <option value="Madhay Predesh">Only Male</option>
+                            <option value="Other">Only Female</option>
+                        </select><br>
+                        <label for="fname"><i class="fa fa-home"></i> Room Floor</label>
+                        <select type="text" id="Floor" name="Floor" placeholder="NY">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="Above 4">Above 4</option>
+                        </select>
+                    </div>
+                    <div class="col-50 secect2">
+
+                        <label for="fname"><i class="fa fa-wallet"></i>
+                            Payment Method</label>
+                        <select name="Payment" id="Payment">
+                            <option value="Cash">Cash</option>
+                        </select>
+                        <label for="RoomPrice"><i class="fa fa-envelope"></i> Room Price</label>
+                        <input type="number" id="RoomPrice" name="RoomPrice" placeholder="Ex...10,000 Months">
+
+                        <div class="col-50 check">
+                            <input type="checkbox" id="wifi" value="WiFi" name="amenities">
+                            <label for="wifi1">In-WiFi</label>
+                            <input type="checkbox" id="kitchen" value="Kitchen" name="amenities">
+                            <label for="kitchen1">Kitchen</label>
+                        </div>
+                        <div class="col-50 check">
+                            <input type="checkbox" id="Ebill" value="WiFi" name="amenities">
+                            <label for="wifi2">Electricity</label>
+                            <input type="checkbox" id="furniture" value="Kitchen" name="amenities">
+                            <label for="kitchen2">Furniture</label>
+                        </div>
+                    </div>
+                </div><br>
+                <button type="button" value="Continue to add" class="btn">
+                    <div id="load" class="loader"></div>
+                    <div id="subadd" class="nnn">Continue to Add</div>
+                </button>
+                <input type="button" value="Cancle" class="btn" id="btncan"
+                    onclick=" document.getElementById('add').style.display = 'none';">
+            </form>
+            <script>
+
+                const scriptURL =
+                    "https://script.google.com/macros/s/AKfycbztUUQ0zahqeO6zTRo4vbDkCfi3t9JIzcHl1nLD3BRMsCfb98lKeFEQzooKci7wqqw4/exec";
+                const form = document.forms["submit-to-google-sheet"];
+
+                if (form) {
+                    form.addEventListener("submit", (e) => {
+                        e.preventDefault();
+                        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+                            .then((response) => {
+                                alert("dddddd");
+                                document.getElementById('form1').style.display = "none";
+                                document.getElementById('1').style.display = 'block';
+                                response;
+                            })
+                            .catch((error) => console.error("Error!", error.message));
+                    });
+                } else {
+                    console.error("Form not found! Make sure the form exists in your HTML.");
+                }
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>
