@@ -592,11 +592,13 @@
                     <li><a href="#" id="sec1">
                             <i class="uil uil-estate"></i>
                             <span class="link-name">Dahsboard</span>
-                        </a></li>
-                    <li><a href="#" id="sec2">
+                        </a>
+                        <a href="#" id="sec2">
                             <i class="uil uil-user"></i>
                             <span class="link-name">Profile</span>
-                        </a></li>
+                        </a>
+                    </li>
+                    <li></li>
                     <li><a href="#" style="display: none;">
                             <i class="uil uil-chart"></i>
                             <span class="link-name">Analytics</span>
@@ -634,243 +636,246 @@
                 </ul>
             </div>
         </nav>
-        <section id="page1" class="dashboard">
-            <div class="top">
-                <i class="uil uil-bars sidebar-toggle"></i>
-                <div class="search-box">
-                    <i class="uil uil-search"></i>
-                    <input type="text" placeholder="Search here...">
-                </div>
-            </div><br><br>
-            <div class="dash-content">
-                <div class="overview">
-                    <div class="title">
-                        <i class="uil uil-tachometer-fast-alt"></i>
-                        <span class="text">Dashboard</span>
+        <section class="dashboard">
+            <div id="page1">
+                <div class="top">
+                    <i class="uil uil-bars sidebar-toggle"></i>
+                    <div class="search-box">
+                        <i class="uil uil-search"></i>
+                        <input type="text" placeholder="Search here...">
                     </div>
-                    <div class="boxes">
-                        <div class="box box1" onclick=" document.getElementById('6').style.display = 'block'">
-                            <i class="uil uil-home"></i>
-                            <span class="text"> </span>
-                            <span class="number">Add Your Room</span>
+                </div><br><br>
+                <div class="dash-content">
+                    <div class="overview">
+                        <div class="title">
+                            <i class="uil uil-tachometer-fast-alt"></i>
+                            <span class="text">Dashboard</span>
                         </div>
-                        <div class="box box2">
-                            <div style="display: flex;">
-                                <i id="iset1" style="margin-right: 10px;">1 </i>
-                                <i class="uil uil-home"> <span id="phone">Loading...</span> </i>
+                        <div class="boxes">
+                            <div class="box box1" onclick=" document.getElementById('6').style.display = 'block'">
+                                <i class="uil uil-home"></i>
+                                <span class="text"> </span>
+                                <span class="number">Add Your Room</span>
                             </div>
-                            <hr>
-                            <h1></h1>
-                            <div class="detail">
-                                <p><strong>Name:</strong> <span id="loggedUserName"></span></p>
-                                <p><strong>Mobile:</strong> <span id="loggedUserNumber"></span></p>
+                            <div class="box box2">
+                                <div style="display: flex;">
+                                    <i id="iset1" style="margin-right: 10px;">1 </i>
+                                    <i class="uil uil-home"> <span id="phone">Loading...</span> </i>
+                                </div>
+                                <hr>
+                                <h1></h1>
+                                <div class="detail">
+                                    <p><strong>Name:</strong> <span id="loggedUserName"></span></p>
+                                    <p><strong>Mobile:</strong> <span id="loggedUserNumber"></span></p>
+                                </div>
+                                <div class="detail">
+                                    <p><strong>Address:</strong> <span id="loggedUserAddress"></span></p>
+                                    <p><strong>State:</strong> <span id="loggedUserstate"></span></p>
+                                </div>
+                                <div class="detail">
+                                    <p><strong>Gender:</strong> <span id="loggedUserGender"></span></p>
+                                    <p><strong> Floor:</strong> <span id="loggedUserFloor"></span></p>
+                                </div>
+                                <div class="detail">
+                                    <p><strong>Bill :</strong> <span id="id"></span> </p>
+                                    <p><strong>Shereable</strong> <span class="text"> </span></p>
+                                </div>
+                                <hr>
+                                <span class="number" id="loggedUserPayment"><span id="address">Loading...</span> Rs
+                                    Month</span>
+                                <script>     document.getElementById("id").innerHTML = userData.email;</script>
                             </div>
-                            <div class="detail">
-                                <p><strong>Address:</strong> <span id="loggedUserAddress"></span></p>
-                                <p><strong>State:</strong> <span id="loggedUserstate"></span></p>
+                            <div class="box box3">
+                                <div style="display: flex;">
+                                    <i id="iset2" style="margin-right: 10px;">2 </i>
+                                    <i class="uil uil-home"> <span id="state">Loading...</span> </i>
+                                </div>
+                                <hr>
+                                <h1></h1>
+                                <div class="detail">
+                                    <p><strong>Name:</strong> <span id="loggedUserName"></span></p>
+                                    <p><strong>Mobile:</strong> <span id="loggedUserNumber"></span></p>
+                                </div>
+                                <div class="detail">
+                                    <p><strong>Address:</strong> <span id="loggedUserAddress"></span></p>
+                                    <p><strong>State:</strong> <span id="loggedUserstate"></span></p>
+                                </div>
+                                <div class="detail">
+                                    <p><strong>Gender:</strong> <span id="loggedUserGender"></span></p>
+                                    <p><strong> Floor:</strong> <span id="loggedUserFloor"></span></p>
+                                </div>
+                                <div class="detail">
+                                    <p><strong>Bill :</strong> <span id="id"></span> </p>
+                                    <p><strong>Shereable</strong> <span class="text"> </span></p>
+                                </div>
+                                <hr>
+                                <span class="number" id="loggedUserPayment"><span id="gender">Loading...</span> Rs
+                                    Month</span>
+                                <script>     document.getElementById("id").innerHTML = userData.email;</script>
                             </div>
-                            <div class="detail">
-                                <p><strong>Gender:</strong> <span id="loggedUserGender"></span></p>
-                                <p><strong> Floor:</strong> <span id="loggedUserFloor"></span></p>
+                            <div class="box box2">
+                                <div style="display: flex;">
+                                    <i id="iset3" style="margin-right: 10px;">3 </i>
+                                    <i class="uil uil-home"> <span id="roomType">Loading...</span> </i>
+                                </div>
+                                <hr>
+                                <h1></h1>
+                                <div class="detail">
+                                    <p><strong>Name:</strong> <span id="loggedUserName"></span></p>
+                                    <p><strong>Mobile:</strong> <span id="loggedUserNumber"></span></p>
+                                </div>
+                                <div class="detail">
+                                    <p><strong>Address:</strong> <span id="loggedUserAddress"></span></p>
+                                    <p><strong>State:</strong> <span id="loggedUserstate"></span></p>
+                                </div>
+                                <div class="detail">
+                                    <p><strong>Gender:</strong> <span id="loggedUserGender"></span></p>
+                                    <p><strong> Floor:</strong> <span id="loggedUserFloor"></span></p>
+                                </div>
+                                <div class="detail">
+                                    <p><strong>Bill :</strong> <span id="id"></span> </p>
+                                    <p><strong>Shereable</strong> <span class="text"> </span></p>
+                                </div>
+                                <hr>
+                                <span class="number" id="loggedUserPayment"> <span id="floor">Loading...</span> Rs
+                                    Month</span>
+                                <script>     document.getElementById("id").innerHTML = userData.email;</script>
                             </div>
-                            <div class="detail">
-                                <p><strong>Bill :</strong> <span id="id"></span> </p>
-                                <p><strong>Shereable</strong> <span class="text"> </span></p>
+                            <div class="box box3">
+                                <div style="display: flex;">
+                                    <i id="iset4" style="margin-right: 10px;">4 </i>
+                                    <i class="uil uil-home"><span id="paymentMethod">Loading...</span> </i>
+                                </div>
+                                <hr>
+                                <h1></h1>
+                                <div class="detail">
+                                    <p><strong>Name:</strong> <span id="loggedUserName"></span></p>
+                                    <p><strong>Mobile:</strong> <span id="loggedUserNumber"></span></p>
+                                </div>
+                                <div class="detail">
+                                    <p><strong>Address:</strong> <span id="loggedUserAddress"></span></p>
+                                    <p><strong>State:</strong> <span id="loggedUserstate"></span></p>
+                                </div>
+                                <div class="detail">
+                                    <p><strong>Gender:</strong> <span id="loggedUserGender"></span></p>
+                                    <p><strong> Floor:</strong> <span id="loggedUserFloor"></span></p>
+                                </div>
+                                <div class="detail">
+                                    <p><strong>Bill :</strong> <span id="id"></span> </p>
+                                    <p><strong>Shereable</strong> <span class="text"> </span></p>
+                                </div>
+                                <hr>
+                                <span class="number" id="loggedUserPayment"> <span id="roomPrice">Loading...</span> Rs
+                                    Month</span>
+                                <script>     document.getElementById("id").innerHTML = userData.email;</script>
                             </div>
-                            <hr>
-                            <span class="number" id="loggedUserPayment"><span id="address">Loading...</span> Rs
-                                Month</span>
-                            <script>     document.getElementById("id").innerHTML = userData.email;</script>
+                            <script type="module" src="Database.js"></script>
                         </div>
-                        <div class="box box3">
-                            <div style="display: flex;">
-                                <i id="iset2" style="margin-right: 10px;">2 </i>
-                                <i class="uil uil-home"> <span id="state">Loading...</span> </i>
-                            </div>
-                            <hr>
-                            <h1></h1>
-                            <div class="detail">
-                                <p><strong>Name:</strong> <span id="loggedUserName"></span></p>
-                                <p><strong>Mobile:</strong> <span id="loggedUserNumber"></span></p>
-                            </div>
-                            <div class="detail">
-                                <p><strong>Address:</strong> <span id="loggedUserAddress"></span></p>
-                                <p><strong>State:</strong> <span id="loggedUserstate"></span></p>
-                            </div>
-                            <div class="detail">
-                                <p><strong>Gender:</strong> <span id="loggedUserGender"></span></p>
-                                <p><strong> Floor:</strong> <span id="loggedUserFloor"></span></p>
-                            </div>
-                            <div class="detail">
-                                <p><strong>Bill :</strong> <span id="id"></span> </p>
-                                <p><strong>Shereable</strong> <span class="text"> </span></p>
-                            </div>
-                            <hr>
-                            <span class="number" id="loggedUserPayment"><span id="gender">Loading...</span> Rs
-                                Month</span>
-                            <script>     document.getElementById("id").innerHTML = userData.email;</script>
+                    </div>
+                </div>
+            </div>
+            <div id="page2" style="display: none;">
+                <div class="top">
+                    <i class="uil uil-bars sidebar-toggle"></i>
+                    <div class="search-box">
+                        <i class="uil uil-search"></i>
+                        <input type="text" placeholder="Search here...">
+                    </div>
+                </div><br><br>
+                <div class="dash-content">
+                    <div class="overview">
+                        <div class="title">
+                            <i class="uil uil-tachometer-fast-alt"></i>
+                            <span class="text">Profile</span>
                         </div>
-                        <div class="box box2">
-                            <div style="display: flex;">
-                                <i id="iset3" style="margin-right: 10px;">3 </i>
-                                <i class="uil uil-home"> <span id="roomType">Loading...</span> </i>
+                        <div class="boxes">
+                            <div class="box box1" onclick=" document.getElementById('11').style.display = 'block'">
+                                <i class="uil uil-home"></i>
+                                <span class="text"> </span>
+                                <span class="number"> Update Profile</span>
                             </div>
-                            <hr>
-                            <h1></h1>
-                            <div class="detail">
-                                <p><strong>Name:</strong> <span id="loggedUserName"></span></p>
-                                <p><strong>Mobile:</strong> <span id="loggedUserNumber"></span></p>
+                            <div class="box box2">
+                                <div style="display: flex;">
+                                    <i id="" style="margin-right: 10px;"> </i>
+                                    <i class="uil uil-user"> <span>Full Name </span> </i>
+                                </div>
+                                <hr>
+                                <h1></h1>
+                                <div class="detail">
+                                </div>
+                                <div class="detail">
+                                </div>
+                                <div class="detail">
+                                </div>
+                                <div class="detail">
+                                </div>
+                                <hr>
+                                <span class="number" id="loggedUserPayment"> <span id="firstName">Loading...</span>
+                                </span>
                             </div>
-                            <div class="detail">
-                                <p><strong>Address:</strong> <span id="loggedUserAddress"></span></p>
-                                <p><strong>State:</strong> <span id="loggedUserstate"></span></p>
+                            <div class="box box2">
+                                <div style="display: flex;">
+                                    <i id="" style="margin-right: 10px;"> </i>
+                                    <i class="uil uil-envelope"> <span>Email </span> </i>
+                                </div>
+                                <hr>
+                                <h1></h1>
+                                <div class="detail">
+                                </div>
+                                <div class="detail">
+                                </div>
+                                <div class="detail">
+                                </div>
+                                <div class="detail">
+                                </div>
+                                <hr>
+                                <span class="number" id="loggedUserPayment"> <span id="email">Loading...</span> </span>
                             </div>
-                            <div class="detail">
-                                <p><strong>Gender:</strong> <span id="loggedUserGender"></span></p>
-                                <p><strong> Floor:</strong> <span id="loggedUserFloor"></span></p>
+                            <div class="box box2">
+                                <div style="display: flex;">
+                                    <i id="" style="margin-right: 10px;"> </i>
+                                    <i class="uil uil-phone"> <span>Mobile Number </span> </i>
+                                </div>
+                                <hr>
+                                <h1></h1>
+                                <div class="detail">
+                                </div>
+                                <div class="detail">
+                                </div>
+                                <div class="detail">
+                                </div>
+                                <div class="detail">
+                                </div>
+                                <hr>
+                                <span class="number" id="loggedUserPayment"><span id="lastName">Loading...</span>
+                                </span>
                             </div>
-                            <div class="detail">
-                                <p><strong>Bill :</strong> <span id="id"></span> </p>
-                                <p><strong>Shereable</strong> <span class="text"> </span></p>
+                            <div class="box box2">
+                                <div style="display: flex;">
+                                    <i id="" style="margin-right: 10px;"> </i>
+                                    <i class="uil uil-location-point"> <span>Full Address </span> </i>
+                                </div>
+                                <hr>
+                                <h1></h1>
+                                <div class="detail">
+                                </div>
+                                <div class="detail">
+                                </div>
+                                <div class="detail">
+                                </div>
+                                <div class="detail">
+                                </div>
+                                <hr>
+                                <span class="number"> <span id="userID">Loading...</span> </span>
                             </div>
-                            <hr>
-                            <span class="number" id="loggedUserPayment"> <span id="floor">Loading...</span> Rs
-                                Month</span>
-                            <script>     document.getElementById("id").innerHTML = userData.email;</script>
+
+                            <script type="module" src="Database.js"></script> <!-- JavaScript File to Fetch Data -->
+
                         </div>
-                        <div class="box box3">
-                            <div style="display: flex;">
-                                <i id="iset4" style="margin-right: 10px;">4 </i>
-                                <i class="uil uil-home"><span id="paymentMethod">Loading...</span> </i>
-                            </div>
-                            <hr>
-                            <h1></h1>
-                            <div class="detail">
-                                <p><strong>Name:</strong> <span id="loggedUserName"></span></p>
-                                <p><strong>Mobile:</strong> <span id="loggedUserNumber"></span></p>
-                            </div>
-                            <div class="detail">
-                                <p><strong>Address:</strong> <span id="loggedUserAddress"></span></p>
-                                <p><strong>State:</strong> <span id="loggedUserstate"></span></p>
-                            </div>
-                            <div class="detail">
-                                <p><strong>Gender:</strong> <span id="loggedUserGender"></span></p>
-                                <p><strong> Floor:</strong> <span id="loggedUserFloor"></span></p>
-                            </div>
-                            <div class="detail">
-                                <p><strong>Bill :</strong> <span id="id"></span> </p>
-                                <p><strong>Shereable</strong> <span class="text"> </span></p>
-                            </div>
-                            <hr>
-                            <span class="number" id="loggedUserPayment"> <span id="roomPrice">Loading...</span> Rs
-                                Month</span>
-                            <script>     document.getElementById("id").innerHTML = userData.email;</script>
-                        </div>
-                        <script type="module" src="Database.js"></script>
                     </div>
                 </div>
             </div>
         </section>
-        <section id="page2" style="display: none;" class="dashboard">
-            <div class="top">
-                <i class="uil uil-bars sidebar-toggle"></i>
-                <div class="search-box">
-                    <i class="uil uil-search"></i>
-                    <input type="text" placeholder="Search here...">
-                </div>
-            </div><br><br>
-            <div class="dash-content">
-                <div class="overview">
-                    <div class="title">
-                        <i class="uil uil-tachometer-fast-alt"></i>
-                        <span class="text">Profile</span>
-                    </div>
-                    <div class="boxes">
-                        <div class="box box1" onclick=" document.getElementById('11').style.display = 'block'">
-                            <i class="uil uil-home"></i>
-                            <span class="text"> </span>
-                            <span class="number"> Update Profile</span>
-                        </div>
-                        <div class="box box2">
-                            <div style="display: flex;">
-                                <i id="" style="margin-right: 10px;"> </i>
-                                <i class="uil uil-user"> <span>Full Name </span> </i>
-                            </div>
-                            <hr>
-                            <h1></h1>
-                            <div class="detail">
-                            </div>
-                            <div class="detail">
-                            </div>
-                            <div class="detail">
-                            </div>
-                            <div class="detail">
-                            </div>
-                            <hr>
-                            <span class="number" id="loggedUserPayment"> <span id="firstName">Loading...</span> </span>
-                        </div>
-                        <div class="box box2">
-                            <div style="display: flex;">
-                                <i id="" style="margin-right: 10px;"> </i>
-                                <i class="uil uil-envelope"> <span>Email </span> </i>
-                            </div>
-                            <hr>
-                            <h1></h1>
-                            <div class="detail">
-                            </div>
-                            <div class="detail">
-                            </div>
-                            <div class="detail">
-                            </div>
-                            <div class="detail">
-                            </div>
-                            <hr>
-                            <span class="number" id="loggedUserPayment"> <span id="email">Loading...</span> </span>
-                        </div>
-                        <div class="box box2">
-                            <div style="display: flex;">
-                                <i id="" style="margin-right: 10px;"> </i>
-                                <i class="uil uil-phone"> <span>Mobile Number </span> </i>
-                            </div>
-                            <hr>
-                            <h1></h1>
-                            <div class="detail">
-                            </div>
-                            <div class="detail">
-                            </div>
-                            <div class="detail">
-                            </div>
-                            <div class="detail">
-                            </div>
-                            <hr>
-                            <span class="number" id="loggedUserPayment"><span id="lastName">Loading...</span> </span>
-                        </div>
-                        <div class="box box2">
-                            <div style="display: flex;">
-                                <i id="" style="margin-right: 10px;"> </i>
-                                <i class="uil uil-location-point"> <span>Full Address </span> </i>
-                            </div>
-                            <hr>
-                            <h1></h1>
-                            <div class="detail">
-                            </div>
-                            <div class="detail">
-                            </div>
-                            <div class="detail">
-                            </div>
-                            <div class="detail">
-                            </div>
-                            <hr>
-                            <span class="number"> <span id="userID">Loading...</span> </span>
-                        </div>
-
-                        <script type="module" src="Database.js"></script> <!-- JavaScript File to Fetch Data -->
-
-                    </div>
-                </div>
-            </div>
-        </section>
-    </section>
 </body>
 <div id="6" style="display: none;"></div>
 <script>
@@ -882,7 +887,7 @@
         document.getElementById(6).innerHTML = req.responseText;
     }
 </script>
-<div id="11"  style="display: none;"></div>
+<div id="11" style="display: none;"></div>
 <script>
     load("Updateprofile.html");
     function load(url) {
@@ -935,6 +940,22 @@
     }
 </script>
 <script>
+    const signUpButton = document.getElementById('sec1');
+    const signInButton = document.getElementById('sec2');
+    const signInForm = document.getElementById('page2');
+    const signUpForm = document.getElementById('page1');
+
+    signUpButton.addEventListener('click', function () {
+        signInForm.style.display = "none";
+        signUpForm.style.display = "block";
+    })
+    signInButton.addEventListener('click', function () {
+        signInForm.style.display = "block";
+        signUpForm.style.display = "none";
+    })
+</script>
+
+<script>
     const body = document.querySelector("body"),
         modeToggle = body.querySelector(".mode-toggle");
     sidebar = body.querySelector("nav");
@@ -970,21 +991,6 @@
         }
     })
 </script>
-</script>
-<script>
-    const signUpButton = document.getElementById('sec1');
-    const signInButton = document.getElementById('sec2');
-    const signInForm = document.getElementById('page2');
-    const signUpForm = document.getElementById('page1');
-
-    signUpButton.addEventListener('click', function () {
-        signInForm.style.display = "none";
-        signUpForm.style.display = "block";
-    })
-    signInButton.addEventListener('click', function () {
-        signInForm.style.display = "block";
-        signUpForm.style.display = "none";
-    })
 </script>
 
 </html>
