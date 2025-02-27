@@ -24,7 +24,7 @@
     <meta property="og:image" content="img/fav.jpeg">
     <meta property="og:url" content="https://www.myroom.com">
     <meta property="og:type" content="website">
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MY ROOM - Find & Book Rooms Across India">
@@ -49,7 +49,7 @@
     <script src="js/jQuery3.4.1.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
-    
+
     <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
@@ -70,13 +70,7 @@
     </script>
 
 </head>
-<style>
-    @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
 
-    body {
-        overflow-x: hidden;
-    }
-</style>
 
 <body oncontextmenu="return false" onload="SearchLoad()" onchange="SearchLoad()">
     <!-- SPLASH SCREEN -->
@@ -105,6 +99,7 @@
             document.getElementById(1).innerHTML = req.responseText;
         }
     </script>
+
     <!-- SLIDER -->
     <div class="slider" id="2"></div>
     <script>
@@ -114,7 +109,7 @@
             req.open("GET", url, false);
             req.send(null);
             document.getElementById(2).innerHTML = req.responseText;
-            
+
         }
     </script>
 

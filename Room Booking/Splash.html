@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Logo Page with Circle Animation</title>
     <style>
+        @import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+        body {
+            overflow-x: hidden;
+        }
+
+        html,
+        body {
+            scrollbar-width: none;
+            /* Firefox */
+            -ms-overflow-style: none;
+            /* IE and Edge */
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+            /* Chrome, Safari, and Opera */
+        }
+
         /* Fullscreen Splash */
         .screen {
             position: fixed;
@@ -47,7 +66,7 @@
             margin: auto;
             height: 250px;
             stroke: rgb(0, 18, 119);
-            transform: rotate(-90deg); 
+            transform: rotate(-90deg);
         }
 
         circle {

@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
   <style>
     * {
       margin: 0px;
@@ -18,14 +19,16 @@
 
     }
 
+    #containerfooter {
+      display: none;
+    }
+
     footer {
-   
       width: 100%;
       margin: 0px;
       padding-bottom: 20px;
       background: #04091a;
       color: #f9f9f9;
-
     }
 
     footer article {
@@ -82,7 +85,8 @@
       gap: 30px;
       grid-template-columns: repeat(2, 1fr);
     }
-    #signtext{
+
+    #signtext {
       color: white;
     }
 
@@ -98,6 +102,7 @@
     }
 
     @media (width > 680px) {
+
       footer article {
         flex-direction: row;
         min-height: 140px;
@@ -146,6 +151,65 @@
     bottom:hover {
       background-color: rgb(10, 10, 95);
     }
+
+    @media screen and (max-width:768px) {
+
+
+      #containerfooter {
+        display: none;
+      }
+    }
+  </style>
+  <style>
+    /* Footer Styling */
+    #containerfooter {
+      display: none;
+      z-index: 999;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      color: #0a2d55;
+      background-color: white;
+      padding: 2px;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      height: 55px;
+      width: 100%;
+      overflow: hidden;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #containerfooter a {
+      width: 22%;
+      color: #0a2d55;
+      text-decoration: none;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin: 1px 0px;
+
+      font-size: 30px;
+      padding: 0px 5px;
+    }
+
+    #containerfooter i {
+      font-size: 25px;
+      margin: auto;
+    }
+
+    #containerfooter i:hover {
+      font-size: 27px;
+      margin: auto;
+    }
+
+    /* Responsive Design for Mobile */
+    @media (min-width: 768px) {
+      #containerfooter {
+        display: none;
+      }
+    }
   </style>
 
 <body oncontextmenu="return false">
@@ -160,33 +224,33 @@
     </article>
 
     <section class="top">
-         <ul>
+      <ul>
         <li>
           <h3>Resources</h3>
           <a>Usage</a>
           <a>Docs</a>
-          <a>Support</a>
-          <a>Hardware</a>
+          <a style="display: none;">Support</a>
+          <a style="display: none;">Hardware</a>
         </li>
         <li>
           <h3>Pricing</h3>
           <a>Overview</a>
           <a>Flexible Data</a>
-          <a>High Volume</a>
-          <a>Enterprise</a>
+          <a style="display: none;">High Volume</a>
+          <a style="display: none;">Enterprise</a>
         </li>
         <li>
           <h3>Developers</h3>
           <a>Forum</a>
           <a>Projects</a>
-          <a>Open Source</a>
-          <a>GitHub</a>
+          <a style="display: none;">Open Source</a>
+          <a style="display: none;">GitHub</a>
         </li>
         <li>
           <h3>Company</h3>
           <a>About Us</a>
-          <a>Blog</a>
-          <a>Partnerships</a>
+          <a style="display: none;">Blog</a>
+          <a style="display: none;">Partnerships</a>
           <a>Careers</a>
         </li>
       </ul>
@@ -194,6 +258,13 @@
 
     <section class="bottom">© 2025 ANY TECHNOLOGIES</section>
   </footer>
+  <div id="containerfooter" style="display:  ;">
+    <a href="index.html" target="_self"><i class="fas fa-home"></i> </a>
+    <a href="index.html" target="_self"> <i class="fas fa-search"></i></a>
+    <a href="cart.html" target="_self"> <i class="fa fa-shopping-cart"> </i></a><br>
+    <a href="Login.html" target="_self"><i class="fa fa-user-circle"></i></a>
+
+  </div>
 </body>
 
 </html>

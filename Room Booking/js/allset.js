@@ -1,15 +1,10 @@
 window.onchange = "SearchLoad()";
 var locate = document.getElementById("locate");
 
-const todays = new Date().toISOString().split("T")[0]; // Get today's date
-document.getElementById("date").value = todays; // Set today's date
-document.getElementById("date").setAttribute("min", todays); // Disable past dates
+const today = new Date().toISOString().split("T")[0]; // Get today's date
+document.getElementById("date").value = today; // Set today's date
+document.getElementById("date").setAttribute("min", today); // Disable past dates
 
-const today = new Date();
-today.setDate(today.getDate()); // Set to tomorrow (future date)
-const minDate = today.toISOString().split("T")[0]; // Convert to YYYY-MM-DD format
-document.getElementById("date").setAttribute("min", minDate);
- 
 const scriptURL =
   "https://script.google.com/macros/s/AKfycbz3qkCmvrudkA88NdnMXn5ihZLC0dIM1wV9u2XloNnRgl5OoMGiuIsI6_t-08bBxn7yqw/exec";
 const form = document.forms["submit-to-google-sheet"];
@@ -30,6 +25,7 @@ if (form) {
 }
 
 // Define room arrays for different categories
+
 // Single Room
 var androidRooms = [
   {
@@ -211,7 +207,6 @@ function displayRoomDetails(room) {
   detailsDuration.textContent = room.duration;
   detailsDistance.textContent = room.distance;
   detailsAddress.textContent = room.address;
-
   bookNow.href = `/book/${room.id}`;
   fullDetails.style.display = "flex";
 
@@ -225,8 +220,7 @@ function displayRoomDetails(room) {
 closeDetailsBtn.addEventListener("click", () => {
   fullDetails.style.display = "none";
 });
-
-// Display rooms based on the condition a == 123
+///
 
 function applyFilters() {
   // Get the selected filter values
@@ -272,6 +266,8 @@ function applyFilters() {
 }
 
 // Variable to control display (a == 123 will display rooms)
+
+// Display rooms based on the condition a == 123
 
 // Display full details of the clicked room
 function displayRoomDetails(room) {

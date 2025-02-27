@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="css\orderPlaced.css">
+    <script src="js/allset.js"></script>
     <script type="module" src="Database.js"></script>
-    <script src="js\Updateprofile.js"></script>
+
 </head>
 <style>
     hr {
@@ -20,7 +21,6 @@
     }
 
     .modal {
-
         position: fixed;
         z-index: 1000;
         left: 0;
@@ -282,23 +282,22 @@
                     <a href="Dahsboard.html" target="_self" id="btn">Black</a>
                 </div>
             </div>
-            <form id="form2">
+            <form id="form2" name="submit-to-google-sheet">
                 <div class="row">
                     <center>
                         <h3>UPDATE PROFILE</h3>
                         <hr>
                     </center>
                     <div class="col-50">
-                       
-                        <input type="number" id="boxida" name="Id" placeholder="+91 1234567890" required readonly>
+                        <input type="number" id="boxida" name="id" placeholder="+91 1234567890" readonly>
                         <label for="email"><i class="fa fa-envelope"></i> Email</label>
-                        <input type="email" id="RoomPrice" name="RoomPrice" placeholder="abc@gmail.com" required>
+                        <input type="text" id="Updatedemail" name="email" placeholder="abc@gmail.com">
                         <label for="fname"><i class="fa fa-user"></i> Full Name</label>
-                        <input type="text" id="Name" name="firstame" placeholder="Radhe Krishna" required>
+                        <input type="text" id="Name" name="fullname" placeholder="Radhe Krishna" required>
                         <label for="email"><i class="fa fa-envelope"></i> Mobile</label>
                         <input type="number" id="Number" name="number" placeholder="+91 1234567890" required>
                         <label for="fname"><i class="fa fa-user"></i> Gender</label>
-                        <select type="text" id="Gender" name="Gender" placeholder="NY" required>
+                        <select type="text" id="Gender" name="Gender" required>
                             <option value="Madhay Predesh">Male</option>
                             <option value="Other">Female</option>
                         </select>
@@ -306,22 +305,24 @@
                     </div>
                     <div class="col-50">
                         <label for="adr"><i class="fa fa-address-card"></i> Address / Landmark</label>
-                        <input type="text" id="Address" name="address" placeholder="542 W. 15th Street">
-                        <label for="fname"><i class="fa fa-home"></i> Room Floor</label>
-                        <input type="number" id="Pin" name="Pincode" placeholder="483119">
-                        <label for="state"><i class="fa fa-address-card"></i> District</label>
-                        <select type="text" id="District" name="District" placeholder="Jabalpur" required>
+                        <input type="text" id="Address" name="Address" placeholder="542 W. 15th Street">
+                        <label for="Pincode"><i class="fa fa-home"></i> Pin Code</label>
+                        <input type="number" id="Pin" name="pincode" placeholder="483119">
+                        <label for="District"><i class="fa fa-address-card"></i> District</label>
+                        <select type="text" id="District" name="district" placeholder="Jabalpur" required>
                             <option value="Madhay Predesh">Jabalpur</option>
                             <option value="Other">Other</option>
                         </select>
                         <label for="fname"><i class="fa fa-wallet"></i>
                             Payment Method</label>
                         <select name="Payment" id="Payment">
+                            <option value="Online & Cash">Online & Cash</option>
+                            <option value="Online">Online</option>
                             <option value="Cash">Cash</option>
                         </select>
                     </div>
                 </div><br>
-                <button onclick="submitupdate()" type="submit" value="Continue to Update" class="btn">
+                <button type="submit" value="Continue to Update" class="btn">
                     <div class="loader"></div>Continue to Update
                 </button>
                 <input type="button" value="Cancle" class="btn" id="btncan"
@@ -331,5 +332,6 @@
         </div>
     </div>
 </body>
+
 
 </html>

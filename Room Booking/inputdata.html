@@ -129,6 +129,10 @@
         flex-direction: column;
       }
 
+      .modal {
+        position: fixed;
+      }
+
       .modal-content {
         position: absolute;
         margin: 0px auto;
@@ -382,6 +386,7 @@
               <option value="Onlin">Online</option>
             </select>
             <label for="Date"><i class="fa fa-calendar-o"></i> Date</label>
+           
             <input type="date" id="date" name="Date" placeholder="01 - 02 -20025" min="today" autocomplete="" required>
           </div>
         </div><br>
@@ -399,7 +404,20 @@
       <a href="index.html" target="_self" id="btn">Black</a><br>
     </div><br><br>
   </div>
-
+  
+  <script>
+    function updateDateTime() {
+      const now = new Date();
+      now.setMinutes(now.getMinutes() - now.getTimezoneOffset()); // Adjust for local time
+  
+      const localDateTime = now.toISOString().slice(0, 16); // Format YYYY-MM-DDTHH:MM
+      document.getElementById("date").value = localDateTime;
+    }
+  
+    // Run on page load
+    updateDateTime();
+  </script>
+  
   <!-- OREDER PLACED -->
 
 </body>
