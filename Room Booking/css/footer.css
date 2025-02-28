@@ -149,7 +149,7 @@
     /* Input Field Styling */
     section form input {
       padding: 12px;
-      width: 100%;
+      width: 90%;
       border: none;
       border-radius: 20px;
       font-size: 16px;
@@ -165,7 +165,7 @@
 
     /* Subscribe Button */
     section form button {
-      width: 100%;
+      width: 95%;
       padding: 12px 20px;
       background-color: #031963;
       color: white;
