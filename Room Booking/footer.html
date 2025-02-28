@@ -36,7 +36,6 @@
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
-
       border-radius: 10px;
       background: linear-gradient(90deg, #773ecb, #2663ff);
     }
@@ -78,13 +77,15 @@
     }
 
     section.top ul {
+      text-align: center;
       list-style: none;
       padding: 0;
-      margin: 0;
+      margin: auto;
       display: grid;
       gap: 30px;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
+
 
     #signtext {
       color: white;
@@ -96,9 +97,11 @@
         margin-bottom: 0%;
       }
 
-      section.top ul {
-        padding-right: 10%;
-      }
+
+    }
+
+    a {
+      text-align: justify;
     }
 
     @media (width > 680px) {
@@ -116,8 +119,9 @@
       }
 
       section.top ul {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         padding-right: 0;
+        width: 100%;
       }
     }
 
@@ -126,6 +130,7 @@
       margin-bottom: 10px;
       color: rgb(255 255 255 / 90%);
       cursor: pointer;
+      text-align: center;
     }
 
     section.top ul li a:hover {
@@ -152,8 +157,45 @@
       background-color: rgb(10, 10, 95);
     }
 
-    @media screen and (max-width:768px) {
 
+
+    /* Input Field Styling */
+    form input {
+      padding: 12px;
+      width: 350px;
+      border: none;
+      border-radius: 20px;
+      font-size: 16px;
+      outline: none;
+    }
+
+    /* Subscribe Button */
+    form button {
+      width: 350px;
+      padding: 12px 20px;
+      background-color: #031963;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    /* Button Hover Effect */
+    form button:hover {
+      background-color: #ff6a20;
+    }
+
+
+    @media screen and (max-width:768px) {
+      section.top ul {
+        grid-template-columns: repeat(3, 1fr);
+        padding-right: 0;
+        width: 100%;
+        display: block;
+      }
 
       #containerfooter {
         display: none;
@@ -227,31 +269,23 @@
       <ul>
         <li>
           <h3>Resources</h3>
-          <a>Usage</a>
-          <a>Docs</a>
-          <a style="display: none;">Support</a>
-          <a style="display: none;">Hardware</a>
-        </li>
-        <li>
-          <h3>Pricing</h3>
-          <a>Overview</a>
-          <a>Flexible Data</a>
-          <a style="display: none;">High Volume</a>
-          <a style="display: none;">Enterprise</a>
-        </li>
-        <li>
-          <h3>Developers</h3>
-          <a>Forum</a>
-          <a>Projects</a>
-          <a style="display: none;">Open Source</a>
-          <a style="display: none;">GitHub</a>
+          <a style="text-align: justify;">A room booking system allows users to reserve rooms for personal or business
+            use. It simplifies the process
+            of finding available rooms, managing reservations, and keeping track of bookings efficiently.</a>
         </li>
         <li>
           <h3>Company</h3>
           <a>About Us</a>
-          <a style="display: none;">Blog</a>
-          <a style="display: none;">Partnerships</a>
+          <a>Forum</a>
+          <a>Projects</a>
           <a>Careers</a>
+        </li>
+        <li>
+          <h3>Subscribe</h3>
+          <form action="">
+            <input type="text" placeholder="Subscribe">
+            <button type="submit">SUBSCRIBE</button>
+          </form>
         </li>
       </ul>
     </section>
@@ -260,9 +294,9 @@
   </footer>
   <div id="containerfooter" style="display:  ;">
     <a href="index.html" target="_self"><i class="fas fa-home"></i> </a>
-    <a href="index.html" target="_self"> <i class="fas fa-search"></i></a>
-    <a href="cart.html" target="_self"> <i class="fa fa-shopping-cart"> </i></a><br>
-    <a href="Login.html" target="_self"><i class="fa fa-user-circle"></i></a>
+    <a href="Shopping.html" target="_self"> <i class="fa fa-shopping-cart"> </i></a><br>
+    <a href="Information.html" target="_self"> <i class="fas fa-bell"></i></a>
+    <a href="Login.html" target="_blank"><i class="fa fa-user-circle"></i></a>
 
   </div>
 </body>

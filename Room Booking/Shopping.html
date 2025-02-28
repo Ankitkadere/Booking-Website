@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Cart || ROOM BOOKED</title>
+    <link rel="icon" href="img\icon.jpeg" type="image/jpeg" />
+    <link rel="stylesheet" href="css/cart.css">
+    <!-- favicon -->
+</head>
+
+<body>
+    <!-- HEADER -->
+    <div id="72"></div>
+    <script>
+        load("header.html");
+        function load(url) {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(72).innerHTML = req.responseText;
+        }
+    </script>
+
+    <!-- CART CONTAINER -->
+    <div id="2"></div>
+    <script>
+        load("booked.html");
+        function load(url) {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(2).innerHTML = req.responseText;
+            let script = document.createElement("script");
+            script.src = "js/cart.js";
+            script.type = "text/javascript";
+            document.body.appendChild(script);
+        }
+    </script>
+
+    </div>
+    <div id="4"></div>
+    <script>
+        load("footer.html");
+        function load(url) {
+            req = new XMLHttpRequest();
+            req.open("GET", url, false);
+            req.send(null);
+            document.getElementById(4).innerHTML = req.responseText;
+        }
+    </script>
+</body>
+<!-- FOOTER -->
+
+</html>

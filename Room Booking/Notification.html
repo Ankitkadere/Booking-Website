@@ -1,0 +1,475 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Information &amp; FAQ - Room Booking Website
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
+</head>
+<style>
+    html,
+    body {
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+        /* IE and Edge */
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
+        /* Chrome, Safari, and Opera */
+    }
+
+    section {
+        padding: 80px 20px;
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 1s ease-out forwards;
+    }
+
+    /* Heading Styling */
+    h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        position: relative;
+        margin-bottom: 20px;
+        color: #2d3748;
+        display: inline-block;
+    }
+
+    h2::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: #4a90e2;
+        margin: 10px auto 0;
+        border-radius: 5px;
+        animation: scaleLine 0.5s ease-in-out infinite alternate;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #4a5568;
+    }
+
+    /* Paragraph Styling */
+    p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #4a5568;
+    }
+
+    /* FAQ and Information Section */
+    section .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* Smooth Hover Effect */
+    a:hover {
+        color: #003b7e;
+        transition: color 0.3s ease-in-out;
+    }
+
+    /* Image Styling */
+    .container img {
+        width: 400px;
+        transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+        border-radius: 10px;
+    }
+
+    img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Information Boxes */
+    .info {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .info section {
+        flex: 1;
+        width: 45vw;
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .info section:hover {
+        transform: translateY(-10px);
+    }
+
+    /* Button Styles */
+    button {
+        background: #4a90e2;
+        color: white;
+        font-weight: bold;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+
+    button:hover {
+        background: #357ae8;
+        transform: scale(1.05);
+    }
+
+    /* Keyframe Animations */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes scaleLine {
+        from {
+            width: 40px;
+        }
+
+        to {
+            width: 80px;
+        }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        h2 {
+            font-size: 2rem;
+        }
+
+        .info {
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        .info section {
+            flex: 1;
+            width: 90vw;
+            background: white;
+            padding: 10px 5px;
+            border-radius: 10px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease-in-out;
+        }
+
+        section {
+            padding: 80px 0px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+    }
+    .topset {
+            position: absolute;
+            top: 0;
+            margin-left: -2%;
+            margin-top: -6%;
+        }
+
+        @media screen and (max-width:768px) {
+            .topset {
+                width: 100vw;
+                position: absolute;
+                top: 0;
+                margin-left: -1.3%;
+                margin-top: -17.5%;
+            }
+        }
+
+</style>
+
+<body>
+
+    <!-- Information Section -->
+    <section class="py-20" id="information">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">
+                Information
+            </h2>
+            <p class="text-lg text-gray-700 mb-8">
+                Welcome to RoomBooking, your go-to platform for finding and booking rooms easily. We connect room
+                owners with potential tenants, making the process seamless and efficient. Below you will find
+                detailed information about our services, privacy policies, and terms &amp; conditions.
+            </p>
+            <img alt="Illustration of people booking rooms online" class="mx-auto rounded-lg shadow-md" height="400"
+                src="https://storage.googleapis.com/a1aa/image/1dIkmDMkYXZ0XFYhaItjJcR56cqWZN4_-rRs5AW_JmU.jpg"
+                width="600" />
+        </div>
+    </section>
+    <!-- FAQ Section -->
+    <section class="info">
+        <section class="py-20 bg-gray-100" id="faq">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-8">
+                    Frequently Asked Questions
+                </h2>
+                <div class="max-w-3xl mx-auto text-gray-700">
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold mb-2">
+                            How do I book a room?
+                        </h3>
+                        <p>
+                            To book a room, simply browse through our available listings, select the room you are
+                            interested in, and contact the room owner directly to arrange the booking and payment.
+                        </p>
+                    </div>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold mb-2">
+                            Do I need to create an account to book a room?
+                        </h3>
+                        <p>
+                            No, you do not need to create an account to book a room. However, room owners need to
+                            create
+                            an account to list their rooms and manage bookings.
+                        </p>
+                    </div>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold mb-2">
+                            How do I pay for the room?
+                        </h3>
+                        <p>
+                            All payments are to be made directly to the room owner in cash. We do not handle any
+                            payments on behalf of the room owners.
+                        </p>
+                    </div>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold mb-2">
+                            What is the cancellation policy?
+                        </h3>
+                        <p>
+                            Cancellation policies vary by room owner. Please review the cancellation policy of the
+                            room
+                            you are booking before making a reservation.
+                        </p>
+                    </div>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold mb-2">
+                            Can I list my room on your platform?
+                        </h3>
+                        <p>
+                            Yes, room owners can create an account and list their rooms on our platform. Simply sign
+                            up,
+                            provide the necessary details about your room, and start receiving bookings.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Privacy Policy Section -->
+        <section class="py-20 bg-gray-100" id="faq">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-8">
+                    Frequently Asked Questions
+                </h2>
+                <div class="max-w-3xl mx-auto text-gray-700">
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold mb-2">
+                            Is there a fee for listing my room?
+                        </h3>
+                        <p>
+                            No, there is no fee for listing your room on our platform. We provide this service free
+                            of
+                            charge to room owners.
+                        </p>
+                    </div>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold mb-2">
+                            How do I update my room listing?
+                        </h3>
+                        <p>
+                            Room owners can update their room listings by logging into their account and making the
+                            necessary changes to their listing details.
+                        </p>
+                    </div>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold mb-2">
+                            What should I do if I encounter a problem with my booking?
+                        </h3>
+                        <p>
+                            If you encounter any issues with your booking, please contact the room owner directly to
+                            resolve the matter. If you need further assistance, you can reach out to our customer
+                            support team.
+                        </p>
+                    </div>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold mb-2">
+                            How do I contact customer support?
+                        </h3>
+                        <p>
+                            If you have any questions or need assistance, you can contact our customer support team
+                            through the contact form on our website or by emailing <b>kaderesofttech@gmail.com</b>
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </section>
+    <!-- Terms & Conditions Section -->
+    <section class="info">
+        <section class="py-20" id="terms">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-8">
+                    Terms &amp; Conditions
+                </h2>
+                <div class="max-w-3xl mx-auto text-gray-700">
+                    <p class="mb-4">
+                        These terms and conditions govern your use of our website and services. By using our
+                        website,
+                        you agree to these terms in full.
+                    </p>
+                    <h3 class="text-xl font-bold mb-2">
+                        Room Booking
+                    </h3>
+                    <p class="mb-4">
+                        When you book a room through our website, you enter into a direct contract with the room
+                        owner.
+                        We are not responsible for any issues that may arise between you and the room owner.
+                    </p>
+                    <h3 class="text-xl font-bold mb-2">
+                        Payments
+                    </h3>
+                    <p class="mb-4">
+                        All payments are to be made directly to the room owner in cash. We do not handle any
+                        payments on
+                        behalf of the room owners.
+                    </p>
+                    <h3 class="text-xl font-bold mb-2">
+                        Cancellations
+                    </h3>
+                    <p class="mb-4">
+                        Cancellation policies vary by room owner. Please review the cancellation policy of the room
+                        you
+                        are booking before making a reservation.
+                    </p>
+                    <h3 class="text-xl font-bold mb-2">
+                        Liability
+                    </h3>
+                    <p class="mb-4">
+                        We are not liable for any damages or losses that may occur as a result of using our website
+                        or
+                        services. Your use of our website is at your own risk.
+                    </p>
+                    <h3 class="text-xl font-bold mb-2">
+                        User Conduct
+                    </h3>
+                    <p class="mb-4">
+                        You agree to use our website only for lawful purposes. You must not use our website in any
+                        way
+                        that causes, or may cause, damage to the website or impairment of the availability or
+                        accessibility of the website.
+                    </p>
+                    <h3 class="text-xl font-bold mb-2">
+                        Intellectual Property
+                    </h3>
+                    <p class="mb-4">
+                        All content on our website, including text, graphics, logos, and images, is the property of
+                        RoomBooking or its content suppliers and is protected by international copyright laws.
+                    </p>
+                    <h3 class="text-xl font-bold mb-2">
+                        Termination
+                    </h3>
+                    <p class="mb-4">
+                        We may terminate or suspend your access to our website and services immediately, without
+                        prior
+                        notice or liability, for any reason whatsoever, including without limitation if you breach
+                        the
+                        terms.
+                    </p>
+                    <h3 class="text-xl font-bold mb-2">
+                        Changes to these Terms
+                    </h3>
+                    <p class="mb-4">
+                        We may update these terms and conditions from time to time. We will notify you of any
+                        changes by
+                        posting the new terms on our website.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- FAQ Section -->
+        <section class="py-20 bg-gray-100" id="privacy">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-8">
+                    Privacy Policy
+                </h2>
+                <div class="max-w-3xl mx-auto text-gray-700">
+                    <p class="mb-4">
+                        Your privacy is important to us. This privacy policy explains how we collect, use, and
+                        protect
+                        your personal information.
+                    </p>
+                    <h3 class="text-xl font-bold mb-2">
+                        Information Collection
+                    </h3>
+                    <p class="mb-4">
+                        We collect information that you provide to us directly, such as when you create an account,
+                        book
+                        a room, or contact us. This information may include your name, email address, phone number,
+                        and
+                        payment details.
+                    </p>
+                    <h3 class="text-xl font-bold mb-2">
+                        Use of Information
+                    </h3>
+                    <p class="mb-4">
+                        We use the information we collect to provide and improve our services, process transactions,
+                        communicate with you, and for other purposes described in this privacy policy.
+                    </p>
+                    <h3 class="text-xl font-bold mb-2">
+                        Information Sharing
+                    </h3>
+                    <p class="mb-4">
+                        We do not share your personal information with third parties except as necessary to provide
+                        our
+                        services, comply with the law, or protect our rights.
+                    </p>
+                    <h3 class="text-xl font-bold mb-2">
+                        Data Security
+                    </h3>
+                    <p class="mb-4">
+                        We take reasonable measures to protect your personal information from unauthorized access,
+                        use,
+                        or disclosure. However, no internet or email transmission is ever fully secure or
+                        error-free.
+                    </p>
+                    <h3 class="text-xl font-bold mb-2">
+                        Changes to this Policy
+                    </h3>
+                    <p class="mb-4">
+                        We may update this privacy policy from time to time. We will notify you of any changes by
+                        posting the new policy on our website.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </section>
+    <!-- Footer -->
+
+</body>
+
+</html>
